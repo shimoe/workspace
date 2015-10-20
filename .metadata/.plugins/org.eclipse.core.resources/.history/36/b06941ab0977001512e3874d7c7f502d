@@ -9,16 +9,15 @@
 #include "vs-wrc103.h"
 #include "ixbus.h"
 
+#define BUZZER_TIME 400
+#define RHYTHM 100
 #define VOLUME 100
-
-int buzzertime = 400;
-int rhythm = 100;
 
 
 void BassDo(){
 	BuzzerSet(179, VOLUME);
 	BuzzerStart();
-	Wait(buzzertime);
+	Wait(BUZZER_TIME);
 	BuzzerStop();
 	Wait(100);
 }
@@ -26,7 +25,7 @@ void BassDo(){
 void Re(){
 	BuzzerSet(160, VOLUME);
 	BuzzerStart();
-	Wait(buzzertime);
+	Wait(BUZZER_TIME);
 	BuzzerStop();
 	Wait(100);
 }
@@ -34,7 +33,7 @@ void Re(){
 void Mi(){
 	BuzzerSet(142, VOLUME);
 	BuzzerStart();
-	Wait(buzzertime);
+	Wait(BUZZER_TIME);
 	BuzzerStop();
 	Wait(100);
 }
@@ -42,7 +41,7 @@ void Mi(){
 void Fa(){
 	BuzzerSet(134, VOLUME);
 	BuzzerStart();
-	Wait(buzzertime);
+	Wait(BUZZER_TIME);
 	BuzzerStop();
 	Wait(100);
 }
@@ -50,7 +49,7 @@ void Fa(){
 void So(){
 	BuzzerSet(120, VOLUME);
 	BuzzerStart();
-	Wait(buzzertime);
+	Wait(BUZZER_TIME);
 	BuzzerStop();
 	Wait(100);
 }
@@ -58,25 +57,25 @@ void So(){
 void Ra(){
 	BuzzerSet(107, VOLUME);
 	BuzzerStart();
-	Wait(buzzertime);
+	Wait(BUZZER_TIME);
 	BuzzerStop();
-	Wait(rhythm);
+	Wait(RHYTHM);
 }
 
 void Si(){
 	BuzzerSet(95, VOLUME);
 	BuzzerStart();
-	Wait(buzzertime);
+	Wait(BUZZER_TIME);
 	BuzzerStop();
-	Wait(rhythm);
+	Wait(RHYTHM);
 }
 
 void HighDo(){
 	BuzzerSet(90, VOLUME);
 	BuzzerStart();
-	Wait(buzzertime);
+	Wait(BUZZER_TIME);
 	BuzzerStop();
-	Wait(rhythm);
+	Wait(RHYTHM);
 }
 
 void kirakira1(){
@@ -116,27 +115,15 @@ void kirakira_master(){
 	kirakira2();
 	kirakira1();
 }
-
-void seirogan1(){
-	buzzertime = 50;
-	rhythm = 0;
-
-	HighDo();
-
-}
-
-void seirogan(){
-buzzertime = 50;
-rhythm = 0;
-
-
-}
 int main(void)
 {
 	const unsigned short MainCycle = 60;
 	Init(MainCycle);
 
 	kirakira_master();
+
+
+
 
 	return 0;
 }

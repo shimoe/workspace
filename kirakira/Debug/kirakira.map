@@ -136,24 +136,34 @@ Discarded input sections
  .group         0x00000000        0x8 ./src/main.o
  .group         0x00000000        0x8 ./src/main.o
  .text          0x00000000        0x0 ./src/main.o
- .data          0x00000000        0x0 ./src/main.o
+ .data          0x00000000        0x8 ./src/main.o
  .bss           0x00000000        0x0 ./src/main.o
- .text.BassDo   0x00000000       0x24 ./src/main.o
- .text.Re       0x00000000       0x24 ./src/main.o
- .text.Mi       0x00000000       0x24 ./src/main.o
- .text.Fa       0x00000000       0x24 ./src/main.o
- .text.So       0x00000000       0x24 ./src/main.o
- .text.Ra       0x00000000       0x24 ./src/main.o
- .text.Si       0x00000000       0x24 ./src/main.o
- .text.HighDo   0x00000000       0x24 ./src/main.o
+ .text.BassDo   0x00000000       0x28 ./src/main.o
+ .text.Re       0x00000000       0x28 ./src/main.o
+ .text.Mi       0x00000000       0x28 ./src/main.o
+ .text.Fa       0x00000000       0x28 ./src/main.o
+ .text.So       0x00000000       0x28 ./src/main.o
+ .text.Ra       0x00000000       0x28 ./src/main.o
+ .text.Si       0x00000000       0x28 ./src/main.o
+ .text.HighDo   0x00000000       0x28 ./src/main.o
+ .text.kirakira1
+                0x00000000       0x4a ./src/main.o
+ .text.kirakira2
+                0x00000000       0x28 ./src/main.o
+ .text.kirakira_master
+                0x00000000       0x16 ./src/main.o
+ .text.seirogan1
+                0x00000000       0x14 ./src/main.o
+ .text.seirogan
+                0x00000000       0x10 ./src/main.o
  .text.startup.main
-                0x00000000       0x72 ./src/main.o
- .debug_info    0x00000000      0x5c7 ./src/main.o
- .debug_abbrev  0x00000000      0x155 ./src/main.o
+                0x00000000       0x10 ./src/main.o
+ .debug_info    0x00000000      0x60f ./src/main.o
+ .debug_abbrev  0x00000000      0x16e ./src/main.o
  .debug_aranges
-                0x00000000       0x60 ./src/main.o
- .debug_ranges  0x00000000       0x50 ./src/main.o
- .debug_macro   0x00000000       0x8f ./src/main.o
+                0x00000000       0x88 ./src/main.o
+ .debug_ranges  0x00000000       0x78 ./src/main.o
+ .debug_macro   0x00000000       0x83 ./src/main.o
  .debug_macro   0x00000000      0x87a ./src/main.o
  .debug_macro   0x00000000       0x1c ./src/main.o
  .debug_macro   0x00000000       0x22 ./src/main.o
@@ -165,10 +175,10 @@ Discarded input sections
  .debug_macro   0x00000000       0x22 ./src/main.o
  .debug_macro   0x00000000       0x1c ./src/main.o
  .debug_macro   0x00000000       0xac ./src/main.o
- .debug_line    0x00000000      0x24f ./src/main.o
- .debug_str     0x00000000     0x740c ./src/main.o
+ .debug_line    0x00000000      0x2b2 ./src/main.o
+ .debug_str     0x00000000     0x743a ./src/main.o
  .comment       0x00000000       0x71 ./src/main.o
- .debug_frame   0x00000000      0x108 ./src/main.o
+ .debug_frame   0x00000000      0x17c ./src/main.o
  .ARM.attributes
                 0x00000000       0x33 ./src/main.o
  COMMON         0x00000000      0x102 ./src/main.o
