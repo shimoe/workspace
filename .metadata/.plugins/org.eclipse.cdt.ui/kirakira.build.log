@@ -1,0 +1,13 @@
+17:09:17 **** Incremental Build of configuration Debug for project kirakira ****
+make -r all 
+Building file: ../src/gpio.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__USE_CMSIS=CMSISv1p30_LPC13xx -DDEBUG -D__CODE_RED -D__REDLIB__ -I"C:/Users/宏太/Documents/LPCXpresso_7.9.2_493/workspace/kirakira/inc" -I"C:/Users/宏太/Documents/LPCXpresso_7.9.2_493/workspace/kirakira/lib" -O0 -Os -mword-relocations -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/gpio.d" -MT"src/gpio.o" -MT"src/gpio.d" -o"src/gpio.o" "../src/gpio.c"
+../src/gpio.c:2:58: fatal error: LPC13xx.h: No such file or directory
+ #include "LPC13xx.h"   /* LPC13xx Peripheral Registers */
+                                                          ^
+compilation terminated.
+make: *** [src/gpio.o] Error 1
+
+17:09:18 Build Finished (took 298ms)
+

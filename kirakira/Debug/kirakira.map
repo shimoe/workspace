@@ -1,0 +1,340 @@
+
+Allocating common symbols
+Common symbol       size              file
+
+WDF                 0x1               ./src/vs-wrc103.o
+I2CReadLength       0x4               ./src/ixbus.o
+I2CSlaveBuffer      0x6               ./src/ixbus.o
+adtemp              0x10              ./src/ixbus.o
+USB_InPutData       0x40              ./src/main.o
+iBuzzerPitch        0x4               ./src/vs-wrc103.o
+enc_A               0x4               ./src/vs-wrc103.o
+bBuzzerFlag         0x1               ./src/vs-wrc103.o
+I2CMode             0x4               ./src/ixbus.o
+PS_DATA             0x14              ./src/vs-wrc103.o
+I2CMasterBuffer     0x6               ./src/ixbus.o
+memmap              0x80              ./src/main.o
+enc_B               0x4               ./src/vs-wrc103.o
+MainCnt             0x2               ./src/vs-wrc103.o
+I2CWriteLength      0x4               ./src/ixbus.o
+USB_OutPutData      0x40              ./src/main.o
+bSendUSBdata        0x1               ./src/main.o
+isUSB_data_sending  0x1               ./src/main.o
+
+Discarded input sections
+
+ .group         0x00000000        0x8 ./src/gpio.o
+ .group         0x00000000        0x8 ./src/gpio.o
+ .group         0x00000000        0x8 ./src/gpio.o
+ .group         0x00000000        0x8 ./src/gpio.o
+ .group         0x00000000        0x8 ./src/gpio.o
+ .group         0x00000000        0x8 ./src/gpio.o
+ .group         0x00000000        0x8 ./src/gpio.o
+ .group         0x00000000        0x8 ./src/gpio.o
+ .group         0x00000000        0x8 ./src/gpio.o
+ .text          0x00000000        0x0 ./src/gpio.o
+ .data          0x00000000        0x0 ./src/gpio.o
+ .bss           0x00000000        0x0 ./src/gpio.o
+ .text.GPIOSetDir
+                0x00000000       0x90 ./src/gpio.o
+ .text.GPIOSetValue
+                0x00000000       0x4c ./src/gpio.o
+ .text.GPIOGetValueBit
+                0x00000000       0x44 ./src/gpio.o
+ .text.GPIOGetValue
+                0x00000000       0x18 ./src/gpio.o
+ .text.GPIOSetInterrupt
+                0x00000000      0x130 ./src/gpio.o
+ .text.GPIOIntEnable
+                0x00000000       0x48 ./src/gpio.o
+ .text.GPIOIntDisable
+                0x00000000       0x4c ./src/gpio.o
+ .text.GPIOIntStatus
+                0x00000000       0x4c ./src/gpio.o
+ .text.GPIOIntClear
+                0x00000000       0x48 ./src/gpio.o
+ .debug_info    0x00000000      0x3c7 ./src/gpio.o
+ .debug_abbrev  0x00000000      0x19b ./src/gpio.o
+ .debug_loc     0x00000000      0x63d ./src/gpio.o
+ .debug_aranges
+                0x00000000       0x60 ./src/gpio.o
+ .debug_ranges  0x00000000       0x50 ./src/gpio.o
+ .debug_macro   0x00000000       0x6b ./src/gpio.o
+ .debug_macro   0x00000000      0x87a ./src/gpio.o
+ .debug_macro   0x00000000       0x1c ./src/gpio.o
+ .debug_macro   0x00000000       0x22 ./src/gpio.o
+ .debug_macro   0x00000000       0x10 ./src/gpio.o
+ .debug_macro   0x00000000      0x12d ./src/gpio.o
+ .debug_macro   0x00000000      0x5b2 ./src/gpio.o
+ .debug_macro   0x00000000      0x7b7 ./src/gpio.o
+ .debug_macro   0x00000000      0x115 ./src/gpio.o
+ .debug_macro   0x00000000       0x22 ./src/gpio.o
+ .debug_line    0x00000000      0x26f ./src/gpio.o
+ .debug_str     0x00000000     0x71e2 ./src/gpio.o
+ .comment       0x00000000       0x71 ./src/gpio.o
+ .debug_frame   0x00000000       0xd0 ./src/gpio.o
+ .ARM.attributes
+                0x00000000       0x33 ./src/gpio.o
+ .group         0x00000000        0x8 ./src/ixbus.o
+ .group         0x00000000        0x8 ./src/ixbus.o
+ .group         0x00000000        0x8 ./src/ixbus.o
+ .group         0x00000000        0x8 ./src/ixbus.o
+ .group         0x00000000        0x8 ./src/ixbus.o
+ .group         0x00000000        0x8 ./src/ixbus.o
+ .group         0x00000000        0x8 ./src/ixbus.o
+ .group         0x00000000        0x8 ./src/ixbus.o
+ .group         0x00000000        0x8 ./src/ixbus.o
+ .group         0x00000000        0x8 ./src/ixbus.o
+ .text          0x00000000        0x0 ./src/ixbus.o
+ .data          0x00000000        0x0 ./src/ixbus.o
+ .bss           0x00000000       0x6c ./src/ixbus.o
+ .text.I2C_IRQHandler
+                0x00000000      0x190 ./src/ixbus.o
+ .text.I2CStart
+                0x00000000       0x24 ./src/ixbus.o
+ .text.I2CStop  0x00000000       0x1a ./src/ixbus.o
+ .text.I2C_init
+                0x00000000       0x64 ./src/ixbus.o
+ .text.I2CEngine
+                0x00000000       0x30 ./src/ixbus.o
+ .text.Get_IX008
+                0x00000000       0x84 ./src/ixbus.o
+ .rodata        0x00000000        0x8 ./src/ixbus.o
+ .debug_info    0x00000000      0xcfe ./src/ixbus.o
+ .debug_abbrev  0x00000000      0x240 ./src/ixbus.o
+ .debug_loc     0x00000000      0x254 ./src/ixbus.o
+ .debug_aranges
+                0x00000000       0x48 ./src/ixbus.o
+ .debug_ranges  0x00000000       0x50 ./src/ixbus.o
+ .debug_macro   0x00000000       0x74 ./src/ixbus.o
+ .debug_macro   0x00000000      0x87a ./src/ixbus.o
+ .debug_macro   0x00000000       0x1c ./src/ixbus.o
+ .debug_macro   0x00000000       0x22 ./src/ixbus.o
+ .debug_macro   0x00000000       0x10 ./src/ixbus.o
+ .debug_macro   0x00000000      0x12d ./src/ixbus.o
+ .debug_macro   0x00000000      0x5b2 ./src/ixbus.o
+ .debug_macro   0x00000000      0x7b7 ./src/ixbus.o
+ .debug_macro   0x00000000      0x115 ./src/ixbus.o
+ .debug_macro   0x00000000       0x1c ./src/ixbus.o
+ .debug_macro   0x00000000       0xac ./src/ixbus.o
+ .debug_line    0x00000000      0x2a2 ./src/ixbus.o
+ .debug_str     0x00000000     0x7cde ./src/ixbus.o
+ .comment       0x00000000       0x71 ./src/ixbus.o
+ .debug_frame   0x00000000       0x98 ./src/ixbus.o
+ .ARM.attributes
+                0x00000000       0x33 ./src/ixbus.o
+ COMMON         0x00000000       0x2c ./src/ixbus.o
+ .group         0x00000000        0x8 ./src/main.o
+ .group         0x00000000        0x8 ./src/main.o
+ .group         0x00000000        0x8 ./src/main.o
+ .group         0x00000000        0x8 ./src/main.o
+ .group         0x00000000        0x8 ./src/main.o
+ .group         0x00000000        0x8 ./src/main.o
+ .group         0x00000000        0x8 ./src/main.o
+ .group         0x00000000        0x8 ./src/main.o
+ .group         0x00000000        0x8 ./src/main.o
+ .group         0x00000000        0x8 ./src/main.o
+ .group         0x00000000        0x8 ./src/main.o
+ .text          0x00000000        0x0 ./src/main.o
+ .data          0x00000000        0x0 ./src/main.o
+ .bss           0x00000000        0x0 ./src/main.o
+ .text.BassDo   0x00000000       0x24 ./src/main.o
+ .text.Re       0x00000000       0x24 ./src/main.o
+ .text.Mi       0x00000000       0x24 ./src/main.o
+ .text.Fa       0x00000000       0x24 ./src/main.o
+ .text.So       0x00000000       0x24 ./src/main.o
+ .text.Ra       0x00000000       0x24 ./src/main.o
+ .text.Si       0x00000000       0x24 ./src/main.o
+ .text.HighDo   0x00000000       0x24 ./src/main.o
+ .text.startup.main
+                0x00000000       0x72 ./src/main.o
+ .debug_info    0x00000000      0x5c7 ./src/main.o
+ .debug_abbrev  0x00000000      0x155 ./src/main.o
+ .debug_aranges
+                0x00000000       0x60 ./src/main.o
+ .debug_ranges  0x00000000       0x50 ./src/main.o
+ .debug_macro   0x00000000       0x8f ./src/main.o
+ .debug_macro   0x00000000      0x87a ./src/main.o
+ .debug_macro   0x00000000       0x1c ./src/main.o
+ .debug_macro   0x00000000       0x22 ./src/main.o
+ .debug_macro   0x00000000       0x10 ./src/main.o
+ .debug_macro   0x00000000      0x12d ./src/main.o
+ .debug_macro   0x00000000      0x5b2 ./src/main.o
+ .debug_macro   0x00000000      0x7b7 ./src/main.o
+ .debug_macro   0x00000000      0x115 ./src/main.o
+ .debug_macro   0x00000000       0x22 ./src/main.o
+ .debug_macro   0x00000000       0x1c ./src/main.o
+ .debug_macro   0x00000000       0xac ./src/main.o
+ .debug_line    0x00000000      0x24f ./src/main.o
+ .debug_str     0x00000000     0x740c ./src/main.o
+ .comment       0x00000000       0x71 ./src/main.o
+ .debug_frame   0x00000000      0x108 ./src/main.o
+ .ARM.attributes
+                0x00000000       0x33 ./src/main.o
+ COMMON         0x00000000      0x102 ./src/main.o
+ .group         0x00000000        0x8 ./src/vs-wrc103.o
+ .group         0x00000000        0x8 ./src/vs-wrc103.o
+ .group         0x00000000        0x8 ./src/vs-wrc103.o
+ .group         0x00000000        0x8 ./src/vs-wrc103.o
+ .group         0x00000000        0x8 ./src/vs-wrc103.o
+ .group         0x00000000        0x8 ./src/vs-wrc103.o
+ .group         0x00000000        0x8 ./src/vs-wrc103.o
+ .group         0x00000000        0x8 ./src/vs-wrc103.o
+ .group         0x00000000        0x8 ./src/vs-wrc103.o
+ .group         0x00000000        0x8 ./src/vs-wrc103.o
+ .text          0x00000000        0x0 ./src/vs-wrc103.o
+ .data          0x00000000        0x0 ./src/vs-wrc103.o
+ .bss           0x00000000       0x22 ./src/vs-wrc103.o
+ .text.getMainCycle
+                0x00000000        0xc ./src/vs-wrc103.o
+ .text.Sync     0x00000000       0x58 ./src/vs-wrc103.o
+ .text.Mtr_Run_lv
+                0x00000000       0xb8 ./src/vs-wrc103.o
+ .text.Timer32Init
+                0x00000000       0x3c ./src/vs-wrc103.o
+ .text.Timer16Init
+                0x00000000       0x64 ./src/vs-wrc103.o
+ .text.ADCInit  0x00000000       0x2c ./src/vs-wrc103.o
+ .text.Init     0x00000000      0x278 ./src/vs-wrc103.o
+ .text.ADRead   0x00000000       0x70 ./src/vs-wrc103.o
+ .text.LED      0x00000000       0x26 ./src/vs-wrc103.o
+ .text.getSW    0x00000000       0x12 ./src/vs-wrc103.o
+ .text.PadWait  0x00000000        0xe ./src/vs-wrc103.o
+ .text.Ds2rw    0x00000000       0x78 ./src/vs-wrc103.o
+ .text.Ds2Com   0x00000000       0x44 ./src/vs-wrc103.o
+ .text.PS_Set_AN
+                0x00000000       0x98 ./src/vs-wrc103.o
+ .text.updatePAD
+                0x00000000       0x60 ./src/vs-wrc103.o
+ .text.getPAD   0x00000000       0x14 ./src/vs-wrc103.o
+ .text.Wait     0x00000000       0x20 ./src/vs-wrc103.o
+ .text.BuzzerSet
+                0x00000000       0x10 ./src/vs-wrc103.o
+ .text.BuzzerStart
+                0x00000000       0x34 ./src/vs-wrc103.o
+ .text.BuzzerStop
+                0x00000000       0x1c ./src/vs-wrc103.o
+ .text.isBuzzer
+                0x00000000        0xc ./src/vs-wrc103.o
+ .text.TIMER32_0_IRQHandler
+                0x00000000       0x80 ./src/vs-wrc103.o
+ .text.InitEncoder
+                0x00000000       0xe0 ./src/vs-wrc103.o
+ .text.ClearEncoder
+                0x00000000       0x14 ./src/vs-wrc103.o
+ .text.GetEncoder
+                0x00000000       0x18 ./src/vs-wrc103.o
+ .text.IntEncoder
+                0x00000000       0xa0 ./src/vs-wrc103.o
+ .text.PIOINT0_IRQHandler
+                0x00000000        0x4 ./src/vs-wrc103.o
+ .text.PIOINT1_IRQHandler
+                0x00000000        0x4 ./src/vs-wrc103.o
+ .text.PIOINT2_IRQHandler
+                0x00000000        0x4 ./src/vs-wrc103.o
+ .rodata        0x00000000       0x3d ./src/vs-wrc103.o
+ .debug_info    0x00000000     0x1c68 ./src/vs-wrc103.o
+ .debug_abbrev  0x00000000      0x4a5 ./src/vs-wrc103.o
+ .debug_loc     0x00000000      0x4ff ./src/vs-wrc103.o
+ .debug_aranges
+                0x00000000      0x100 ./src/vs-wrc103.o
+ .debug_ranges  0x00000000       0xf0 ./src/vs-wrc103.o
+ .debug_macro   0x00000000       0xd2 ./src/vs-wrc103.o
+ .debug_macro   0x00000000      0x87a ./src/vs-wrc103.o
+ .debug_macro   0x00000000       0x1c ./src/vs-wrc103.o
+ .debug_macro   0x00000000       0x22 ./src/vs-wrc103.o
+ .debug_macro   0x00000000       0x10 ./src/vs-wrc103.o
+ .debug_macro   0x00000000      0x12d ./src/vs-wrc103.o
+ .debug_macro   0x00000000      0x5b2 ./src/vs-wrc103.o
+ .debug_macro   0x00000000      0x7b7 ./src/vs-wrc103.o
+ .debug_macro   0x00000000      0x115 ./src/vs-wrc103.o
+ .debug_macro   0x00000000       0x22 ./src/vs-wrc103.o
+ .debug_macro   0x00000000       0x1c ./src/vs-wrc103.o
+ .debug_line    0x00000000      0x57b ./src/vs-wrc103.o
+ .debug_str     0x00000000     0x7f0c ./src/vs-wrc103.o
+ .comment       0x00000000       0x71 ./src/vs-wrc103.o
+ .debug_frame   0x00000000      0x284 ./src/vs-wrc103.o
+ .ARM.attributes
+                0x00000000       0x33 ./src/vs-wrc103.o
+ COMMON         0x00000000       0x2a ./src/vs-wrc103.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+MFlash32         0x00000000         0x00007000         xr
+FlashMap         0x00007000         0x00001000         xr
+RamLoc8          0x10000000         0x00002000         xrw
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD ./src/gpio.o
+LOAD ./src/ixbus.o
+LOAD ./src/main.o
+LOAD ./src/vs-wrc103.o
+LOAD C:/nxp/workspace/kirakira/lib\libCMSISv1p30_LPC13xx.a
+START GROUP
+LOAD c:/nxp/lpcxpresso_7.9.2_493/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libcr_semihost.a
+LOAD c:/nxp/lpcxpresso_7.9.2_493/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a
+LOAD c:/nxp/lpcxpresso_7.9.2_493/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libcr_eabihelpers.a
+END GROUP
+                0x00007000                __top_MFlash32 = 0x7000
+                0x00008000                __top_FlashMap = 0x8000
+                0x10002000                __top_RamLoc8 = 0x10002000
+
+.text
+ *(.isr_vector)
+ *(.text*)
+ *(.rodata*)
+
+.glue_7         0x00000000        0x0
+ .glue_7        0x00000000        0x0 linker stubs
+
+.glue_7t        0x00000000        0x0
+ .glue_7t       0x00000000        0x0 linker stubs
+
+.vfp11_veneer   0x00000000        0x0
+ .vfp11_veneer  0x00000000        0x0 linker stubs
+
+.v4_bx          0x00000000        0x0
+ .v4_bx         0x00000000        0x0 linker stubs
+
+.iplt           0x00000000        0x0
+ .iplt          0x00000000        0x0 ./src/gpio.o
+
+.rel.dyn        0x00000000        0x0
+ .rel.iplt      0x00000000        0x0 ./src/gpio.o
+
+.ARM.extab
+ *(.ARM.extab* .gnu.linkonce.armextab.*)
+                0x00000000                __exidx_start = .
+
+.ARM.exidx
+ *(.ARM.exidx* .gnu.linkonce.armexidx.*)
+                0x00000000                __exidx_end = .
+                0x00000000                _etext = .
+
+.cmap
+ *(.Const_Map*)
+
+.data           0x10000000        0x0 load address 0x00000000
+                0x10000000                _data = .
+ *(vtable)
+ *(.data*)
+                0x10000000                _edata = .
+
+.igot.plt       0x10000000        0x0 load address 0x00000000
+ .igot.plt      0x00000000        0x0 ./src/gpio.o
+
+.bss            0x10000000        0x0 load address 0x00000000
+                0x10000000                _bss = .
+ *(.bss*)
+ *(COMMON)
+                0x10000000                _ebss = .
+
+.cr_heap        0x10000000        0x0 load address 0x00000000
+                0x10000000                end = .
+                0x10000000                _pvHeapStart = .
+                0x10002000                _vRamTop = __top_RamLoc8
+                0x10002000                _vStackTop = (_vRamTop - 0x0)
+OUTPUT(kirakira.axf elf32-littlearm)

@@ -1,0 +1,106 @@
+17:17:10 **** Incremental Build of configuration Debug for project buzzer ****
+make -r all 
+Building file: ../src/main.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__USE_CMSIS=CMSISv1p30_LPC13xx -DDEBUG -D__CODE_RED -D__REDLIB__ -I"C:/workspace/buzzer/inc" -I"C:/workspace/buzzer/lib" -O0 -Os -mword-relocations -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/main.d" -MT"src/main.o" -MT"src/main.d" -o"src/main.o" "../src/main.c"
+In file included from ../src/main.c:1:0:
+C:/workspace/buzzer/inc/gpio.h:21:18: error: unknown type name 'uint32_t'
+ void GPIOSetDir( uint32_t portNum, uint32_t bitPosi, uint32_t dir );
+                  ^
+C:/workspace/buzzer/inc/gpio.h:21:36: error: unknown type name 'uint32_t'
+ void GPIOSetDir( uint32_t portNum, uint32_t bitPosi, uint32_t dir );
+                                    ^
+C:/workspace/buzzer/inc/gpio.h:21:54: error: unknown type name 'uint32_t'
+ void GPIOSetDir( uint32_t portNum, uint32_t bitPosi, uint32_t dir );
+                                                      ^
+C:/workspace/buzzer/inc/gpio.h:22:23: error: unknown type name 'uint32_t'
+ char GPIOGetValueBit( uint32_t portNum, uint32_t bitPosi );
+                       ^
+C:/workspace/buzzer/inc/gpio.h:22:41: error: unknown type name 'uint32_t'
+ char GPIOGetValueBit( uint32_t portNum, uint32_t bitPosi );
+                                         ^
+C:/workspace/buzzer/inc/gpio.h:23:1: error: unknown type name 'uint32_t'
+ uint32_t GPIOGetValue( uint32_t portNum);
+ ^
+C:/workspace/buzzer/inc/gpio.h:23:24: error: unknown type name 'uint32_t'
+ uint32_t GPIOGetValue( uint32_t portNum);
+                        ^
+C:/workspace/buzzer/inc/gpio.h:24:20: error: unknown type name 'uint32_t'
+ void GPIOSetValue( uint32_t portNum, uint32_t bitPosi, uint32_t bitVal );
+                    ^
+C:/workspace/buzzer/inc/gpio.h:24:38: error: unknown type name 'uint32_t'
+ void GPIOSetValue( uint32_t portNum, uint32_t bitPosi, uint32_t bitVal );
+                                      ^
+C:/workspace/buzzer/inc/gpio.h:24:56: error: unknown type name 'uint32_t'
+ void GPIOSetValue( uint32_t portNum, uint32_t bitPosi, uint32_t bitVal );
+                                                        ^
+C:/workspace/buzzer/inc/gpio.h:25:24: error: unknown type name 'uint32_t'
+ void GPIOSetInterrupt( uint32_t portNum, uint32_t bitPosi, uint32_t sense,
+                        ^
+C:/workspace/buzzer/inc/gpio.h:25:42: error: unknown type name 'uint32_t'
+ void GPIOSetInterrupt( uint32_t portNum, uint32_t bitPosi, uint32_t sense,
+                                          ^
+C:/workspace/buzzer/inc/gpio.h:25:60: error: unknown type name 'uint32_t'
+ void GPIOSetInterrupt( uint32_t portNum, uint32_t bitPosi, uint32_t sense,
+                                                            ^
+C:/workspace/buzzer/inc/gpio.h:26:3: error: unknown type name 'uint32_t'
+   uint32_t single, uint32_t event );
+   ^
+C:/workspace/buzzer/inc/gpio.h:26:20: error: unknown type name 'uint32_t'
+   uint32_t single, uint32_t event );
+                    ^
+C:/workspace/buzzer/inc/gpio.h:27:21: error: unknown type name 'uint32_t'
+ void GPIOIntEnable( uint32_t portNum, uint32_t bitPosi );
+                     ^
+C:/workspace/buzzer/inc/gpio.h:27:39: error: unknown type name 'uint32_t'
+ void GPIOIntEnable( uint32_t portNum, uint32_t bitPosi );
+                                       ^
+C:/workspace/buzzer/inc/gpio.h:28:22: error: unknown type name 'uint32_t'
+ void GPIOIntDisable( uint32_t portNum, uint32_t bitPosi );
+                      ^
+C:/workspace/buzzer/inc/gpio.h:28:40: error: unknown type name 'uint32_t'
+ void GPIOIntDisable( uint32_t portNum, uint32_t bitPosi );
+                                        ^
+C:/workspace/buzzer/inc/gpio.h:29:1: error: unknown type name 'uint32_t'
+ uint32_t GPIOIntStatus( uint32_t portNum, uint32_t bitPosi );
+ ^
+C:/workspace/buzzer/inc/gpio.h:29:25: error: unknown type name 'uint32_t'
+ uint32_t GPIOIntStatus( uint32_t portNum, uint32_t bitPosi );
+                         ^
+C:/workspace/buzzer/inc/gpio.h:29:43: error: unknown type name 'uint32_t'
+ uint32_t GPIOIntStatus( uint32_t portNum, uint32_t bitPosi );
+                                           ^
+C:/workspace/buzzer/inc/gpio.h:30:20: error: unknown type name 'uint32_t'
+ void GPIOIntClear( uint32_t portNum, uint32_t bitPosi );
+                    ^
+C:/workspace/buzzer/inc/gpio.h:30:38: error: unknown type name 'uint32_t'
+ void GPIOIntClear( uint32_t portNum, uint32_t bitPosi );
+                                      ^
+In file included from ../src/main.c:2:0:
+C:/workspace/buzzer/inc/vs-wrc103.h:15:9: error: unknown type name 'uint8_t'
+ typedef uint8_t BYTE;
+         ^
+In file included from ../src/main.c:2:0:
+C:/workspace/buzzer/inc/vs-wrc103.h:175:14: error: unknown type name 'uint8_t'
+ short getPAD(uint8_t num);
+              ^
+In file included from ../src/main.c:3:0:
+C:/workspace/buzzer/inc/ixbus.h:46:8: error: unknown type name 'uint32_t'
+ extern uint32_t I2C_init();
+        ^
+C:/workspace/buzzer/inc/ixbus.h:47:8: error: unknown type name 'uint32_t'
+ extern uint32_t I2CStart( void );
+        ^
+C:/workspace/buzzer/inc/ixbus.h:48:8: error: unknown type name 'uint32_t'
+ extern uint32_t I2CStop( void );
+        ^
+C:/workspace/buzzer/inc/ixbus.h:49:8: error: unknown type name 'uint32_t'
+ extern uint32_t I2CEngine( void );
+        ^
+C:/workspace/buzzer/inc/ixbus.h:51:1: error: unknown type name 'uint8_t'
+ uint8_t* GetIXAN();
+ ^
+make: *** [src/main.o] Error 1
+
+17:17:10 Build Finished (took 239ms)
+

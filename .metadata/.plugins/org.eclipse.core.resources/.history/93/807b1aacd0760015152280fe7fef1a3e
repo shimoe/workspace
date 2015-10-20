@@ -1,0 +1,27 @@
+/*
+キラキラ星
+14104064 Kouta Shimomatsubae
+2015/10/20
+*/
+
+#include "LPC13xx.h"
+#include "gpio.h"
+#include "vs-wrc103.h"
+#include "ixbus.h"
+
+void BassDo(){
+	BuzzerSet(179, 100);
+	    BuzzerStart();
+	    Wait(400);
+	    BuzzerStop();
+	    Wait(100);
+}
+
+int main(void)
+{
+	const unsigned short MainCycle = 60;
+	Init(MainCycle);
+
+	return 0;
+}
+

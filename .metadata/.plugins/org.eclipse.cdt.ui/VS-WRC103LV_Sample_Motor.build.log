@@ -1,0 +1,13 @@
+16:56:43 **** Build of configuration Debug for project VS-WRC103LV_Sample_Motor ****
+make -r all 
+Building file: ../src/cr_startup_lpc13.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__USE_CMSIS=CMSISv1p30_LPC13xx -DDEBUG -D__CODE_RED -D__REDLIB__ -I"C:/Users/宏太/Documents/LPCXpresso_7.9.2_493/workspace/VS-WRC103LV_Sample_Motor/inc" -I"C:/Users/宏太/Documents/LPCXpresso_7.9.2_493/workspace/VS-WRC103LV_Sample_Motor/lib" -O0 -Os -mword-relocations -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/cr_startup_lpc13.d" -MT"src/cr_startup_lpc13.o" -MT"src/cr_startup_lpc13.d" -o"src/cr_startup_lpc13.o" "../src/cr_startup_lpc13.c"
+../src/cr_startup_lpc13.c:34:28: fatal error: system_LPC13xx.h: No such file or directory
+ #include "system_LPC13xx.h"
+                            ^
+compilation terminated.
+make: *** [src/cr_startup_lpc13.o] Error 1
+
+16:56:43 Build Finished (took 184ms)
+

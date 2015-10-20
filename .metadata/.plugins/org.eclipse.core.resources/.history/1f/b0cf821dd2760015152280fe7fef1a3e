@@ -1,0 +1,76 @@
+/*
+キラキラ星
+14104064 Kouta Shimomatsubae
+2015/10/20
+ */
+
+#include "LPC13xx.h"
+#include "gpio.h"
+#include "vs-wrc103.h"
+#include "ixbus.h"
+
+const int BUZZER_TIME,RHYTHM,VOLUME;
+
+
+BUZZER_TIME = 400;
+RHYTHM = 100;
+VOLUME = 100;
+
+
+void BassDo(){
+	BuzzerSet(179, VOLUME);
+	BuzzerStart();
+	Wait(BUZZER_TIME);
+	BuzzerStop();
+	Wait(100);
+}
+
+void Re(){
+	BuzzerSet(160, VOLUME);
+	BuzzerStart();
+	Wait(BUZZER_TIME);
+	BuzzerStop();
+	Wait(100);
+}
+
+void Mi(){
+	BuzzerSet(142, VOLUME);
+	BuzzerStart();
+	Wait(BUZZER_TIME);
+	BuzzerStop();
+	Wait(100);
+}
+
+void Fa(){
+	BuzzerSet(134, VOLUME);
+	    BuzzerStart();
+	    Wait(BUZZER_TIME);
+	    BuzzerStop();
+	    Wait(100);
+}
+
+void So(){
+	BuzzerSet(120, VOLUME);
+	    BuzzerStart();
+	    Wait(BUZZER_TIME);
+	    BuzzerStop();
+	    Wait(100);
+}
+
+void Ra(){
+	BuzzerSet(107, VOLUME);
+	    BuzzerStart();
+	    Wait(BUZZER_TIME);
+	    BuzzerStop();
+	    Wait(100);
+}
+
+
+int main(void)
+{
+	const unsigned short MainCycle = 60;
+	Init(MainCycle);
+
+	return 0;
+}
+
