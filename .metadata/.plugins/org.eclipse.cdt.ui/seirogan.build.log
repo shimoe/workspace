@@ -1,4 +1,4 @@
-11:49:58 **** Incremental Build of configuration Debug for project seirogan ****
+11:53:32 **** Incremental Build of configuration Debug for project seirogan ****
 make -r all 
 Building file: ../src/main.c
 Invoking: MCU C Compiler
@@ -19,5 +19,5 @@ arm-none-eabi-size seirogan.axf; arm-none-eabi-size seirogan.axf; arm-none-eabi-
    3037	      0	    506	   3543	    dd7	seirogan.axf
  
 
-11:49:59 Build Finished (took 951ms)
+11:53:33 Build Finished (took 957ms)
 
