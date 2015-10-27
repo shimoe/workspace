@@ -1,0 +1,74 @@
+#include "LPC13xx.h"
+#include "gpio.h"
+#include "vs-wrc103.h"
+#include "ixbus.h"
+
+#define VOLUME 100
+#define BASS_DO 179
+#define RE 160
+#define MI 142
+#define FA 134
+#define SO 120
+#define RA 107
+#define SI 95
+#define HIGH_DO 90
+#define PITCH 1600
+
+int halfnote,quarternote,eighthnote,sixthnote;
+
+halfnote = PITCH/2;
+quaternote = PITCH/4;
+eighthnote = PITCH/8;
+sixthnote = PITCH/16;
+
+
+void Sound(int scale,int sigtime,int wait,int repeat){
+	int i;
+
+	for(i = 0;i < repeat;i++){
+		BuzzerSet(scale, VOLUME);
+		BuzzerStart();
+		Wait(sigtime);
+		BuzzerStop();
+		Wait(wait);
+	}
+}
+
+void Seirogan(){
+	int wait = 10;
+	Sound(HIGH_DO,quarternote,100,1);
+	Sound(HIGH_DO,eighthnote,100,2);
+	Sound(HIGH_DO,quarternote,100,2);
+	Sound(MI,quarternote,100,1);
+	Sound(MI,eighthnote,100,2);
+	Sound(MI,quarternote,100,2);
+
+	Sound(HIGH_DO,quarternote,100,1);
+	Sound(MI,quarternote,100,1);
+	Sound(HIGH_DO,quarternote,100,1);
+	Sound(MI,quarternote,100,1);
+	Sound(HIGH_DO,quarternote,100,3);
+
+	Sound(HIGH_DO,quarternote,100,1);
+	Sound(HIGH_DO,eighthnote,100,2);
+	Sound(HIGH_DO,quarternote,100,2);
+	Sound(MI,quarternote,100,1);
+	Sound(MI,eighthnote,100,2);
+	Sound(MI,quarternote,100,2);
+
+	Sound(HIGH_DO,quarternote,100,1);
+	Sound(MI,eighthnote,100,1);
+	Sound(HIGH_DO,quarternote,100,1);
+	Sound(MI,quarternote,100,1);
+	Sound(HIGH_DO,halfnote,100,1);
+
+}
+
+int main(void)
+{
+	const unsigned short MainCycle = 60;
+	Init(MainCycle);
+
+	return 0;
+}
+

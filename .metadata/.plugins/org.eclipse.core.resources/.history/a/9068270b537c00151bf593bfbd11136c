@@ -1,0 +1,27 @@
+#include "LPC13xx.h"
+#include "gpio.h"
+#include "vs-wrc103.h"
+#include "ixbus.h"
+
+#define VOLUME 100
+#define BASS_DO 179
+#define RE 160
+#define MI 142
+#define FA 134
+#define SO 120
+#define RA 107
+#define SI 95
+#define HIGH_DO 90
+
+void sound(int scale,int sigtime,int wait){
+
+}
+
+int main(void)
+{
+	const unsigned short MainCycle = 60;
+	Init(MainCycle);
+
+	return 0;
+}
+

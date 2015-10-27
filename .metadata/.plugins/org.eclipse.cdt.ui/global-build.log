@@ -714,3 +714,321 @@ arm-none-eabi-size kirakira.axf; arm-none-eabi-size kirakira.axf; arm-none-eabi-
    text	   data	    bss	    dec	    hex	filename
       0	      0	      0	      0	      0	kirakira.axf
  
+11:33:01 **** Incremental Build of configuration Debug for project kirakira ****
+make -r all 
+Building target: kirakira.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"C:/nxp/workspace/kirakira/lib" -Xlinker --gc-sections -Xlinker -Map=kirakira.map -mcpu=cortex-m3 -mthumb -T "../Debug/vs-wrc103lv_Debug.ld" -o "kirakira.axf"  ./src/gpio.o ./src/ixbus.o ./src/main.o ./src/vs-wrc103.o   -lCMSISv1p30_LPC13xx
+c:/nxp/lpcxpresso_7.9.2_493/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/bin/ld.exe: warning: cannot find entry symbol ResetISR; not setting start address
+Finished building target: kirakira.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size kirakira.axf; arm-none-eabi-size kirakira.axf; arm-none-eabi-objcopy -O binary kirakira.axf kirakira.bin; checksum kirakira.bin;
+   text	   data	    bss	    dec	    hex	filename
+      0	      0	      0	      0	      0	kirakira.axf
+   text	   data	    bss	    dec	    hex	filename
+      0	      0	      0	      0	      0	kirakira.axf
+ 
+11:33:02 **** Build of configuration Debug for project seirogan ****
+make -r all 
+Building file: ../src/cr_startup_lpc13.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__USE_CMSIS=CMSISv1p30_LPC13xx -DDEBUG -D__CODE_RED -D__REDLIB__ -I"C:/nxp/workspace/seirogan/inc" -I"C:/nxp/workspace/seirogan/lib" -O0 -Os -mword-relocations -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/cr_startup_lpc13.d" -MT"src/cr_startup_lpc13.o" -MT"src/cr_startup_lpc13.d" -o"src/cr_startup_lpc13.o" "../src/cr_startup_lpc13.c"
+Finished building: ../src/cr_startup_lpc13.c
+ 
+Building file: ../src/gpio.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__USE_CMSIS=CMSISv1p30_LPC13xx -DDEBUG -D__CODE_RED -D__REDLIB__ -I"C:/nxp/workspace/seirogan/inc" -I"C:/nxp/workspace/seirogan/lib" -O0 -Os -mword-relocations -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/gpio.d" -MT"src/gpio.o" -MT"src/gpio.d" -o"src/gpio.o" "../src/gpio.c"
+Finished building: ../src/gpio.c
+ 
+Building file: ../src/ixbus.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__USE_CMSIS=CMSISv1p30_LPC13xx -DDEBUG -D__CODE_RED -D__REDLIB__ -I"C:/nxp/workspace/seirogan/inc" -I"C:/nxp/workspace/seirogan/lib" -O0 -Os -mword-relocations -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/ixbus.d" -MT"src/ixbus.o" -MT"src/ixbus.d" -o"src/ixbus.o" "../src/ixbus.c"
+Finished building: ../src/ixbus.c
+ 
+Building file: ../src/main.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__USE_CMSIS=CMSISv1p30_LPC13xx -DDEBUG -D__CODE_RED -D__REDLIB__ -I"C:/nxp/workspace/seirogan/inc" -I"C:/nxp/workspace/seirogan/lib" -O0 -Os -mword-relocations -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/main.d" -MT"src/main.o" -MT"src/main.d" -o"src/main.o" "../src/main.c"
+../src/main.c:19:1: warning: data definition has no type or storage class
+ halfnote = PITCH/2;
+ ^
+../src/main.c:19:1: warning: type defaults to 'int' in declaration of 'halfnote' [-Wimplicit-int]
+../src/main.c:20:1: warning: data definition has no type or storage class
+ quaternote = PITCH/4;
+ ^
+../src/main.c:20:1: warning: type defaults to 'int' in declaration of 'quaternote' [-Wimplicit-int]
+../src/main.c:21:1: warning: data definition has no type or storage class
+ eighthnote = PITCH/8;
+ ^
+../src/main.c:21:1: warning: type defaults to 'int' in declaration of 'eighthnote' [-Wimplicit-int]
+../src/main.c:22:1: warning: data definition has no type or storage class
+ sixthnote = PITCH/16;
+ ^
+../src/main.c:22:1: warning: type defaults to 'int' in declaration of 'sixthnote' [-Wimplicit-int]
+../src/main.c:25:34: error: expected declaration specifiers or '...' before ',' token
+ void Sound(int scale,int sigtime,,int wait,int repeat){
+                                  ^
+../src/main.c: In function 'Seirogan':
+../src/main.c:39:2: warning: implicit declaration of function 'Sound' [-Wimplicit-function-declaration]
+  Sound(HIGH_DO,quarternote,100,1);
+  ^
+../src/main.c:46:16: error: 'qaurternote' undeclared (first use in this function)
+  Sound(HIGH_DO,qaurternote,100,1);
+                ^
+../src/main.c:46:16: note: each undeclared identifier is reported only once for each function it appears in
+../src/main.c:47:11: error: 'quarter' undeclared (first use in this function)
+  Sound(MI,quarter,100,1);
+           ^
+../src/main.c:63:16: error: 'halhnote' undeclared (first use in this function)
+  Sound(HIGH_DO,halhnote,100,1);
+                ^
+../src/main.c:38:6: warning: unused variable 'wait' [-Wunused-variable]
+  int wait = 10;
+      ^
+make: *** [src/main.o] Error 1
+11:33:27 **** Incremental Build of configuration Debug for project kirakira ****
+make -r all 
+make: Nothing to be done for `all'.
+11:33:28 **** Incremental Build of configuration Debug for project seirogan ****
+make -r all 
+Building file: ../src/main.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__USE_CMSIS=CMSISv1p30_LPC13xx -DDEBUG -D__CODE_RED -D__REDLIB__ -I"C:/nxp/workspace/seirogan/inc" -I"C:/nxp/workspace/seirogan/lib" -O0 -Os -mword-relocations -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/main.d" -MT"src/main.o" -MT"src/main.d" -o"src/main.o" "../src/main.c"
+../src/main.c:19:1: warning: data definition has no type or storage class
+ halfnote = PITCH/2;
+ ^
+../src/main.c:19:1: warning: type defaults to 'int' in declaration of 'halfnote' [-Wimplicit-int]
+../src/main.c:20:1: warning: data definition has no type or storage class
+ quaternote = PITCH/4;
+ ^
+../src/main.c:20:1: warning: type defaults to 'int' in declaration of 'quaternote' [-Wimplicit-int]
+../src/main.c:21:1: warning: data definition has no type or storage class
+ eighthnote = PITCH/8;
+ ^
+../src/main.c:21:1: warning: type defaults to 'int' in declaration of 'eighthnote' [-Wimplicit-int]
+../src/main.c:22:1: warning: data definition has no type or storage class
+ sixthnote = PITCH/16;
+ ^
+../src/main.c:22:1: warning: type defaults to 'int' in declaration of 'sixthnote' [-Wimplicit-int]
+../src/main.c:25:34: error: expected declaration specifiers or '...' before ',' token
+ void Sound(int scale,int sigtime,,int wait,int repeat){
+                                  ^
+../src/main.c: In function 'Seirogan':
+../src/main.c:39:2: warning: implicit declaration of function 'Sound' [-Wimplicit-function-declaration]
+  Sound(HIGH_DO,quarternote,100,1);
+  ^
+../src/main.c:48:16: error: 'qaurternote' undeclared (first use in this function)
+  Sound(HIGH_DO,qaurternote,100,1);
+                ^
+../src/main.c:48:16: note: each undeclared identifier is reported only once for each function it appears in
+../src/main.c:49:11: error: 'quarter' undeclared (first use in this function)
+  Sound(MI,quarter,100,1);
+           ^
+../src/main.c:38:6: warning: unused variable 'wait' [-Wunused-variable]
+  int wait = 10;
+      ^
+make: *** [src/main.o] Error 1
+11:33:49 **** Incremental Build of configuration Debug for project kirakira ****
+make -r all 
+make: Nothing to be done for `all'.
+11:33:49 **** Incremental Build of configuration Debug for project seirogan ****
+make -r all 
+Building file: ../src/main.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__USE_CMSIS=CMSISv1p30_LPC13xx -DDEBUG -D__CODE_RED -D__REDLIB__ -I"C:/nxp/workspace/seirogan/inc" -I"C:/nxp/workspace/seirogan/lib" -O0 -Os -mword-relocations -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/main.d" -MT"src/main.o" -MT"src/main.d" -o"src/main.o" "../src/main.c"
+../src/main.c:19:1: warning: data definition has no type or storage class
+ halfnote = PITCH/2;
+ ^
+../src/main.c:19:1: warning: type defaults to 'int' in declaration of 'halfnote' [-Wimplicit-int]
+../src/main.c:20:1: warning: data definition has no type or storage class
+ quaternote = PITCH/4;
+ ^
+../src/main.c:20:1: warning: type defaults to 'int' in declaration of 'quaternote' [-Wimplicit-int]
+../src/main.c:21:1: warning: data definition has no type or storage class
+ eighthnote = PITCH/8;
+ ^
+../src/main.c:21:1: warning: type defaults to 'int' in declaration of 'eighthnote' [-Wimplicit-int]
+../src/main.c:22:1: warning: data definition has no type or storage class
+ sixthnote = PITCH/16;
+ ^
+../src/main.c:22:1: warning: type defaults to 'int' in declaration of 'sixthnote' [-Wimplicit-int]
+../src/main.c: In function 'Seirogan':
+../src/main.c:48:16: error: 'qaurternote' undeclared (first use in this function)
+  Sound(HIGH_DO,qaurternote,100,1);
+                ^
+../src/main.c:48:16: note: each undeclared identifier is reported only once for each function it appears in
+../src/main.c:49:11: error: 'quarter' undeclared (first use in this function)
+  Sound(MI,quarter,100,1);
+           ^
+../src/main.c:38:6: warning: unused variable 'wait' [-Wunused-variable]
+  int wait = 10;
+      ^
+make: *** [src/main.o] Error 1
+11:34:02 **** Incremental Build of configuration Debug for project kirakira ****
+make -r all 
+make: Nothing to be done for `all'.
+11:34:02 **** Incremental Build of configuration Debug for project seirogan ****
+make -r all 
+Building file: ../src/main.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__USE_CMSIS=CMSISv1p30_LPC13xx -DDEBUG -D__CODE_RED -D__REDLIB__ -I"C:/nxp/workspace/seirogan/inc" -I"C:/nxp/workspace/seirogan/lib" -O0 -Os -mword-relocations -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/main.d" -MT"src/main.o" -MT"src/main.d" -o"src/main.o" "../src/main.c"
+../src/main.c:19:1: warning: data definition has no type or storage class
+ halfnote = PITCH/2;
+ ^
+../src/main.c:19:1: warning: type defaults to 'int' in declaration of 'halfnote' [-Wimplicit-int]
+../src/main.c:20:1: warning: data definition has no type or storage class
+ quaternote = PITCH/4;
+ ^
+../src/main.c:20:1: warning: type defaults to 'int' in declaration of 'quaternote' [-Wimplicit-int]
+../src/main.c:21:1: warning: data definition has no type or storage class
+ eighthnote = PITCH/8;
+ ^
+../src/main.c:21:1: warning: type defaults to 'int' in declaration of 'eighthnote' [-Wimplicit-int]
+../src/main.c:22:1: warning: data definition has no type or storage class
+ sixthnote = PITCH/16;
+ ^
+../src/main.c:22:1: warning: type defaults to 'int' in declaration of 'sixthnote' [-Wimplicit-int]
+../src/main.c: In function 'Seirogan':
+../src/main.c:50:16: error: 'qaurternote' undeclared (first use in this function)
+  Sound(HIGH_DO,qaurternote,100,3);
+                ^
+../src/main.c:50:16: note: each undeclared identifier is reported only once for each function it appears in
+../src/main.c:38:6: warning: unused variable 'wait' [-Wunused-variable]
+  int wait = 10;
+      ^
+make: *** [src/main.o] Error 1
+11:34:11 **** Incremental Build of configuration Debug for project kirakira ****
+make -r all 
+make: Nothing to be done for `all'.
+11:34:12 **** Incremental Build of configuration Debug for project seirogan ****
+make -r all 
+Building file: ../src/main.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__USE_CMSIS=CMSISv1p30_LPC13xx -DDEBUG -D__CODE_RED -D__REDLIB__ -I"C:/nxp/workspace/seirogan/inc" -I"C:/nxp/workspace/seirogan/lib" -O0 -Os -mword-relocations -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/main.d" -MT"src/main.o" -MT"src/main.d" -o"src/main.o" "../src/main.c"
+../src/main.c:19:1: warning: data definition has no type or storage class
+ halfnote = PITCH/2;
+ ^
+../src/main.c:19:1: warning: type defaults to 'int' in declaration of 'halfnote' [-Wimplicit-int]
+../src/main.c:20:1: warning: data definition has no type or storage class
+ quaternote = PITCH/4;
+ ^
+../src/main.c:20:1: warning: type defaults to 'int' in declaration of 'quaternote' [-Wimplicit-int]
+../src/main.c:21:1: warning: data definition has no type or storage class
+ eighthnote = PITCH/8;
+ ^
+../src/main.c:21:1: warning: type defaults to 'int' in declaration of 'eighthnote' [-Wimplicit-int]
+../src/main.c:22:1: warning: data definition has no type or storage class
+ sixthnote = PITCH/16;
+ ^
+../src/main.c:22:1: warning: type defaults to 'int' in declaration of 'sixthnote' [-Wimplicit-int]
+../src/main.c: In function 'Seirogan':
+../src/main.c:38:6: warning: unused variable 'wait' [-Wunused-variable]
+  int wait = 10;
+      ^
+Finished building: ../src/main.c
+ 
+Building file: ../src/vs-wrc103.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__USE_CMSIS=CMSISv1p30_LPC13xx -DDEBUG -D__CODE_RED -D__REDLIB__ -I"C:/nxp/workspace/seirogan/inc" -I"C:/nxp/workspace/seirogan/lib" -O0 -Os -mword-relocations -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/vs-wrc103.d" -MT"src/vs-wrc103.o" -MT"src/vs-wrc103.d" -o"src/vs-wrc103.o" "../src/vs-wrc103.c"
+Finished building: ../src/vs-wrc103.c
+ 
+Building target: seirogan.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"C:/nxp/workspace/seirogan/lib" -Xlinker --gc-sections -Xlinker -Map=seirogan.map -mcpu=cortex-m3 -mthumb -T "../Debug/vs-wrc103lv_Debug.ld" -o "seirogan.axf"  ./src/cr_startup_lpc13.o ./src/gpio.o ./src/ixbus.o ./src/main.o ./src/vs-wrc103.o   -lCMSISv1p30_LPC13xx
+Finished building target: seirogan.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size seirogan.axf; arm-none-eabi-size seirogan.axf; arm-none-eabi-objcopy -O binary seirogan.axf seirogan.bin; checksum seirogan.bin;
+   text	   data	    bss	    dec	    hex	filename
+   2449	      0	    494	   2943	    b7f	seirogan.axf
+   text	   data	    bss	    dec	    hex	filename
+   2449	      0	    494	   2943	    b7f	seirogan.axf
+ 
+11:34:33 **** Incremental Build of configuration Debug for project kirakira ****
+make -r all 
+make: Nothing to be done for `all'.
+11:34:33 **** Incremental Build of configuration Debug for project seirogan ****
+make -r all 
+Building file: ../src/main.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__USE_CMSIS=CMSISv1p30_LPC13xx -DDEBUG -D__CODE_RED -D__REDLIB__ -I"C:/nxp/workspace/seirogan/inc" -I"C:/nxp/workspace/seirogan/lib" -O0 -Os -mword-relocations -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/main.d" -MT"src/main.o" -MT"src/main.d" -o"src/main.o" "../src/main.c"
+../src/main.c:19:1: warning: data definition has no type or storage class
+ halfnote = PITCH/2;
+ ^
+../src/main.c:19:1: warning: type defaults to 'int' in declaration of 'halfnote' [-Wimplicit-int]
+../src/main.c:20:1: warning: data definition has no type or storage class
+ quaternote = PITCH/4;
+ ^
+../src/main.c:20:1: warning: type defaults to 'int' in declaration of 'quaternote' [-Wimplicit-int]
+../src/main.c:21:1: warning: data definition has no type or storage class
+ eighthnote = PITCH/8;
+ ^
+../src/main.c:21:1: warning: type defaults to 'int' in declaration of 'eighthnote' [-Wimplicit-int]
+../src/main.c:22:1: warning: data definition has no type or storage class
+ sixthnote = PITCH/16;
+ ^
+../src/main.c:22:1: warning: type defaults to 'int' in declaration of 'sixthnote' [-Wimplicit-int]
+../src/main.c: In function 'Seirogan':
+../src/main.c:38:6: warning: unused variable 'wait' [-Wunused-variable]
+  int wait = 10;
+      ^
+Finished building: ../src/main.c
+ 
+Building target: seirogan.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"C:/nxp/workspace/seirogan/lib" -Xlinker --gc-sections -Xlinker -Map=seirogan.map -mcpu=cortex-m3 -mthumb -T "../Debug/vs-wrc103lv_Debug.ld" -o "seirogan.axf"  ./src/cr_startup_lpc13.o ./src/gpio.o ./src/ixbus.o ./src/main.o ./src/vs-wrc103.o   -lCMSISv1p30_LPC13xx
+Finished building target: seirogan.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size seirogan.axf; arm-none-eabi-size seirogan.axf; arm-none-eabi-objcopy -O binary seirogan.axf seirogan.bin; checksum seirogan.bin;
+   text	   data	    bss	    dec	    hex	filename
+   3009	     16	    494	   3519	    dbf	seirogan.axf
+   text	   data	    bss	    dec	    hex	filename
+   3009	     16	    494	   3519	    dbf	seirogan.axf
+ 
+11:34:41 **** Incremental Build of configuration Debug for project kirakira ****
+make -r all 
+make: Nothing to be done for `all'.
+11:34:41 **** Incremental Build of configuration Debug for project seirogan ****
+make -r all 
+Building file: ../src/main.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__USE_CMSIS=CMSISv1p30_LPC13xx -DDEBUG -D__CODE_RED -D__REDLIB__ -I"C:/nxp/workspace/seirogan/inc" -I"C:/nxp/workspace/seirogan/lib" -O0 -Os -mword-relocations -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/main.d" -MT"src/main.o" -MT"src/main.d" -o"src/main.o" "../src/main.c"
+../src/main.c:19:1: warning: data definition has no type or storage class
+ halfnote = PITCH/2;
+ ^
+../src/main.c:19:1: warning: type defaults to 'int' in declaration of 'halfnote' [-Wimplicit-int]
+../src/main.c:20:1: warning: data definition has no type or storage class
+ quaternote = PITCH/4;
+ ^
+../src/main.c:20:1: warning: type defaults to 'int' in declaration of 'quaternote' [-Wimplicit-int]
+../src/main.c:21:1: warning: data definition has no type or storage class
+ eighthnote = PITCH/8;
+ ^
+../src/main.c:21:1: warning: type defaults to 'int' in declaration of 'eighthnote' [-Wimplicit-int]
+../src/main.c:22:1: warning: data definition has no type or storage class
+ sixthnote = PITCH/16;
+ ^
+../src/main.c:22:1: warning: type defaults to 'int' in declaration of 'sixthnote' [-Wimplicit-int]
+../src/main.c: In function 'Seirogan':
+../src/main.c:38:6: warning: unused variable 'wait' [-Wunused-variable]
+  int wait = 10;
+      ^
+Finished building: ../src/main.c
+ 
+Building target: seirogan.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"C:/nxp/workspace/seirogan/lib" -Xlinker --gc-sections -Xlinker -Map=seirogan.map -mcpu=cortex-m3 -mthumb -T "../Debug/vs-wrc103lv_Debug.ld" -o "seirogan.axf"  ./src/cr_startup_lpc13.o ./src/gpio.o ./src/ixbus.o ./src/main.o ./src/vs-wrc103.o   -lCMSISv1p30_LPC13xx
+Finished building target: seirogan.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size seirogan.axf; arm-none-eabi-size seirogan.axf; arm-none-eabi-objcopy -O binary seirogan.axf seirogan.bin; checksum seirogan.bin;
+   text	   data	    bss	    dec	    hex	filename
+   3009	     16	    494	   3519	    dbf	seirogan.axf
+   text	   data	    bss	    dec	    hex	filename
+   3009	     16	    494	   3519	    dbf	seirogan.axf
+ 
