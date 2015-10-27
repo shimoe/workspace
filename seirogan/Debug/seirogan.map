@@ -11,6 +11,7 @@ I2CReadLength       0x4               ./src/ixbus.o
 I2CSlaveBuffer      0x6               ./src/ixbus.o
 adtemp              0x10              ./src/ixbus.o
 USB_InPutData       0x40              ./src/main.o
+halfnote            0x4               ./src/main.o
 quarternote         0x4               ./src/main.o
 iBuzzerPitch        0x4               ./src/vs-wrc103.o
 enc_A               0x4               ./src/vs-wrc103.o
@@ -20,11 +21,13 @@ PS_DATA             0x14              ./src/vs-wrc103.o
 I2CMasterBuffer     0x6               ./src/ixbus.o
 memmap              0x80              ./src/main.o
 enc_B               0x4               ./src/vs-wrc103.o
+eighthnote          0x4               ./src/main.o
 MainCnt             0x2               ./src/vs-wrc103.o
 I2CWriteLength      0x4               ./src/ixbus.o
 USB_OutPutData      0x40              ./src/main.o
 bSendUSBdata        0x1               ./src/main.o
 isUSB_data_sending  0x1               ./src/main.o
+sixthnote           0x4               ./src/main.o
 
 Discarded input sections
 
@@ -107,6 +110,7 @@ Discarded input sections
  .group         0x00000000        0x8 ./src/main.o
  .group         0x00000000        0x8 ./src/main.o
  .text          0x00000000        0x0 ./src/main.o
+ .data          0x00000000        0x0 ./src/main.o
  .bss           0x00000000        0x0 ./src/main.o
  .debug_macro   0x00000000      0x87a ./src/main.o
  .debug_macro   0x00000000       0x1c ./src/main.o
@@ -194,7 +198,7 @@ END GROUP
                 0x00008000                __top_FlashMap = 0x8000
                 0x10002000                __top_RamLoc8 = 0x10002000
 
-.text           0x00000000      0xbc1
+.text           0x00000000      0xbdd
  *(.isr_vector)
  .isr_vector    0x00000000      0x124 ./src/cr_startup_lpc13.o
                 0x00000000                g_pfnVectors
@@ -258,153 +262,150 @@ END GROUP
                 0x000003f8                Sound
  *fill*         0x0000042e        0x2 
  .text.Seirogan
-                0x00000430      0x11c ./src/main.o
+                0x00000430      0x138 ./src/main.o
                 0x00000430                Seirogan
  .text.startup.main
-                0x0000054c       0x10 ./src/main.o
-                0x0000054c                main
- .text.Sync     0x0000055c       0x58 ./src/vs-wrc103.o
-                0x0000055c                Sync
+                0x00000568       0x10 ./src/main.o
+                0x00000568                main
+ .text.Sync     0x00000578       0x58 ./src/vs-wrc103.o
+                0x00000578                Sync
  .text.Timer32Init
-                0x000005b4       0x3c ./src/vs-wrc103.o
-                0x000005b4                Timer32Init
+                0x000005d0       0x3c ./src/vs-wrc103.o
+                0x000005d0                Timer32Init
  .text.Timer16Init
-                0x000005f0       0x64 ./src/vs-wrc103.o
-                0x000005f0                Timer16Init
- .text.ADCInit  0x00000654       0x2c ./src/vs-wrc103.o
-                0x00000654                ADCInit
- .text.Init     0x00000680      0x278 ./src/vs-wrc103.o
-                0x00000680                Init
- .text.Wait     0x000008f8       0x20 ./src/vs-wrc103.o
-                0x000008f8                Wait
+                0x0000060c       0x64 ./src/vs-wrc103.o
+                0x0000060c                Timer16Init
+ .text.ADCInit  0x00000670       0x2c ./src/vs-wrc103.o
+                0x00000670                ADCInit
+ .text.Init     0x0000069c      0x278 ./src/vs-wrc103.o
+                0x0000069c                Init
+ .text.Wait     0x00000914       0x20 ./src/vs-wrc103.o
+                0x00000914                Wait
  .text.BuzzerSet
-                0x00000918       0x10 ./src/vs-wrc103.o
-                0x00000918                BuzzerSet
+                0x00000934       0x10 ./src/vs-wrc103.o
+                0x00000934                BuzzerSet
  .text.BuzzerStart
-                0x00000928       0x34 ./src/vs-wrc103.o
-                0x00000928                BuzzerStart
+                0x00000944       0x34 ./src/vs-wrc103.o
+                0x00000944                BuzzerStart
  .text.BuzzerStop
-                0x0000095c       0x1c ./src/vs-wrc103.o
-                0x0000095c                BuzzerStop
+                0x00000978       0x1c ./src/vs-wrc103.o
+                0x00000978                BuzzerStop
  .text.TIMER32_0_IRQHandler
-                0x00000978       0x80 ./src/vs-wrc103.o
-                0x00000978                TIMER32_0_IRQHandler
+                0x00000994       0x80 ./src/vs-wrc103.o
+                0x00000994                TIMER32_0_IRQHandler
  .text.IntEncoder
-                0x000009f8       0xa0 ./src/vs-wrc103.o
-                0x000009f8                IntEncoder
+                0x00000a14       0xa0 ./src/vs-wrc103.o
+                0x00000a14                IntEncoder
  .text.PIOINT0_IRQHandler
-                0x00000a98        0x4 ./src/vs-wrc103.o
-                0x00000a98                PIOINT0_IRQHandler
+                0x00000ab4        0x4 ./src/vs-wrc103.o
+                0x00000ab4                PIOINT0_IRQHandler
  .text.PIOINT1_IRQHandler
-                0x00000a9c        0x4 ./src/vs-wrc103.o
-                0x00000a9c                PIOINT1_IRQHandler
+                0x00000ab8        0x4 ./src/vs-wrc103.o
+                0x00000ab8                PIOINT1_IRQHandler
  .text.PIOINT2_IRQHandler
-                0x00000aa0        0x4 ./src/vs-wrc103.o
-                0x00000aa0                PIOINT2_IRQHandler
+                0x00000abc        0x4 ./src/vs-wrc103.o
+                0x00000abc                PIOINT2_IRQHandler
  .text.SystemInit
-                0x00000aa4       0xe0 C:/nxp/workspace/seirogan/lib\libCMSISv1p30_LPC13xx.a(system_LPC13xx.o)
-                0x00000aa4                SystemInit
+                0x00000ac0       0xe0 C:/nxp/workspace/seirogan/lib\libCMSISv1p30_LPC13xx.a(system_LPC13xx.o)
+                0x00000ac0                SystemInit
  *(.rodata*)
- .rodata        0x00000b84       0x3d ./src/vs-wrc103.o
-                0x00000bb1                enctbl
+ .rodata        0x00000ba0       0x3d ./src/vs-wrc103.o
+                0x00000bcd                enctbl
 
-.glue_7         0x00000bc4        0x0
+.glue_7         0x00000be0        0x0
  .glue_7        0x00000000        0x0 linker stubs
 
-.glue_7t        0x00000bc4        0x0
+.glue_7t        0x00000be0        0x0
  .glue_7t       0x00000000        0x0 linker stubs
 
-.vfp11_veneer   0x00000bc4        0x0
+.vfp11_veneer   0x00000be0        0x0
  .vfp11_veneer  0x00000000        0x0 linker stubs
 
-.v4_bx          0x00000bc4        0x0
+.v4_bx          0x00000be0        0x0
  .v4_bx         0x00000000        0x0 linker stubs
 
-.iplt           0x00000bc4        0x0
+.iplt           0x00000be0        0x0
  .iplt          0x00000000        0x0 ./src/cr_startup_lpc13.o
 
-.rel.dyn        0x00000bc4        0x0
+.rel.dyn        0x00000be0        0x0
  .rel.iplt      0x00000000        0x0 ./src/cr_startup_lpc13.o
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x00000bc4                __exidx_start = .
+                0x00000be0                __exidx_start = .
 
 .ARM.exidx
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-                0x00000bc4                __exidx_end = .
-                0x00000bc4                _etext = .
+                0x00000be0                __exidx_end = .
+                0x00000be0                _etext = .
 
 .cmap
  *(.Const_Map*)
 
-.data           0x10000000       0x10 load address 0x00000bc1
+.data           0x10000000        0x0 load address 0x00000bdd
                 0x10000000                _data = .
  *(vtable)
  *(.data*)
- .data          0x10000000       0x10 ./src/main.o
-                0x10000000                eighthnote
-                0x10000004                halfnote
-                0x10000008                quaternote
-                0x1000000c                sixthnote
-                0x10000010                _edata = .
+                0x10000000                _edata = .
 
-.igot.plt       0x10000010        0x0 load address 0x00000bd1
+.igot.plt       0x10000000        0x0 load address 0x00000bdd
  .igot.plt      0x00000000        0x0 ./src/cr_startup_lpc13.o
 
-.bss            0x10000010      0x1ee load address 0x00000bd1
-                0x10000010                _bss = .
+.bss            0x10000000      0x1fa load address 0x00000bdd
+                0x10000000                _bss = .
  *(.bss*)
- .bss           0x10000010       0x6c ./src/ixbus.o
-                0x10000064                WrIndex
-                0x10000068                I2CMasterState
-                0x1000006c                RdIndex
-                0x10000070                I2CEndFlag
-                0x10000074                I2CCount
-                0x10000078                I2CSlaveState
- .bss           0x1000007c       0x22 ./src/vs-wrc103.o
-                0x1000009d                EncFlag
+ .bss           0x10000000       0x6c ./src/ixbus.o
+                0x10000054                WrIndex
+                0x10000058                I2CMasterState
+                0x1000005c                RdIndex
+                0x10000060                I2CEndFlag
+                0x10000064                I2CCount
+                0x10000068                I2CSlaveState
+ .bss           0x1000006c       0x22 ./src/vs-wrc103.o
+                0x1000008d                EncFlag
  *(COMMON)
- *fill*         0x1000009e        0x2 
- COMMON         0x100000a0       0x2c ./src/ixbus.o
-                0x100000a0                I2CReadLength
-                0x100000a4                I2CSlaveBuffer
-                0x100000aa                adtemp
-                0x100000bc                I2CMode
-                0x100000c0                I2CMasterBuffer
-                0x100000c8                I2CWriteLength
- COMMON         0x100000cc      0x106 ./src/main.o
-                0x100000cc                USB_InPutData
-                0x1000010c                quarternote
-                0x10000110                memmap
-                0x10000190                USB_OutPutData
-                0x100001d0                bSendUSBdata
-                0x100001d1                isUSB_data_sending
- *fill*         0x100001d2        0x2 
- COMMON         0x100001d4       0x2a ./src/vs-wrc103.o
-                0x100001d4                WDF
-                0x100001d8                iBuzzerPitch
-                0x100001dc                enc_A
-                0x100001e0                bBuzzerFlag
-                0x100001e2                PS_DATA
-                0x100001f8                enc_B
-                0x100001fc                MainCnt
-                0x100001fe                _ebss = .
+ *fill*         0x1000008e        0x2 
+ COMMON         0x10000090       0x2c ./src/ixbus.o
+                0x10000090                I2CReadLength
+                0x10000094                I2CSlaveBuffer
+                0x1000009a                adtemp
+                0x100000ac                I2CMode
+                0x100000b0                I2CMasterBuffer
+                0x100000b8                I2CWriteLength
+ COMMON         0x100000bc      0x114 ./src/main.o
+                0x100000bc                USB_InPutData
+                0x100000fc                halfnote
+                0x10000100                quarternote
+                0x10000104                memmap
+                0x10000184                eighthnote
+                0x10000188                USB_OutPutData
+                0x100001c8                bSendUSBdata
+                0x100001c9                isUSB_data_sending
+                0x100001cc                sixthnote
+ COMMON         0x100001d0       0x2a ./src/vs-wrc103.o
+                0x100001d0                WDF
+                0x100001d4                iBuzzerPitch
+                0x100001d8                enc_A
+                0x100001dc                bBuzzerFlag
+                0x100001de                PS_DATA
+                0x100001f4                enc_B
+                0x100001f8                MainCnt
+                0x100001fa                _ebss = .
 
-.cr_heap        0x100001fe        0x0 load address 0x00000bd1
-                0x100001fe                end = .
-                0x100001fe                _pvHeapStart = .
+.cr_heap        0x100001fa        0x0 load address 0x00000bdd
+                0x100001fa                end = .
+                0x100001fa                _pvHeapStart = .
                 0x10002000                _vRamTop = __top_RamLoc8
                 0x10002000                _vStackTop = (_vRamTop - 0x0)
 OUTPUT(seirogan.axf elf32-littlearm)
 
-.debug_info     0x00000000     0x39f0
+.debug_info     0x00000000     0x39e6
  .debug_info    0x00000000      0x1fe ./src/cr_startup_lpc13.o
  .debug_info    0x000001fe      0x3c7 ./src/gpio.o
  .debug_info    0x000005c5      0xcfe ./src/ixbus.o
- .debug_info    0x000012c3      0x575 ./src/main.o
- .debug_info    0x00001838     0x1c68 ./src/vs-wrc103.o
- .debug_info    0x000034a0      0x550 C:/nxp/workspace/seirogan/lib\libCMSISv1p30_LPC13xx.a(system_LPC13xx.o)
+ .debug_info    0x000012c3      0x56b ./src/main.o
+ .debug_info    0x0000182e     0x1c68 ./src/vs-wrc103.o
+ .debug_info    0x00003496      0x550 C:/nxp/workspace/seirogan/lib\libCMSISv1p30_LPC13xx.a(system_LPC13xx.o)
 
 .debug_abbrev   0x00000000      0xbe0
  .debug_abbrev  0x00000000       0xf8 ./src/cr_startup_lpc13.o
@@ -444,7 +445,7 @@ OUTPUT(seirogan.axf elf32-littlearm)
  .debug_ranges  0x00000120       0xf0 ./src/vs-wrc103.o
  .debug_ranges  0x00000210       0x20 C:/nxp/workspace/seirogan/lib\libCMSISv1p30_LPC13xx.a(system_LPC13xx.o)
 
-.debug_macro    0x00000000     0x1c35
+.debug_macro    0x00000000     0x1c3b
  .debug_macro   0x00000000       0x52 ./src/cr_startup_lpc13.o
  .debug_macro   0x00000052      0x87a ./src/cr_startup_lpc13.o
  .debug_macro   0x000008cc       0x10 ./src/cr_startup_lpc13.o
@@ -459,17 +460,17 @@ OUTPUT(seirogan.axf elf32-littlearm)
  .debug_macro   0x00001952       0x74 ./src/ixbus.o
  .debug_macro   0x000019c6       0x1c ./src/ixbus.o
  .debug_macro   0x000019e2       0xac ./src/ixbus.o
- .debug_macro   0x00001a8e       0xb9 ./src/main.o
- .debug_macro   0x00001b47       0x1c ./src/main.o
- .debug_macro   0x00001b63       0xd2 ./src/vs-wrc103.o
+ .debug_macro   0x00001a8e       0xbf ./src/main.o
+ .debug_macro   0x00001b4d       0x1c ./src/main.o
+ .debug_macro   0x00001b69       0xd2 ./src/vs-wrc103.o
 
-.debug_line     0x00000000     0x11c2
+.debug_line     0x00000000     0x11cb
  .debug_line    0x00000000      0x21e ./src/cr_startup_lpc13.o
  .debug_line    0x0000021e      0x26f ./src/gpio.o
  .debug_line    0x0000048d      0x2a2 ./src/ixbus.o
- .debug_line    0x0000072f      0x1ee ./src/main.o
- .debug_line    0x0000091d      0x57b ./src/vs-wrc103.o
- .debug_line    0x00000e98      0x32a C:/nxp/workspace/seirogan/lib\libCMSISv1p30_LPC13xx.a(system_LPC13xx.o)
+ .debug_line    0x0000072f      0x1f7 ./src/main.o
+ .debug_line    0x00000926      0x57b ./src/vs-wrc103.o
+ .debug_line    0x00000ea1      0x32a C:/nxp/workspace/seirogan/lib\libCMSISv1p30_LPC13xx.a(system_LPC13xx.o)
 
 .debug_str      0x00000000     0x8595
  .debug_str     0x00000000     0x3cba ./src/cr_startup_lpc13.o

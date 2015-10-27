@@ -12,14 +12,12 @@
 #define RA 107
 #define SI 95
 #define HIGH_DO 90
+#define HIGH_MI 80
 #define PITCH 1600
 
 int halfnote,quarternote,eighthnote,sixthnote;
 
-halfnote = PITCH/2;
-quaternote = PITCH/4;
-eighthnote = PITCH/8;
-sixthnote = PITCH/16;
+
 
 
 void Sound(int scale,int sigtime,int wait,int repeat){
@@ -35,33 +33,37 @@ void Sound(int scale,int sigtime,int wait,int repeat){
 }
 
 void Seirogan(){
-	int wait = 10;
+	int wait = 50;
+	halfnote = 800;//PITCH/2;
+	quarternote = 400;//PITCH/4;
+	eighthnote = 200;//PITCH/8;
+	sixthnote = 100;//PITCH/16;
 
-	Sound(HIGH_DO,quarternote,100,1);
-	Sound(HIGH_DO,eighthnote,100,2);
-	Sound(HIGH_DO,quarternote,100,2);
-	Sound(MI,quarternote,100,1);
-	Sound(MI,eighthnote,100,2);
-	Sound(MI,quarternote,100,2);
+	Sound(HIGH_DO,quarternote,wait,1);
+	Sound(HIGH_DO,eighthnote,wait,2);
+	Sound(HIGH_DO,quarternote,wait,2);
+	Sound(HIGH_MI,quarternote,wait,1);
+	Sound(HIGH_MI,eighthnote,wait,2);
+	Sound(HIGH_MI,quarternote,wait,2);
 
-	Sound(HIGH_DO,quarternote,100,1);
-	Sound(MI,quarternote,100,1);
-	Sound(HIGH_DO,quarternote,100,1);
-	Sound(MI,quarternote,100,1);
-	Sound(HIGH_DO,quarternote,100,3);
+	Sound(HIGH_DO,quarternote,wait,1);
+	Sound(HIGH_MI,quarternote,wait,1);
+	Sound(HIGH_DO,quarternote,wait,1);
+	Sound(HIGH_MI,quarternote,wait,1);
+	Sound(SO,quarternote,wait,3);
 
-	Sound(HIGH_DO,quarternote,100,1);
-	Sound(HIGH_DO,eighthnote,100,2);
-	Sound(HIGH_DO,quarternote,100,2);
-	Sound(MI,quarternote,100,1);
-	Sound(MI,eighthnote,100,2);
-	Sound(MI,quarternote,100,2);
+	Sound(HIGH_DO,quarternote,wait,1);
+	Sound(HIGH_DO,eighthnote,wait,2);
+	Sound(HIGH_DO,quarternote,wait,2);
+	Sound(HIGH_MI,quarternote,wait,1);
+	Sound(HIGH_MI,eighthnote,wait,2);
+	Sound(HIGH_MI,quarternote,wait,2);
 
-	Sound(HIGH_DO,quarternote,100,1);
-	Sound(MI,eighthnote,100,1);
-	Sound(HIGH_DO,quarternote,100,1);
-	Sound(MI,quarternote,100,1);
-	Sound(HIGH_DO,halfnote,100,1);
+	Sound(HIGH_DO,quarternote,wait,1);
+	Sound(HIGH_MI,quarternote,wait,1);
+	Sound(HIGH_DO,quarternote,wait,1);
+	Sound(HIGH_MI,quarternote,wait,1);
+	Sound(HIGH_DO,halfnote,wait,1);
 
 }
 
