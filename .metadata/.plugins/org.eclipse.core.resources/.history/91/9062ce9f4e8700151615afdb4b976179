@@ -61,10 +61,3 @@ void loop5(){
 		printf("%d/n",i);
 	}
 }
-
-void loop6(int start,int end, int step,int mode){
-	switch(mode){
-	case 0:
-		break;
-	}
-}
