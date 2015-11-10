@@ -38,14 +38,14 @@ int main(void) {
 void loop1(){
 	int i;
 	for(i = 0;i < 10;i++){
-		printf("%d/n",i);
+		printf("%d\n",i);
 	}
 }
 
 void loop2(){
 	int i;
 	for(i = 10;i < 20;i++){
-		printf("%d/n",i);
+		printf("%d\n",i);
 	}
 }
 
@@ -53,7 +53,7 @@ void loop3(){
 	int i;
 	for(i = 1;i <= 20;i++){
 		if(i%2 == 1){
-			printf("%d/n",i);
+			printf("%d\n",i);
 		}
 	}
 }
@@ -62,7 +62,7 @@ void loop4(){
 	int i;
 	for(i = 1;i <= 20;i++){
 		if(i%2 == 0){
-			printf("%d/n",i);
+			printf("%d\n",i);
 		}
 	}
 }
@@ -70,7 +70,7 @@ void loop4(){
 void loop5(){
 	int i;
 	for(i = 10;i > 0;i--){
-		printf("%d/n",i);
+		printf("%d\n",i);
 	}
 }
 
@@ -81,7 +81,7 @@ void loop6(int start,int end, int step,int mode){
 	case 0:if(start < end){
 		for(i = start;i < end;i++){
 			if(i%step == 0){
-				printf("%d/n",i);
+				printf("%d\n",i);
 			}
 		}
 	}else printf("please input start_number smoler than end_number");
@@ -90,7 +90,7 @@ void loop6(int start,int end, int step,int mode){
 	case 1:if(start < end){
 		for(i = start;i < end;i++){
 			if(i%step != 0){
-				printf("%d/n",i);
+				printf("%d\n",i);
 			}
 		}
 	}else printf("please input start_number smoler than end_number");

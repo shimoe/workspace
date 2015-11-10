@@ -8,11 +8,12 @@
 			<item value=""/>
 		</list>
 		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
+			<item value="/home/t/o104064k/Downloads/robocar.zip"/>
 			<item value="C:\Users\宏太\Downloads\VS-WRC103LV_Sample_MOTOR_20110118_1104.zip"/>
 			<item value="C:\Users\宏太\Downloads\robocar.zip"/>
 		</list>
 	</section>
 	<section name="com.crt.quickstart.views.wizards.examples.QSExampleSelectionPage">
-		<item value="C:\Users\宏太\Downloads" key="dirname"/>
+		<item value="/home/t/o104064k/Downloads" key="dirname"/>
 	</section>
 </section>

@@ -69,8 +69,8 @@ Discarded input sections
  .debug_macro   0x00000000      0x7b7 ./src/gpio.o
  .debug_macro   0x00000000      0x115 ./src/gpio.o
  .debug_macro   0x00000000       0x22 ./src/gpio.o
- .debug_line    0x00000000      0x26f ./src/gpio.o
- .debug_str     0x00000000     0x71e2 ./src/gpio.o
+ .debug_line    0x00000000      0x2a1 ./src/gpio.o
+ .debug_str     0x00000000     0x71f4 ./src/gpio.o
  .comment       0x00000000       0x71 ./src/gpio.o
  .debug_frame   0x00000000       0xd0 ./src/gpio.o
  .ARM.attributes
@@ -117,8 +117,8 @@ Discarded input sections
  .debug_macro   0x00000000      0x115 ./src/ixbus.o
  .debug_macro   0x00000000       0x1c ./src/ixbus.o
  .debug_macro   0x00000000       0xac ./src/ixbus.o
- .debug_line    0x00000000      0x2a2 ./src/ixbus.o
- .debug_str     0x00000000     0x7cde ./src/ixbus.o
+ .debug_line    0x00000000      0x2d4 ./src/ixbus.o
+ .debug_str     0x00000000     0x7cf0 ./src/ixbus.o
  .comment       0x00000000       0x71 ./src/ixbus.o
  .debug_frame   0x00000000       0x98 ./src/ixbus.o
  .ARM.attributes
@@ -175,8 +175,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x22 ./src/main.o
  .debug_macro   0x00000000       0x1c ./src/main.o
  .debug_macro   0x00000000       0xac ./src/main.o
- .debug_line    0x00000000      0x2b2 ./src/main.o
- .debug_str     0x00000000     0x743a ./src/main.o
+ .debug_line    0x00000000      0x2e4 ./src/main.o
+ .debug_str     0x00000000     0x744c ./src/main.o
  .comment       0x00000000       0x71 ./src/main.o
  .debug_frame   0x00000000      0x17c ./src/main.o
  .ARM.attributes
@@ -260,8 +260,8 @@ Discarded input sections
  .debug_macro   0x00000000      0x115 ./src/vs-wrc103.o
  .debug_macro   0x00000000       0x22 ./src/vs-wrc103.o
  .debug_macro   0x00000000       0x1c ./src/vs-wrc103.o
- .debug_line    0x00000000      0x57b ./src/vs-wrc103.o
- .debug_str     0x00000000     0x7f0c ./src/vs-wrc103.o
+ .debug_line    0x00000000      0x5ad ./src/vs-wrc103.o
+ .debug_str     0x00000000     0x7f1e ./src/vs-wrc103.o
  .comment       0x00000000       0x71 ./src/vs-wrc103.o
  .debug_frame   0x00000000      0x284 ./src/vs-wrc103.o
  .ARM.attributes
@@ -282,11 +282,11 @@ LOAD ./src/gpio.o
 LOAD ./src/ixbus.o
 LOAD ./src/main.o
 LOAD ./src/vs-wrc103.o
-LOAD C:/nxp/workspace/kirakira/lib\libCMSISv1p30_LPC13xx.a
+LOAD /home/t/o104064k/robocar/workspace/kirakira/lib/libCMSISv1p30_LPC13xx.a
 START GROUP
-LOAD c:/nxp/lpcxpresso_7.9.2_493/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libcr_semihost.a
-LOAD c:/nxp/lpcxpresso_7.9.2_493/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a
-LOAD c:/nxp/lpcxpresso_7.9.2_493/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libcr_eabihelpers.a
+LOAD /auto/edu/lib/lpcxpresso_7.9.2_493/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m/libcr_semihost.a
+LOAD /auto/edu/lib/lpcxpresso_7.9.2_493/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m/libcr_c.a
+LOAD /auto/edu/lib/lpcxpresso_7.9.2_493/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m/libcr_eabihelpers.a
 END GROUP
                 0x00007000                __top_MFlash32 = 0x7000
                 0x00008000                __top_FlashMap = 0x8000
