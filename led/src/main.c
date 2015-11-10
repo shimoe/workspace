@@ -49,6 +49,8 @@ void green_and_orange(int t,int n){
 
 void blink_for_ever(void){
 	while(1){
+		LED(0);
+		Wait(500);
 	LED(1);
 	Wait(500);
 	LED(2);

@@ -1625,3 +1625,261 @@ make: `all' に対して行うべき事はありません.
 11:47:20 **** Incremental Build of configuration Debug for project seirogan ****
 make -r all 
 make: `all' に対して行うべき事はありません.
+11:50:49 **** Incremental Build of configuration Debug for project kirakira ****
+make -r all 
+Building file: ../src/gpio.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__USE_CMSIS=CMSISv1p30_LPC13xx -DDEBUG -D__CODE_RED -D__REDLIB__ -I"C:/nxp/workspace/kirakira/inc" -I"C:/nxp/workspace/kirakira/lib" -O0 -Os -mword-relocations -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/gpio.d" -MT"src/gpio.o" -MT"src/gpio.d" -o"src/gpio.o" "../src/gpio.c"
+Finished building: ../src/gpio.c
+ 
+Building file: ../src/ixbus.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__USE_CMSIS=CMSISv1p30_LPC13xx -DDEBUG -D__CODE_RED -D__REDLIB__ -I"C:/nxp/workspace/kirakira/inc" -I"C:/nxp/workspace/kirakira/lib" -O0 -Os -mword-relocations -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/ixbus.d" -MT"src/ixbus.o" -MT"src/ixbus.d" -o"src/ixbus.o" "../src/ixbus.c"
+Finished building: ../src/ixbus.c
+ 
+Building file: ../src/main.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__USE_CMSIS=CMSISv1p30_LPC13xx -DDEBUG -D__CODE_RED -D__REDLIB__ -I"C:/nxp/workspace/kirakira/inc" -I"C:/nxp/workspace/kirakira/lib" -O0 -Os -mword-relocations -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/main.d" -MT"src/main.o" -MT"src/main.d" -o"src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building file: ../src/vs-wrc103.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__USE_CMSIS=CMSISv1p30_LPC13xx -DDEBUG -D__CODE_RED -D__REDLIB__ -I"C:/nxp/workspace/kirakira/inc" -I"C:/nxp/workspace/kirakira/lib" -O0 -Os -mword-relocations -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/vs-wrc103.d" -MT"src/vs-wrc103.o" -MT"src/vs-wrc103.d" -o"src/vs-wrc103.o" "../src/vs-wrc103.c"
+Finished building: ../src/vs-wrc103.c
+ 
+Building target: kirakira.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"C:/nxp/workspace/kirakira/lib" -Xlinker --gc-sections -Xlinker -Map=kirakira.map -mcpu=cortex-m3 -mthumb -T "../Debug/vs-wrc103lv_Debug.ld" -o "kirakira.axf"  ./src/gpio.o ./src/ixbus.o ./src/main.o ./src/vs-wrc103.o   -lCMSISv1p30_LPC13xx
+c:/nxp/lpcxpresso_7.9.2_493/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/bin/ld.exe: warning: cannot find entry symbol ResetISR; not setting start address
+Finished building target: kirakira.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size kirakira.axf; arm-none-eabi-size kirakira.axf; arm-none-eabi-objcopy -O binary kirakira.axf kirakira.bin; checksum kirakira.bin;
+   text	   data	    bss	    dec	    hex	filename
+      0	      0	      0	      0	      0	kirakira.axf
+   text	   data	    bss	    dec	    hex	filename
+      0	      0	      0	      0	      0	kirakira.axf
+ 
+11:50:51 **** Incremental Build of configuration Debug for project led ****
+make -r all 
+Building file: ../src/cr_startup_lpc13.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__USE_CMSIS=CMSISv1p30_LPC13xx -DDEBUG -D__CODE_RED -D__REDLIB__ -I"C:/nxp/workspace/led/inc" -I"C:/nxp/workspace/led/lib" -O0 -Os -mword-relocations -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/cr_startup_lpc13.d" -MT"src/cr_startup_lpc13.o" -MT"src/cr_startup_lpc13.d" -o"src/cr_startup_lpc13.o" "../src/cr_startup_lpc13.c"
+Finished building: ../src/cr_startup_lpc13.c
+ 
+Building file: ../src/gpio.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__USE_CMSIS=CMSISv1p30_LPC13xx -DDEBUG -D__CODE_RED -D__REDLIB__ -I"C:/nxp/workspace/led/inc" -I"C:/nxp/workspace/led/lib" -O0 -Os -mword-relocations -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/gpio.d" -MT"src/gpio.o" -MT"src/gpio.d" -o"src/gpio.o" "../src/gpio.c"
+Finished building: ../src/gpio.c
+ 
+Building file: ../src/ixbus.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__USE_CMSIS=CMSISv1p30_LPC13xx -DDEBUG -D__CODE_RED -D__REDLIB__ -I"C:/nxp/workspace/led/inc" -I"C:/nxp/workspace/led/lib" -O0 -Os -mword-relocations -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/ixbus.d" -MT"src/ixbus.o" -MT"src/ixbus.d" -o"src/ixbus.o" "../src/ixbus.c"
+Finished building: ../src/ixbus.c
+ 
+Building file: ../src/main.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__USE_CMSIS=CMSISv1p30_LPC13xx -DDEBUG -D__CODE_RED -D__REDLIB__ -I"C:/nxp/workspace/led/inc" -I"C:/nxp/workspace/led/lib" -O0 -Os -mword-relocations -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/main.d" -MT"src/main.o" -MT"src/main.d" -o"src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building file: ../src/vs-wrc103.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__USE_CMSIS=CMSISv1p30_LPC13xx -DDEBUG -D__CODE_RED -D__REDLIB__ -I"C:/nxp/workspace/led/inc" -I"C:/nxp/workspace/led/lib" -O0 -Os -mword-relocations -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/vs-wrc103.d" -MT"src/vs-wrc103.o" -MT"src/vs-wrc103.d" -o"src/vs-wrc103.o" "../src/vs-wrc103.c"
+Finished building: ../src/vs-wrc103.c
+ 
+Building target: led.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"C:/nxp/workspace/led/lib" -Xlinker --gc-sections -Xlinker -Map=led.map -mcpu=cortex-m3 -mthumb -T "../Debug/vs-wrc103lv_Debug.ld" -o "led.axf"  ./src/cr_startup_lpc13.o ./src/gpio.o ./src/ixbus.o ./src/main.o ./src/vs-wrc103.o   -lCMSISv1p30_LPC13xx
+Finished building target: led.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size led.axf; arm-none-eabi-size led.axf; arm-none-eabi-objcopy -O binary led.axf led.bin; checksum led.bin;
+   text	   data	    bss	    dec	    hex	filename
+   2885	      0	    490	   3375	    d2f	led.axf
+   text	   data	    bss	    dec	    hex	filename
+   2885	      0	    490	   3375	    d2f	led.axf
+ 
+11:50:55 **** Incremental Build of configuration Debug for project loop ****
+make all 
+Cannot run program "make": Launching failed
+
+Error: Program "make" not found in PATH
+PATH=[C:/nxp/LPCXpresso_7.9.2_493/lpcxpresso/jre/bin/client;C:/nxp/LPCXpresso_7.9.2_493/lpcxpresso/jre/bin;C:/nxp/LPCXpresso_7.9.2_493/lpcxpresso/jre/lib/i386;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\ProgramData\Lenovo\ReadyApps;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files (x86)\Skype\Phone\;C:\nxp\LPCXpresso_7.9.2_493\lpcxpresso;]
+11:50:55 **** Incremental Build of configuration Debug for project seirogan ****
+make -r all 
+Building file: ../src/cr_startup_lpc13.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__USE_CMSIS=CMSISv1p30_LPC13xx -DDEBUG -D__CODE_RED -D__REDLIB__ -I"C:/nxp/workspace/seirogan/inc" -I"C:/nxp/workspace/seirogan/lib" -O0 -Os -mword-relocations -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/cr_startup_lpc13.d" -MT"src/cr_startup_lpc13.o" -MT"src/cr_startup_lpc13.d" -o"src/cr_startup_lpc13.o" "../src/cr_startup_lpc13.c"
+Finished building: ../src/cr_startup_lpc13.c
+ 
+Building file: ../src/gpio.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__USE_CMSIS=CMSISv1p30_LPC13xx -DDEBUG -D__CODE_RED -D__REDLIB__ -I"C:/nxp/workspace/seirogan/inc" -I"C:/nxp/workspace/seirogan/lib" -O0 -Os -mword-relocations -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/gpio.d" -MT"src/gpio.o" -MT"src/gpio.d" -o"src/gpio.o" "../src/gpio.c"
+Finished building: ../src/gpio.c
+ 
+Building file: ../src/ixbus.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__USE_CMSIS=CMSISv1p30_LPC13xx -DDEBUG -D__CODE_RED -D__REDLIB__ -I"C:/nxp/workspace/seirogan/inc" -I"C:/nxp/workspace/seirogan/lib" -O0 -Os -mword-relocations -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/ixbus.d" -MT"src/ixbus.o" -MT"src/ixbus.d" -o"src/ixbus.o" "../src/ixbus.c"
+Finished building: ../src/ixbus.c
+ 
+Building file: ../src/main.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__USE_CMSIS=CMSISv1p30_LPC13xx -DDEBUG -D__CODE_RED -D__REDLIB__ -I"C:/nxp/workspace/seirogan/inc" -I"C:/nxp/workspace/seirogan/lib" -O0 -Os -mword-relocations -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/main.d" -MT"src/main.o" -MT"src/main.d" -o"src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building file: ../src/vs-wrc103.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__USE_CMSIS=CMSISv1p30_LPC13xx -DDEBUG -D__CODE_RED -D__REDLIB__ -I"C:/nxp/workspace/seirogan/inc" -I"C:/nxp/workspace/seirogan/lib" -O0 -Os -mword-relocations -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/vs-wrc103.d" -MT"src/vs-wrc103.o" -MT"src/vs-wrc103.d" -o"src/vs-wrc103.o" "../src/vs-wrc103.c"
+Finished building: ../src/vs-wrc103.c
+ 
+Building target: seirogan.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"C:/nxp/workspace/seirogan/lib" -Xlinker --gc-sections -Xlinker -Map=seirogan.map -mcpu=cortex-m3 -mthumb -T "../Debug/vs-wrc103lv_Debug.ld" -o "seirogan.axf"  ./src/cr_startup_lpc13.o ./src/gpio.o ./src/ixbus.o ./src/main.o ./src/vs-wrc103.o   -lCMSISv1p30_LPC13xx
+Finished building target: seirogan.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size seirogan.axf; arm-none-eabi-size seirogan.axf; arm-none-eabi-objcopy -O binary seirogan.axf seirogan.bin; checksum seirogan.bin;
+   text	   data	    bss	    dec	    hex	filename
+   3037	      0	    506	   3543	    dd7	seirogan.axf
+   text	   data	    bss	    dec	    hex	filename
+   3037	      0	    506	   3543	    dd7	seirogan.axf
+ 
+11:55:26 **** Incremental Build of configuration Debug for project kirakira ****
+make -r all 
+Building target: kirakira.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"C:/nxp/workspace/kirakira/lib" -Xlinker --gc-sections -Xlinker -Map=kirakira.map -mcpu=cortex-m3 -mthumb -T "../Debug/vs-wrc103lv_Debug.ld" -o "kirakira.axf"  ./src/gpio.o ./src/ixbus.o ./src/main.o ./src/vs-wrc103.o   -lCMSISv1p30_LPC13xx
+c:/nxp/lpcxpresso_7.9.2_493/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/bin/ld.exe: warning: cannot find entry symbol ResetISR; not setting start address
+Finished building target: kirakira.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size kirakira.axf; arm-none-eabi-size kirakira.axf; arm-none-eabi-objcopy -O binary kirakira.axf kirakira.bin; checksum kirakira.bin;
+   text	   data	    bss	    dec	    hex	filename
+      0	      0	      0	      0	      0	kirakira.axf
+   text	   data	    bss	    dec	    hex	filename
+      0	      0	      0	      0	      0	kirakira.axf
+ 
+11:55:27 **** Incremental Build of configuration Debug for project led ****
+make -r all 
+Building file: ../src/main.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__USE_CMSIS=CMSISv1p30_LPC13xx -DDEBUG -D__CODE_RED -D__REDLIB__ -I"C:/nxp/workspace/led/inc" -I"C:/nxp/workspace/led/lib" -O0 -Os -mword-relocations -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/main.d" -MT"src/main.o" -MT"src/main.d" -o"src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building target: led.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"C:/nxp/workspace/led/lib" -Xlinker --gc-sections -Xlinker -Map=led.map -mcpu=cortex-m3 -mthumb -T "../Debug/vs-wrc103lv_Debug.ld" -o "led.axf"  ./src/cr_startup_lpc13.o ./src/gpio.o ./src/ixbus.o ./src/main.o ./src/vs-wrc103.o   -lCMSISv1p30_LPC13xx
+Finished building target: led.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size led.axf; arm-none-eabi-size led.axf; arm-none-eabi-objcopy -O binary led.axf led.bin; checksum led.bin;
+   text	   data	    bss	    dec	    hex	filename
+   2897	      0	    490	   3387	    d3b	led.axf
+   text	   data	    bss	    dec	    hex	filename
+   2897	      0	    490	   3387	    d3b	led.axf
+ 
+11:55:29 **** Incremental Build of configuration Debug for project loop ****
+make all 
+Cannot run program "make": Launching failed
+
+Error: Program "make" not found in PATH
+PATH=[C:/nxp/LPCXpresso_7.9.2_493/lpcxpresso/jre/bin/client;C:/nxp/LPCXpresso_7.9.2_493/lpcxpresso/jre/bin;C:/nxp/LPCXpresso_7.9.2_493/lpcxpresso/jre/lib/i386;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\ProgramData\Lenovo\ReadyApps;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files (x86)\Skype\Phone\;C:\nxp\LPCXpresso_7.9.2_493\lpcxpresso;]
+11:55:29 **** Incremental Build of configuration Debug for project seirogan ****
+make -r all 
+Building target: seirogan.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"C:/nxp/workspace/seirogan/lib" -Xlinker --gc-sections -Xlinker -Map=seirogan.map -mcpu=cortex-m3 -mthumb -T "../Debug/vs-wrc103lv_Debug.ld" -o "seirogan.axf"  ./src/cr_startup_lpc13.o ./src/gpio.o ./src/ixbus.o ./src/main.o ./src/vs-wrc103.o   -lCMSISv1p30_LPC13xx
+Finished building target: seirogan.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size seirogan.axf; arm-none-eabi-size seirogan.axf; arm-none-eabi-objcopy -O binary seirogan.axf seirogan.bin; checksum seirogan.bin;
+   text	   data	    bss	    dec	    hex	filename
+   3037	      0	    506	   3543	    dd7	seirogan.axf
+   text	   data	    bss	    dec	    hex	filename
+   3037	      0	    506	   3543	    dd7	seirogan.axf
+ 
+11:56:22 **** Incremental Build of configuration Debug for project kirakira ****
+make -r all 
+make: Nothing to be done for `all'.
+11:56:22 **** Incremental Build of configuration Debug for project led ****
+make -r all 
+Building file: ../src/main.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__USE_CMSIS=CMSISv1p30_LPC13xx -DDEBUG -D__CODE_RED -D__REDLIB__ -I"C:/nxp/workspace/led/inc" -I"C:/nxp/workspace/led/lib" -O0 -Os -mword-relocations -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/main.d" -MT"src/main.o" -MT"src/main.d" -o"src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building target: led.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"C:/nxp/workspace/led/lib" -Xlinker --gc-sections -Xlinker -Map=led.map -mcpu=cortex-m3 -mthumb -T "../Debug/vs-wrc103lv_Debug.ld" -o "led.axf"  ./src/cr_startup_lpc13.o ./src/gpio.o ./src/ixbus.o ./src/main.o ./src/vs-wrc103.o   -lCMSISv1p30_LPC13xx
+Finished building target: led.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size led.axf; arm-none-eabi-size led.axf; arm-none-eabi-objcopy -O binary led.axf led.bin; checksum led.bin;
+   text	   data	    bss	    dec	    hex	filename
+   2913	      0	    490	   3403	    d4b	led.axf
+   text	   data	    bss	    dec	    hex	filename
+   2913	      0	    490	   3403	    d4b	led.axf
+ 
+11:56:24 **** Incremental Build of configuration Debug for project loop ****
+make all 
+Cannot run program "make": Launching failed
+
+Error: Program "make" not found in PATH
+PATH=[C:/nxp/LPCXpresso_7.9.2_493/lpcxpresso/jre/bin/client;C:/nxp/LPCXpresso_7.9.2_493/lpcxpresso/jre/bin;C:/nxp/LPCXpresso_7.9.2_493/lpcxpresso/jre/lib/i386;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\ProgramData\Lenovo\ReadyApps;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files (x86)\Skype\Phone\;C:\nxp\LPCXpresso_7.9.2_493\lpcxpresso;]
+11:56:24 **** Incremental Build of configuration Debug for project seirogan ****
+make -r all 
+make: Nothing to be done for `all'.
+11:56:44 **** Incremental Build of configuration Debug for project kirakira ****
+make -r all 
+make: Nothing to be done for `all'.
+11:56:45 **** Incremental Build of configuration Debug for project led ****
+make -r all 
+make: Nothing to be done for `all'.
+11:56:45 **** Incremental Build of configuration Debug for project loop ****
+make all 
+Cannot run program "make": Launching failed
+
+Error: Program "make" not found in PATH
+PATH=[C:/nxp/LPCXpresso_7.9.2_493/lpcxpresso/jre/bin/client;C:/nxp/LPCXpresso_7.9.2_493/lpcxpresso/jre/bin;C:/nxp/LPCXpresso_7.9.2_493/lpcxpresso/jre/lib/i386;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\ProgramData\Lenovo\ReadyApps;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files (x86)\Skype\Phone\;C:\nxp\LPCXpresso_7.9.2_493\lpcxpresso;]
+11:56:45 **** Incremental Build of configuration Debug for project seirogan ****
+make -r all 
+make: Nothing to be done for `all'.
+11:57:56 **** Incremental Build of configuration Debug for project kirakira ****
+make -r all 
+make: Nothing to be done for `all'.
+11:57:56 **** Incremental Build of configuration Debug for project led ****
+make -r all 
+Building file: ../src/main.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__USE_CMSIS=CMSISv1p30_LPC13xx -DDEBUG -D__CODE_RED -D__REDLIB__ -I"C:/nxp/workspace/led/inc" -I"C:/nxp/workspace/led/lib" -O0 -Os -mword-relocations -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/main.d" -MT"src/main.o" -MT"src/main.d" -o"src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building target: led.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"C:/nxp/workspace/led/lib" -Xlinker --gc-sections -Xlinker -Map=led.map -mcpu=cortex-m3 -mthumb -T "../Debug/vs-wrc103lv_Debug.ld" -o "led.axf"  ./src/cr_startup_lpc13.o ./src/gpio.o ./src/ixbus.o ./src/main.o ./src/vs-wrc103.o   -lCMSISv1p30_LPC13xx
+Finished building target: led.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size led.axf; arm-none-eabi-size led.axf; arm-none-eabi-objcopy -O binary led.axf led.bin; checksum led.bin;
+   text	   data	    bss	    dec	    hex	filename
+   2897	      0	    490	   3387	    d3b	led.axf
+   text	   data	    bss	    dec	    hex	filename
+   2897	      0	    490	   3387	    d3b	led.axf
+ 
+11:57:57 **** Incremental Build of configuration Debug for project loop ****
+make all 
+Cannot run program "make": Launching failed
+
+Error: Program "make" not found in PATH
+PATH=[C:/nxp/LPCXpresso_7.9.2_493/lpcxpresso/jre/bin/client;C:/nxp/LPCXpresso_7.9.2_493/lpcxpresso/jre/bin;C:/nxp/LPCXpresso_7.9.2_493/lpcxpresso/jre/lib/i386;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\ProgramData\Lenovo\ReadyApps;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files (x86)\Skype\Phone\;C:\nxp\LPCXpresso_7.9.2_493\lpcxpresso;]
+11:57:58 **** Incremental Build of configuration Debug for project seirogan ****
+make -r all 
+make: Nothing to be done for `all'.

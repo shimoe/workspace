@@ -29,7 +29,7 @@ all: kirakira.axf
 kirakira.axf: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: MCU Linker'
-	arm-none-eabi-gcc -nostdlib -L"/home/t/o104064k/robocar/workspace/kirakira/lib" -Xlinker --gc-sections -Xlinker -Map=kirakira.map -mcpu=cortex-m3 -mthumb -T "../Debug/vs-wrc103lv_Debug.ld" -o "kirakira.axf" $(OBJS) $(USER_OBJS) $(LIBS)
+	arm-none-eabi-gcc -nostdlib -L"C:/nxp/workspace/kirakira/lib" -Xlinker --gc-sections -Xlinker -Map=kirakira.map -mcpu=cortex-m3 -mthumb -T "../Debug/vs-wrc103lv_Debug.ld" -o "kirakira.axf" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 	$(MAKE) --no-print-directory post-build

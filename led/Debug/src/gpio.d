@@ -1,13 +1,12 @@
-src/gpio.o src/gpio.d: ../src/gpio.c \
- /home/t/o104064k/robocar/workspace/led/lib/LPC13xx.h \
- /home/t/o104064k/robocar/workspace/led/lib/core_cm3.h \
- /home/t/o104064k/robocar/workspace/led/lib/system_LPC13xx.h \
- /home/t/o104064k/robocar/workspace/led/inc/gpio.h
+src/gpio.o src/gpio.d: ../src/gpio.c C:/nxp/workspace/led/lib/LPC13xx.h \
+ C:/nxp/workspace/led/lib/core_cm3.h \
+ C:/nxp/workspace/led/lib/system_LPC13xx.h \
+ C:/nxp/workspace/led/inc/gpio.h
 
-/home/t/o104064k/robocar/workspace/led/lib/LPC13xx.h:
+C:/nxp/workspace/led/lib/LPC13xx.h:
 
-/home/t/o104064k/robocar/workspace/led/lib/core_cm3.h:
+C:/nxp/workspace/led/lib/core_cm3.h:
 
-/home/t/o104064k/robocar/workspace/led/lib/system_LPC13xx.h:
+C:/nxp/workspace/led/lib/system_LPC13xx.h:
 
-/home/t/o104064k/robocar/workspace/led/inc/gpio.h:
+C:/nxp/workspace/led/inc/gpio.h:
