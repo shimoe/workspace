@@ -63,26 +63,8 @@ void loop5(){
 }
 
 void loop6(int start,int end, int step,int mode){
-	int i;
 	switch(mode){
-	case 0: for(i = start;i < end;i++){
-		printf("%d/n",i);
-	}break;
-
-	case 1: for(i = start;i < end;i++){
-		if(i%2 == 0){
-			printf("%d/n",i);
-		}
-	}break;
-
-	case 2: for(i = start;i < end;i++){
-		if(i%2 == 1){
-			printf("%d/n",i);
-		}
-	}break;
-
-	case 3: for(i = start;i > end;i--){
-		printf("%d/n",i);
-	}break;
+	case 0:
+		break;
 	}
 }
