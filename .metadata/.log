@@ -1797,3 +1797,31 @@ Command-line arguments:  -os win32 -ws win32 -arch x86
 
 !ENTRY org.eclipse.cdt.core 1 0 2015-10-27 10:50:22.779
 !MESSAGE Indexed 'seirogan' (5 sources, 11 headers) in 0.205 sec: 1,077 declarations; 3,071 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+!SESSION 2015-11-10 10:40:36.773 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.7.0_80
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=ja_JP
+Command-line arguments:  -os linux -ws gtk -arch x86
+
+!ENTRY org.eclipse.core.resources 2 10035 2015-11-10 10:40:39.603
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.ui 2 0 2015-11-10 10:40:40.187
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2015-11-10 10:40:40.187
+!MESSAGE Commands need a name: plug-in='com.crt.config'
+
+!ENTRY org.eclipse.ui 2 0 2015-11-10 10:40:40.677
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2015-11-10 10:40:40.677
+!MESSAGE Commands need a name: plug-in='com.crt.config'
+
+!ENTRY org.eclipse.ui 4 4 2015-11-10 10:40:43.336
+!MESSAGE Plugin org.eclipse.cdt.ui, extension org.eclipse.ui.decorators, id org.eclipse.cdt.internal.ui.CustomBuildSettingsDecorator: Duplicate id found: org.eclipse.cdt.internal.ui.CustomBuildSettingsDecorator
+
+!ENTRY org.eclipse.ui 4 4 2015-11-10 10:40:43.339
+!MESSAGE Plugin org.eclipse.cdt.ui, extension org.eclipse.ui.decorators, id org.eclipse.cdt.internal.ui.CustomBuildSettingsDecorator: Unknown extension tag found: decorator
+
+!ENTRY org.eclipse.cdt.core 1 0 2015-11-10 10:41:16.769
+!MESSAGE Indexed 'loop' (1 sources, 37 headers) in 0.261 sec: 1,040 declarations; 1,908 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
