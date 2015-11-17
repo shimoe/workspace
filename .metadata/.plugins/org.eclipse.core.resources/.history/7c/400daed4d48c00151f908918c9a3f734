@@ -1,0 +1,71 @@
+#include "LPC13xx.h"
+#include "gpio.h"
+#include "vs-wrc103.h"
+#include "ixbus.h"
+
+
+#define PITCH 100
+#define VOLUME 100
+#define SCALE 179
+
+#define LEFT_SENSOR 0
+#define RIGHT_SENSOR 1
+#define COUNT 10
+#define STEP 100
+
+#define NONE 0
+#define GREEN 1
+#define ORANGE 2
+#define BOTH 3
+
+#define WAIT 1000
+
+
+void beep(){
+	BuzzerSet(SCALE, VOLUME);
+	BuzzerStart();
+	Wait(PITCH);
+	BuzzerStop();
+	Wait(PITCH);
+}
+
+void count(int value){
+	int i;
+
+	for(i = 0;i < value%100;i++){
+		beep();
+	}
+}
+
+int check_ps(int side){
+	int i;
+	int sum= 0;
+
+	LED(GREEN);
+	for(i = 0;i < COUNT;i++){
+		sum =sum + ADread(side);
+		Wait(STEP);
+	}
+	LED(NONE);
+
+	return sum/COUNT;
+}
+
+
+int main(void)
+{
+	const unsigned short MainCycle = 60;
+	Init(MainCycle);
+
+	int value;
+	int sensor = LEFT_SENSOR;
+
+	while(1){
+		value = check(sensor);
+		count(value);
+		Wait(WAIT);
+	}
+
+	return 0;
+}
+

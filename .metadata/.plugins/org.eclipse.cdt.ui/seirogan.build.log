@@ -1,6 +1,6 @@
-11:57:58 **** Incremental Build of configuration Debug for project seirogan ****
+11:01:32 **** Incremental Build of configuration Debug for project seirogan ****
 make -r all 
-make: Nothing to be done for `all'.
+src/cr_startup_lpc13.d:1: *** 複数のターゲットパターンです.  中止.
 
-11:57:58 Build Finished (took 90ms)
+11:01:32 Build Finished (took 58ms)
 
