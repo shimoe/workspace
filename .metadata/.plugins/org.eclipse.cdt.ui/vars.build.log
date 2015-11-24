@@ -1,0 +1,6 @@
+11:05:32 **** Incremental Build of configuration Debug for project vars ****
+make all 
+make: `all' に対して行うべき事はありません.
+
+11:05:32 Build Finished (took 56ms)
+

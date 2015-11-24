@@ -1,20 +1,15 @@
-11:57:51 **** Incremental Build of configuration Debug for project photo_sensor ****
-make -r all 
-Building file: ../src/main.c
-Invoking: MCU C Compiler
-arm-none-eabi-gcc -D__USE_CMSIS=CMSISv1p30_LPC13xx -DDEBUG -D__CODE_RED -D__REDLIB__ -I"/home/t/o104064k/robocar/workspace/photo_sensor/inc" -I"/home/t/o104064k/robocar/workspace/photo_sensor/lib" -O0 -Os -mword-relocations -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/main.d" -MT"src/main.o" -MT"src/main.d" -o"src/main.o" "../src/main.c"
-Finished building: ../src/main.c
+11:05:26 **** Incremental Build of configuration Debug for project vars ****
+make all 
+Building file: ../src/vars.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/vars.d" -MT"src/vars.d" -o "src/vars.o" "../src/vars.c"
+Finished building: ../src/vars.c
  
-Building target: photo_sensor.axf
-Invoking: MCU Linker
-arm-none-eabi-gcc -nostdlib -L"/home/t/o104064k/robocar/workspace/photo_sensor/lib" -Xlinker --gc-sections -Xlinker -Map=photo_sensor.map -mcpu=cortex-m3 -mthumb -T "../Debug/vs-wrc103lv_Debug.ld" -o "photo_sensor.axf"  ./src/cr_startup_lpc13.o ./src/gpio.o ./src/ixbus.o ./src/main.o ./src/vs-wrc103.o   -lCMSISv1p30_LPC13xx
-Finished building target: photo_sensor.axf
+Building target: vars
+Invoking: GCC C Linker
+gcc  -o "vars"  ./src/vars.o   
+Finished building target: vars
  
-make --no-print-directory post-build
-Performing post-build steps
-arm-none-eabi-size photo_sensor.axf; arm-none-eabi-size photo_sensor.axf; arm-none-eabi-objcopy -O binary photo_sensor.axf photo_sensor.bin; checksum photo_sensor.bin;
-   text	   data	    bss	    dec	    hex	filename
-   2961	      0	    490	   3451	    d7b	photo_sensor.axf
-   text	   data	    bss	    dec	    hex	filename
-   2961	      0	    490	   3451	    d7b	photo_sensor.axf
- 
+11:05:32 **** Incremental Build of configuration Debug for project vars ****
+make all 
+make: `all' に対して行うべき事はありません.

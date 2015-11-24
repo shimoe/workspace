@@ -1,0 +1,39 @@
+/*
+ ============================================================================
+ Name        : vars.c
+ Author      : 
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+
+void check1(void){
+	char c;
+
+	for (c = 1; c > 0; c++) {
+		printf("%d\n",c);
+	}
+
+}
+
+void check2(void){
+	unsigned char c;
+
+	for (c = 1; c > 0; c++) {
+		printf("%d\n",c);
+	}
+
+}
+
+
+int main(void) {
+	check1();
+	printf("--------------------------------------");
+	check2();
+	return 0;
+}
