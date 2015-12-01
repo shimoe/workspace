@@ -27,3 +27,6 @@ arm-none-eabi-size trace.axf; arm-none-eabi-size trace.axf; arm-none-eabi-objcop
    text	   data	    bss	    dec	    hex	filename
    3129	      0	    490	   3619	    e23	trace.axf
  
+
+12:01:39 Build Finished (took 368ms)
+
