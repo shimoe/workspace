@@ -1,0 +1,45 @@
+#include "LPC13xx.h"
+#include "gpio.h"
+#include "vs-wrc103.h"
+#include "ixbus.h"
+
+
+#define POWER 12000
+#define DIFF 5000
+#define BLACK 800
+
+
+int main(void)
+{
+	const unsigned short MainCycle = 60;
+	Init(MainCycle);
+
+	int i = 0;
+
+	while(1){
+		if(ADRead(0) > BLACK && ADRead(1) > BLACK){
+			Mtr_Run_lv(POWER,-POWER,0,0,0,0);
+			if(ADRead(0) < BLACK && ADRead(1) < BLACK){
+				i++;
+			}
+		}
+
+		if(ADRead(0) > BLACK){
+			Mtr_Run_lv(POWER+DIFF,-(POWER-DIFF),0,0,0,0);
+			LED(0);
+		}
+		else if(ADRead(0) < BLACK){
+			Mtr_Run_lv(POWER-DIFF,-(POWER+DIFF),0,0,0,0);
+			LED(1);
+		}
+
+		if(i == 1){
+			break;
+		}
+	}
+
+	Mtr_Run_lv(0,0,0,0,0,0);
+	LED(3);
+	return 0;
+}
+
