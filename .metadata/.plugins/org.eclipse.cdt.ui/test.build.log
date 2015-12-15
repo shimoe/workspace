@@ -1,12 +1,8 @@
-12:02:09 **** Incremental Build of configuration Debug for project test ****
+12:01:26 **** Incremental Build of configuration Debug for project test ****
 make -r all 
 Building file: ../src/main.c
 Invoking: MCU C Compiler
 arm-none-eabi-gcc -D__USE_CMSIS=CMSISv1p30_LPC13xx -DDEBUG -D__CODE_RED -D__REDLIB__ -I"/home/t/o104064k/robocar/workspace/test/inc" -I"/home/t/o104064k/robocar/workspace/test/lib" -O0 -Os -mword-relocations -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/main.d" -MT"src/main.o" -MT"src/main.d" -o"src/main.o" "../src/main.c"
-../src/main.c: In function 'main':
-../src/main.c:20:17: warning: unused variable 'j' [-Wunused-variable]
-  int right,left,j;
-                 ^
 Finished building: ../src/main.c
  
 Building target: test.axf
@@ -23,5 +19,5 @@ arm-none-eabi-size test.axf; arm-none-eabi-size test.axf; arm-none-eabi-objcopy 
    2985	      0	    490	   3475	    d93	test.axf
  
 
-12:02:09 Build Finished (took 111ms)
+12:01:26 Build Finished (took 257ms)
 

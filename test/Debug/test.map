@@ -385,21 +385,21 @@ END GROUP
                 0x10002000                _vStackTop = (_vRamTop - 0x0)
 OUTPUT(test.axf elf32-littlearm)
 
-.debug_info     0x00000000     0x37b6
+.debug_info     0x00000000     0x37ad
  .debug_info    0x00000000      0x1fe ./src/cr_startup_lpc13.o
  .debug_info    0x000001fe      0x3c7 ./src/gpio.o
  .debug_info    0x000005c5      0xcfe ./src/ixbus.o
- .debug_info    0x000012c3      0x33b ./src/main.o
- .debug_info    0x000015fe     0x1c68 ./src/vs-wrc103.o
- .debug_info    0x00003266      0x550 /home/t/o104064k/robocar/workspace/test/lib/libCMSISv1p30_LPC13xx.a(system_LPC13xx.o)
+ .debug_info    0x000012c3      0x332 ./src/main.o
+ .debug_info    0x000015f5     0x1c68 ./src/vs-wrc103.o
+ .debug_info    0x0000325d      0x550 /home/t/o104064k/robocar/workspace/test/lib/libCMSISv1p30_LPC13xx.a(system_LPC13xx.o)
 
-.debug_abbrev   0x00000000      0xb9f
+.debug_abbrev   0x00000000      0xb92
  .debug_abbrev  0x00000000       0xf8 ./src/cr_startup_lpc13.o
  .debug_abbrev  0x000000f8      0x19b ./src/gpio.o
  .debug_abbrev  0x00000293      0x240 ./src/ixbus.o
- .debug_abbrev  0x000004d3      0x134 ./src/main.o
- .debug_abbrev  0x00000607      0x4a5 ./src/vs-wrc103.o
- .debug_abbrev  0x00000aac       0xf3 /home/t/o104064k/robocar/workspace/test/lib/libCMSISv1p30_LPC13xx.a(system_LPC13xx.o)
+ .debug_abbrev  0x000004d3      0x127 ./src/main.o
+ .debug_abbrev  0x000005fa      0x4a5 ./src/vs-wrc103.o
+ .debug_abbrev  0x00000a9f       0xf3 /home/t/o104064k/robocar/workspace/test/lib/libCMSISv1p30_LPC13xx.a(system_LPC13xx.o)
 
 .debug_loc      0x00000000      0xf4b
  .debug_loc     0x00000000       0x2b ./src/cr_startup_lpc13.o

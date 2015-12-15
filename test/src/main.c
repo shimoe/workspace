@@ -17,7 +17,7 @@ int main(void)
 	int i = 0;
 
 
-	int right,left,j;
+	int right,left;
 
 
 	while(1){

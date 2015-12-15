@@ -1,0 +1,27 @@
+11:59:27 **** Incremental Build of configuration Debug for project array ****
+make -r all 
+Building file: ../src/main.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__USE_CMSIS=CMSISv1p30_LPC13xx -DDEBUG -D__CODE_RED -D__REDLIB__ -I"/home/t/o104064k/robocar/workspace/array/inc" -I"/home/t/o104064k/robocar/workspace/array/lib" -O0 -Os -mword-relocations -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/main.d" -MT"src/main.o" -MT"src/main.d" -o"src/main.o" "../src/main.c"
+../src/main.c: In function 'sensor':
+../src/main.c:74:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+Finished building: ../src/main.c
+ 
+Building target: array.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"/home/t/o104064k/robocar/workspace/array/lib" -Xlinker --gc-sections -Xlinker -Map=array.map -mcpu=cortex-m3 -mthumb -T "../Debug/vs-wrc103lv_Debug.ld" -o "array.axf"  ./src/cr_startup_lpc13.o ./src/gpio.o ./src/ixbus.o ./src/main.o ./src/vs-wrc103.o   -lCMSISv1p30_LPC13xx
+Finished building target: array.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size array.axf; arm-none-eabi-size array.axf; arm-none-eabi-objcopy -O binary array.axf array.bin; checksum array.bin;
+   text	   data	    bss	    dec	    hex	filename
+   2961	      0	    578	   3539	    dd3	array.axf
+   text	   data	    bss	    dec	    hex	filename
+   2961	      0	    578	   3539	    dd3	array.axf
+ 
+
+11:59:27 Build Finished (took 158ms)
+

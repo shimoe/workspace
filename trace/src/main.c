@@ -62,7 +62,7 @@ void sensor(){
 	case 3 : Mtr_Run_lv(0,0,0,0,0,0);
 				fanfare();
 				break;
-	}S
+	}
 
 }
 
