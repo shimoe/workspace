@@ -405,13 +405,13 @@ OUTPUT(photo_sensor.axf elf32-littlearm)
  .debug_info    0x0000163c     0x1c68 ./src/vs-wrc103.o
  .debug_info    0x000032a4      0x550 /home/t/o104064k/robocar/workspace/photo_sensor/lib/libCMSISv1p30_LPC13xx.a(system_LPC13xx.o)
 
-.debug_abbrev   0x00000000      0xc17
+.debug_abbrev   0x00000000      0xbff
  .debug_abbrev  0x00000000       0xf8 ./src/cr_startup_lpc13.o
  .debug_abbrev  0x000000f8      0x19b ./src/gpio.o
  .debug_abbrev  0x00000293      0x240 ./src/ixbus.o
- .debug_abbrev  0x000004d3      0x1ac ./src/main.o
- .debug_abbrev  0x0000067f      0x4a5 ./src/vs-wrc103.o
- .debug_abbrev  0x00000b24       0xf3 /home/t/o104064k/robocar/workspace/photo_sensor/lib/libCMSISv1p30_LPC13xx.a(system_LPC13xx.o)
+ .debug_abbrev  0x000004d3      0x194 ./src/main.o
+ .debug_abbrev  0x00000667      0x4a5 ./src/vs-wrc103.o
+ .debug_abbrev  0x00000b0c       0xf3 /home/t/o104064k/robocar/workspace/photo_sensor/lib/libCMSISv1p30_LPC13xx.a(system_LPC13xx.o)
 
 .debug_loc      0x00000000      0xf99
  .debug_loc     0x00000000       0x2b ./src/cr_startup_lpc13.o

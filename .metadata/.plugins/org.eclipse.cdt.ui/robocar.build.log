@@ -1,13 +1,35 @@
-15:43:10 **** Build of configuration Debug for project robocar ****
+10:30:37 **** Build of configuration Debug for project robocar ****
 make -r all 
 Building file: ../src/cr_startup_lpc13.c
 Invoking: MCU C Compiler
-arm-none-eabi-gcc -D__USE_CMSIS=CMSISv1p30_LPC13xx -DDEBUG -D__CODE_RED -D__REDLIB__ -I"C:/Users/宏太/Documents/LPCXpresso_7.9.2_493/workspace/robocar/inc" -I"C:/Users/宏太/Documents/LPCXpresso_7.9.2_493/workspace/robocar/lib" -O0 -Os -mword-relocations -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/cr_startup_lpc13.d" -MT"src/cr_startup_lpc13.o" -MT"src/cr_startup_lpc13.d" -o"src/cr_startup_lpc13.o" "../src/cr_startup_lpc13.c"
-../src/cr_startup_lpc13.c:34:28: fatal error: system_LPC13xx.h: No such file or directory
- #include "system_LPC13xx.h"
-                            ^
-compilation terminated.
-make: *** [src/cr_startup_lpc13.o] Error 1
+arm-none-eabi-gcc -D__USE_CMSIS=CMSISv1p30_LPC13xx -DDEBUG -D__CODE_RED -D__REDLIB__ -I"/home/t/o104064k/robocar/workspace/robocar/inc" -I"/home/t/o104064k/robocar/workspace/robocar/lib" -O0 -Os -mword-relocations -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/cr_startup_lpc13.d" -MT"src/cr_startup_lpc13.o" -MT"src/cr_startup_lpc13.d" -o"src/cr_startup_lpc13.o" "../src/cr_startup_lpc13.c"
+Finished building: ../src/cr_startup_lpc13.c
+ 
+Building file: ../src/gpio.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__USE_CMSIS=CMSISv1p30_LPC13xx -DDEBUG -D__CODE_RED -D__REDLIB__ -I"/home/t/o104064k/robocar/workspace/robocar/inc" -I"/home/t/o104064k/robocar/workspace/robocar/lib" -O0 -Os -mword-relocations -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/gpio.d" -MT"src/gpio.o" -MT"src/gpio.d" -o"src/gpio.o" "../src/gpio.c"
+Finished building: ../src/gpio.c
+ 
+Building file: ../src/ixbus.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__USE_CMSIS=CMSISv1p30_LPC13xx -DDEBUG -D__CODE_RED -D__REDLIB__ -I"/home/t/o104064k/robocar/workspace/robocar/inc" -I"/home/t/o104064k/robocar/workspace/robocar/lib" -O0 -Os -mword-relocations -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/ixbus.d" -MT"src/ixbus.o" -MT"src/ixbus.d" -o"src/ixbus.o" "../src/ixbus.c"
+Finished building: ../src/ixbus.c
+ 
+Building file: ../src/main.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__USE_CMSIS=CMSISv1p30_LPC13xx -DDEBUG -D__CODE_RED -D__REDLIB__ -I"/home/t/o104064k/robocar/workspace/robocar/inc" -I"/home/t/o104064k/robocar/workspace/robocar/lib" -O0 -Os -mword-relocations -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/main.d" -MT"src/main.o" -MT"src/main.d" -o"src/main.o" "../src/main.c"
+../src/main.c: In function 'main':
+../src/main.c:10:1: error: 'b' undeclared (first use in this function)
+ b
+ ^
+../src/main.c:10:1: note: each undeclared identifier is reported only once for each function it appears in
+../src/main.c:11:2: error: expected ';' before 'return'
+  return 0;
+  ^
+../src/main.c:12:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+make: *** [src/main.o] エラー 1
 
-15:43:11 Build Finished (took 179ms)
+10:30:38 Build Finished (took 311ms)
 

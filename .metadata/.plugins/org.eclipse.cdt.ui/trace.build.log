@@ -1,4 +1,4 @@
-12:01:39 **** Incremental Build of configuration Debug for project trace ****
+10:30:39 **** Build of configuration Debug for project trace ****
 make -r all 
 Building file: ../src/main.c
 Invoking: MCU C Compiler
@@ -8,11 +8,6 @@ arm-none-eabi-gcc -D__USE_CMSIS=CMSISv1p30_LPC13xx -DDEBUG -D__CODE_RED -D__REDL
   switch(((ADRead(0) > BLACK) << 1 + (ADRead(1) > BLACK)) & 3){
                                    ^
 Finished building: ../src/main.c
- 
-Building file: ../src/vs-wrc103.c
-Invoking: MCU C Compiler
-arm-none-eabi-gcc -D__USE_CMSIS=CMSISv1p30_LPC13xx -DDEBUG -D__CODE_RED -D__REDLIB__ -I"/home/t/o104064k/robocar/workspace/trace/inc" -I"/home/t/o104064k/robocar/workspace/trace/lib" -O0 -Os -mword-relocations -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/vs-wrc103.d" -MT"src/vs-wrc103.o" -MT"src/vs-wrc103.d" -o"src/vs-wrc103.o" "../src/vs-wrc103.c"
-Finished building: ../src/vs-wrc103.c
  
 Building target: trace.axf
 Invoking: MCU Linker
@@ -28,5 +23,5 @@ arm-none-eabi-size trace.axf; arm-none-eabi-size trace.axf; arm-none-eabi-objcop
    3129	      0	    490	   3619	    e23	trace.axf
  
 
-12:01:39 Build Finished (took 368ms)
+10:30:39 Build Finished (took 260ms)
 

@@ -1,4 +1,4 @@
-11:14:28 **** Incremental Build of configuration Debug for project motor ****
+10:30:36 **** Build of configuration Debug for project motor ****
 make -r all 
 Building file: ../src/main.c
 Invoking: MCU C Compiler
@@ -19,5 +19,5 @@ arm-none-eabi-size motor.axf; arm-none-eabi-size motor.axf; arm-none-eabi-objcop
    3021	      0	    490	   3511	    db7	motor.axf
  
 
-11:14:28 Build Finished (took 162ms)
+10:30:36 Build Finished (took 307ms)
 

@@ -23,25 +23,25 @@ endif
 # Add inputs and outputs from these tool invocations to the build variables 
 
 # All Target
-all: robocar.axf
+all: day7.axf
 
 # Tool invocations
-robocar.axf: $(OBJS) $(USER_OBJS)
+day7.axf: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: MCU Linker'
-	arm-none-eabi-gcc -nostdlib -L"/Users/hkim/lpcxpresso/robocar/lib" -Xlinker --gc-sections -Xlinker -Map=robocar.map -mcpu=cortex-m3 -mthumb -T "../Debug/vs-wrc103lv_Debug.ld" -o "robocar.axf" $(OBJS) $(USER_OBJS) $(LIBS)
+	arm-none-eabi-gcc -nostdlib -L"/home/t/o104064k/robocar/workspace/day7/lib" -Xlinker --gc-sections -Xlinker -Map=day7.map -mcpu=cortex-m3 -mthumb -T "../Debug/vs-wrc103lv_Debug.ld" -o "day7.axf" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 	$(MAKE) --no-print-directory post-build
 
 # Other Targets
 clean:
-	-$(RM) $(OBJS)$(C_DEPS)$(EXECUTABLES) robocar.axf
+	-$(RM) $(OBJS)$(C_DEPS)$(EXECUTABLES) day7.axf
 	-@echo ' '
 
 post-build:
 	-@echo 'Performing post-build steps'
-	-arm-none-eabi-size robocar.axf; arm-none-eabi-size robocar.axf; arm-none-eabi-objcopy -O binary robocar.axf robocar.bin; checksum robocar.bin;
+	-arm-none-eabi-size day7.axf; arm-none-eabi-size day7.axf; arm-none-eabi-objcopy -O binary day7.axf day7.bin; checksum day7.bin;
 	-@echo ' '
 
 .PHONY: all clean dependents

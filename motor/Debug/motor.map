@@ -465,13 +465,13 @@ OUTPUT(motor.axf elf32-littlearm)
  .debug_macro   0x00001b0b       0x1c ./src/main.o
  .debug_macro   0x00001b27       0xd2 ./src/vs-wrc103.o
 
-.debug_line     0x00000000     0x12d9
+.debug_line     0x00000000     0x12da
  .debug_line    0x00000000      0x23b ./src/cr_startup_lpc13.o
  .debug_line    0x0000023b      0x29b ./src/gpio.o
  .debug_line    0x000004d6      0x2ce ./src/ixbus.o
- .debug_line    0x000007a4      0x264 ./src/main.o
- .debug_line    0x00000a08      0x5a7 ./src/vs-wrc103.o
- .debug_line    0x00000faf      0x32a /home/t/o104064k/robocar/workspace/motor/lib/libCMSISv1p30_LPC13xx.a(system_LPC13xx.o)
+ .debug_line    0x000007a4      0x265 ./src/main.o
+ .debug_line    0x00000a09      0x5a7 ./src/vs-wrc103.o
+ .debug_line    0x00000fb0      0x32a /home/t/o104064k/robocar/workspace/motor/lib/libCMSISv1p30_LPC13xx.a(system_LPC13xx.o)
 
 .debug_str      0x00000000     0x8524
  .debug_str     0x00000000     0x3cc9 ./src/cr_startup_lpc13.o

@@ -1,4 +1,4 @@
-11:57:51 **** Incremental Build of configuration Debug for project photo_sensor ****
+10:30:37 **** Build of configuration Debug for project photo_sensor ****
 make -r all 
 Building file: ../src/main.c
 Invoking: MCU C Compiler
@@ -19,5 +19,5 @@ arm-none-eabi-size photo_sensor.axf; arm-none-eabi-size photo_sensor.axf; arm-no
    2961	      0	    490	   3451	    d7b	photo_sensor.axf
  
 
-11:57:51 Build Finished (took 157ms)
+10:30:37 Build Finished (took 358ms)
 
