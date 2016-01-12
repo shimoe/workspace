@@ -67,11 +67,12 @@ int RunRightSide(){
 }
 
 int RunLeftSide(){
-  int i,j,count;
+  int i,count;
 
   count = 0;
   i = ADRead(0);
   j = ADRead(1);
+
 
   if(i < 500){
     Mtr_Run_lv(POWER+DIFF,-(POWER-DIFF),0,0,0,0);

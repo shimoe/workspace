@@ -13,9 +13,9 @@
 #define LED_D 3 
 
 
-int Sensor(int black,int gray);
-int RunRightSide(void);
-int RunLeftSide(void);
+int Sensor(int led,int black,int gray);
+void RunRightSide(void);
+void RunLeftSide(void);
 void GrayZone(void);
 
 int main(void)
@@ -24,13 +24,11 @@ int main(void)
 	Init(MainCycle);
 
 	int count = 0;
-	int i,j;
-	while(1){
-		count = RunLeftSide();
-		if(count > 3){
-			Mtr_Run_lv(0,0,0,0,0,0);
-		}
-	}
+	
+	do{
+	  RunLeftSide();  
+	}while(count < 2);
+
 	return 0;
 }
 
@@ -54,7 +52,7 @@ int Sensor(int black,int gray){
   }
 }
 
-int RunRightSide(){
+void RunRightSide(){
   int i;
 
   i = ADRead(1);
@@ -66,27 +64,16 @@ int RunRightSide(){
   }
 }
 
-int RunLeftSide(){
-  int i,j,count;
+void RunLeftSide(){
+  int i,j;
 
-  count = 0;
   i = ADRead(0);
   j = ADRead(1);
-
-  if(i < 500){
-    Mtr_Run_lv(POWER+DIFF,-(POWER-DIFF),0,0,0,0);
+  while(i < 500){
     if(j < 500){
-    	while(1){
-    		Mtr_Run_lv(POWER,POWER,0,0,0,0);
-if(j < 500){
-	count++;
-	break;
-}
-    	}
+      Mtr_Run_lv(POWER,POWER,0,0,0,0);
     }
-  }else{
-    Mtr_Run_lv(POWER-DIFF,-(POWER+DIFF),0,0,0,0);
+    Mtr_Run_lv(POWER+DIFF,-(POWER-DIFF),0,0,0,0);  
   }
-
-return count;
+    Mtr_Run_lv(POWER-DIFF,-(POWER+DIFF),0,0,0,0);
 }

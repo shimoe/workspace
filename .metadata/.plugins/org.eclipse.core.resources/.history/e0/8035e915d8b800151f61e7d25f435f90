@@ -24,12 +24,9 @@ int main(void)
 	Init(MainCycle);
 
 	int count = 0;
-	int i,j;
+	
 	while(1){
-		count = RunLeftSide();
-		if(count > 3){
-			Mtr_Run_lv(0,0,0,0,0,0);
-		}
+	  RunLeftSide();  
 	}
 	return 0;
 }
@@ -73,20 +70,12 @@ int RunLeftSide(){
   i = ADRead(0);
   j = ADRead(1);
 
+
   if(i < 500){
     Mtr_Run_lv(POWER+DIFF,-(POWER-DIFF),0,0,0,0);
-    if(j < 500){
-    	while(1){
-    		Mtr_Run_lv(POWER,POWER,0,0,0,0);
-if(j < 500){
-	count++;
-	break;
-}
-    	}
-    }
   }else{
     Mtr_Run_lv(POWER-DIFF,-(POWER+DIFF),0,0,0,0);
   }
 
-return count;
+
 }

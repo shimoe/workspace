@@ -1,250 +1,35 @@
-12:01:26 **** Incremental Build of configuration Debug for project test ****
+11:58:20 **** Incremental Build of configuration Debug for project robocar ****
 make -r all 
-Building file: ../src/main.c
-Invoking: MCU C Compiler
-arm-none-eabi-gcc -D__USE_CMSIS=CMSISv1p30_LPC13xx -DDEBUG -D__CODE_RED -D__REDLIB__ -I"/home/t/o104064k/robocar/workspace/test/inc" -I"/home/t/o104064k/robocar/workspace/test/lib" -O0 -Os -mword-relocations -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/main.d" -MT"src/main.o" -MT"src/main.d" -o"src/main.o" "../src/main.c"
-Finished building: ../src/main.c
- 
-Building target: test.axf
-Invoking: MCU Linker
-arm-none-eabi-gcc -nostdlib -L"/home/t/o104064k/robocar/workspace/test/lib" -Xlinker --gc-sections -Xlinker -Map=test.map -mcpu=cortex-m3 -mthumb -T "../Debug/vs-wrc103lv_Debug.ld" -o "test.axf"  ./src/cr_startup_lpc13.o ./src/gpio.o ./src/ixbus.o ./src/main.o ./src/vs-wrc103.o   -lCMSISv1p30_LPC13xx
-Finished building target: test.axf
- 
-make --no-print-directory post-build
-Performing post-build steps
-arm-none-eabi-size test.axf; arm-none-eabi-size test.axf; arm-none-eabi-objcopy -O binary test.axf test.bin; checksum test.bin;
-   text	   data	    bss	    dec	    hex	filename
-   2985	      0	    490	   3475	    d93	test.axf
-   text	   data	    bss	    dec	    hex	filename
-   2985	      0	    490	   3475	    d93	test.axf
- 
-10:30:33 **** Build of configuration Debug for project array ****
-make -r all 
-Building file: ../src/main.c
-Invoking: MCU C Compiler
-arm-none-eabi-gcc -D__USE_CMSIS=CMSISv1p30_LPC13xx -DDEBUG -D__CODE_RED -D__REDLIB__ -I"/home/t/o104064k/robocar/workspace/array/inc" -I"/home/t/o104064k/robocar/workspace/array/lib" -O0 -Os -mword-relocations -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/main.d" -MT"src/main.o" -MT"src/main.d" -o"src/main.o" "../src/main.c"
-../src/main.c: In function 'sensor':
-../src/main.c:73:1: warning: control reaches end of non-void function [-Wreturn-type]
- }
- ^
-Finished building: ../src/main.c
- 
-Building target: array.axf
-Invoking: MCU Linker
-arm-none-eabi-gcc -nostdlib -L"/home/t/o104064k/robocar/workspace/array/lib" -Xlinker --gc-sections -Xlinker -Map=array.map -mcpu=cortex-m3 -mthumb -T "../Debug/vs-wrc103lv_Debug.ld" -o "array.axf"  ./src/cr_startup_lpc13.o ./src/gpio.o ./src/ixbus.o ./src/main.o ./src/vs-wrc103.o   -lCMSISv1p30_LPC13xx
-Finished building target: array.axf
- 
-make --no-print-directory post-build
-Performing post-build steps
-arm-none-eabi-size array.axf; arm-none-eabi-size array.axf; arm-none-eabi-objcopy -O binary array.axf array.bin; checksum array.bin;
-   text	   data	    bss	    dec	    hex	filename
-   2961	      0	    578	   3539	    dd3	array.axf
-   text	   data	    bss	    dec	    hex	filename
-   2961	      0	    578	   3539	    dd3	array.axf
- 
-10:30:34 **** Build of configuration Debug for project day7 ****
-make -r all 
-Building file: ../src/cr_startup_lpc13.c
-Invoking: MCU C Compiler
-arm-none-eabi-gcc -D__USE_CMSIS=CMSISv1p30_LPC13xx -DDEBUG -D__CODE_RED -D__REDLIB__ -I"/home/t/o104064k/robocar/workspace/day7/inc" -I"/home/t/o104064k/robocar/workspace/day7/lib" -O0 -Os -mword-relocations -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/cr_startup_lpc13.d" -MT"src/cr_startup_lpc13.o" -MT"src/cr_startup_lpc13.d" -o"src/cr_startup_lpc13.o" "../src/cr_startup_lpc13.c"
-Finished building: ../src/cr_startup_lpc13.c
- 
-Building file: ../src/gpio.c
-Invoking: MCU C Compiler
-arm-none-eabi-gcc -D__USE_CMSIS=CMSISv1p30_LPC13xx -DDEBUG -D__CODE_RED -D__REDLIB__ -I"/home/t/o104064k/robocar/workspace/day7/inc" -I"/home/t/o104064k/robocar/workspace/day7/lib" -O0 -Os -mword-relocations -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/gpio.d" -MT"src/gpio.o" -MT"src/gpio.d" -o"src/gpio.o" "../src/gpio.c"
-Finished building: ../src/gpio.c
- 
-Building file: ../src/ixbus.c
-Invoking: MCU C Compiler
-arm-none-eabi-gcc -D__USE_CMSIS=CMSISv1p30_LPC13xx -DDEBUG -D__CODE_RED -D__REDLIB__ -I"/home/t/o104064k/robocar/workspace/day7/inc" -I"/home/t/o104064k/robocar/workspace/day7/lib" -O0 -Os -mword-relocations -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/ixbus.d" -MT"src/ixbus.o" -MT"src/ixbus.d" -o"src/ixbus.o" "../src/ixbus.c"
-Finished building: ../src/ixbus.c
- 
-Building file: ../src/main.c
-Invoking: MCU C Compiler
-arm-none-eabi-gcc -D__USE_CMSIS=CMSISv1p30_LPC13xx -DDEBUG -D__CODE_RED -D__REDLIB__ -I"/home/t/o104064k/robocar/workspace/day7/inc" -I"/home/t/o104064k/robocar/workspace/day7/lib" -O0 -Os -mword-relocations -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/main.d" -MT"src/main.o" -MT"src/main.d" -o"src/main.o" "../src/main.c"
-Finished building: ../src/main.c
- 
-Building file: ../src/vs-wrc103.c
-Invoking: MCU C Compiler
-arm-none-eabi-gcc -D__USE_CMSIS=CMSISv1p30_LPC13xx -DDEBUG -D__CODE_RED -D__REDLIB__ -I"/home/t/o104064k/robocar/workspace/day7/inc" -I"/home/t/o104064k/robocar/workspace/day7/lib" -O0 -Os -mword-relocations -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/vs-wrc103.d" -MT"src/vs-wrc103.o" -MT"src/vs-wrc103.d" -o"src/vs-wrc103.o" "../src/vs-wrc103.c"
-Finished building: ../src/vs-wrc103.c
- 
-Building target: day7.axf
-Invoking: MCU Linker
-arm-none-eabi-gcc -nostdlib -L"/home/t/o104064k/robocar/workspace/day7/lib" -Xlinker --gc-sections -Xlinker -Map=day7.map -mcpu=cortex-m3 -mthumb -T "../Debug/vs-wrc103lv_Debug.ld" -o "day7.axf"  ./src/cr_startup_lpc13.o ./src/gpio.o ./src/ixbus.o ./src/main.o ./src/vs-wrc103.o   -lCMSISv1p30_LPC13xx
-Finished building target: day7.axf
- 
-make --no-print-directory post-build
-Performing post-build steps
-arm-none-eabi-size day7.axf; arm-none-eabi-size day7.axf; arm-none-eabi-objcopy -O binary day7.axf day7.bin; checksum day7.bin;
-   text	   data	    bss	    dec	    hex	filename
-   2449	      0	    490	   2939	    b7b	day7.axf
-   text	   data	    bss	    dec	    hex	filename
-   2449	      0	    490	   2939	    b7b	day7.axf
- 
-10:30:35 **** Build of configuration Debug for project kirakira ****
-make -r all 
-src/gpio.d:1: *** 複数のターゲットパターンです.  中止.
-10:30:35 **** Build of configuration Debug for project led ****
-make -r all 
-src/cr_startup_lpc13.d:1: *** 複数のターゲットパターンです.  中止.
-10:30:36 **** Build of configuration Debug for project loop ****
-make all 
-make: `all' に対して行うべき事はありません.
-10:30:36 **** Build of configuration Debug for project motor ****
-make -r all 
-Building file: ../src/main.c
-Invoking: MCU C Compiler
-arm-none-eabi-gcc -D__USE_CMSIS=CMSISv1p30_LPC13xx -DDEBUG -D__CODE_RED -D__REDLIB__ -I"/home/t/o104064k/robocar/workspace/motor/inc" -I"/home/t/o104064k/robocar/workspace/motor/lib" -O0 -Os -mword-relocations -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/main.d" -MT"src/main.o" -MT"src/main.d" -o"src/main.o" "../src/main.c"
-Finished building: ../src/main.c
- 
-Building target: motor.axf
-Invoking: MCU Linker
-arm-none-eabi-gcc -nostdlib -L"/home/t/o104064k/robocar/workspace/motor/lib" -Xlinker --gc-sections -Xlinker -Map=motor.map -mcpu=cortex-m3 -mthumb -T "../Debug/vs-wrc103lv_Debug.ld" -o "motor.axf"  ./src/cr_startup_lpc13.o ./src/gpio.o ./src/ixbus.o ./src/main.o ./src/vs-wrc103.o   -lCMSISv1p30_LPC13xx
-Finished building target: motor.axf
- 
-make --no-print-directory post-build
-Performing post-build steps
-arm-none-eabi-size motor.axf; arm-none-eabi-size motor.axf; arm-none-eabi-objcopy -O binary motor.axf motor.bin; checksum motor.bin;
-   text	   data	    bss	    dec	    hex	filename
-   3021	      0	    490	   3511	    db7	motor.axf
-   text	   data	    bss	    dec	    hex	filename
-   3021	      0	    490	   3511	    db7	motor.axf
- 
-10:30:37 **** Build of configuration Debug for project photo_sensor ****
-make -r all 
-Building file: ../src/main.c
-Invoking: MCU C Compiler
-arm-none-eabi-gcc -D__USE_CMSIS=CMSISv1p30_LPC13xx -DDEBUG -D__CODE_RED -D__REDLIB__ -I"/home/t/o104064k/robocar/workspace/photo_sensor/inc" -I"/home/t/o104064k/robocar/workspace/photo_sensor/lib" -O0 -Os -mword-relocations -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/main.d" -MT"src/main.o" -MT"src/main.d" -o"src/main.o" "../src/main.c"
-Finished building: ../src/main.c
- 
-Building target: photo_sensor.axf
-Invoking: MCU Linker
-arm-none-eabi-gcc -nostdlib -L"/home/t/o104064k/robocar/workspace/photo_sensor/lib" -Xlinker --gc-sections -Xlinker -Map=photo_sensor.map -mcpu=cortex-m3 -mthumb -T "../Debug/vs-wrc103lv_Debug.ld" -o "photo_sensor.axf"  ./src/cr_startup_lpc13.o ./src/gpio.o ./src/ixbus.o ./src/main.o ./src/vs-wrc103.o   -lCMSISv1p30_LPC13xx
-Finished building target: photo_sensor.axf
- 
-make --no-print-directory post-build
-Performing post-build steps
-arm-none-eabi-size photo_sensor.axf; arm-none-eabi-size photo_sensor.axf; arm-none-eabi-objcopy -O binary photo_sensor.axf photo_sensor.bin; checksum photo_sensor.bin;
-   text	   data	    bss	    dec	    hex	filename
-   2961	      0	    490	   3451	    d7b	photo_sensor.axf
-   text	   data	    bss	    dec	    hex	filename
-   2961	      0	    490	   3451	    d7b	photo_sensor.axf
- 
-10:30:37 **** Build of configuration Debug for project robocar ****
-make -r all 
-Building file: ../src/cr_startup_lpc13.c
-Invoking: MCU C Compiler
-arm-none-eabi-gcc -D__USE_CMSIS=CMSISv1p30_LPC13xx -DDEBUG -D__CODE_RED -D__REDLIB__ -I"/home/t/o104064k/robocar/workspace/robocar/inc" -I"/home/t/o104064k/robocar/workspace/robocar/lib" -O0 -Os -mword-relocations -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/cr_startup_lpc13.d" -MT"src/cr_startup_lpc13.o" -MT"src/cr_startup_lpc13.d" -o"src/cr_startup_lpc13.o" "../src/cr_startup_lpc13.c"
-Finished building: ../src/cr_startup_lpc13.c
- 
-Building file: ../src/gpio.c
-Invoking: MCU C Compiler
-arm-none-eabi-gcc -D__USE_CMSIS=CMSISv1p30_LPC13xx -DDEBUG -D__CODE_RED -D__REDLIB__ -I"/home/t/o104064k/robocar/workspace/robocar/inc" -I"/home/t/o104064k/robocar/workspace/robocar/lib" -O0 -Os -mword-relocations -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/gpio.d" -MT"src/gpio.o" -MT"src/gpio.d" -o"src/gpio.o" "../src/gpio.c"
-Finished building: ../src/gpio.c
- 
-Building file: ../src/ixbus.c
-Invoking: MCU C Compiler
-arm-none-eabi-gcc -D__USE_CMSIS=CMSISv1p30_LPC13xx -DDEBUG -D__CODE_RED -D__REDLIB__ -I"/home/t/o104064k/robocar/workspace/robocar/inc" -I"/home/t/o104064k/robocar/workspace/robocar/lib" -O0 -Os -mword-relocations -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/ixbus.d" -MT"src/ixbus.o" -MT"src/ixbus.d" -o"src/ixbus.o" "../src/ixbus.c"
-Finished building: ../src/ixbus.c
- 
 Building file: ../src/main.c
 Invoking: MCU C Compiler
 arm-none-eabi-gcc -D__USE_CMSIS=CMSISv1p30_LPC13xx -DDEBUG -D__CODE_RED -D__REDLIB__ -I"/home/t/o104064k/robocar/workspace/robocar/inc" -I"/home/t/o104064k/robocar/workspace/robocar/lib" -O0 -Os -mword-relocations -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/main.d" -MT"src/main.o" -MT"src/main.d" -o"src/main.o" "../src/main.c"
 ../src/main.c: In function 'main':
-../src/main.c:10:1: error: 'b' undeclared (first use in this function)
- b
- ^
-../src/main.c:10:1: note: each undeclared identifier is reported only once for each function it appears in
-../src/main.c:11:2: error: expected ';' before 'return'
-  return 0;
-  ^
-../src/main.c:12:1: warning: control reaches end of non-void function [-Wreturn-type]
+../src/main.c:27:8: warning: unused variable 'j' [-Wunused-variable]
+  int i,j;
+        ^
+../src/main.c:27:6: warning: unused variable 'i' [-Wunused-variable]
+  int i,j;
+      ^
+../src/main.c: In function 'Sensor':
+../src/main.c:55:1: warning: control reaches end of non-void function [-Wreturn-type]
  }
  ^
-make: *** [src/main.o] エラー 1
-10:30:38 **** Build of configuration Debug for project seirogan ****
-make -r all 
-src/cr_startup_lpc13.d:1: *** 複数のターゲットパターンです.  中止.
-10:30:38 **** Build of configuration Debug for project strings ****
-make all 
-Building file: ../src/strings.c
-Invoking: GCC C Compiler
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/strings.d" -MT"src/strings.d" -o "src/strings.o" "../src/strings.c"
-../src/strings.c: In function ‘str_insert’:
-../src/strings.c:152:9: warning: unused variable ‘j’ [-Wunused-variable]
-   int i,j;
-         ^
-../src/strings.c: In function ‘str_subst’:
-../src/strings.c:165:9: warning: unused variable ‘j’ [-Wunused-variable]
-   int i,j,n;
-         ^
-../src/strings.c:165:7: warning: unused variable ‘i’ [-Wunused-variable]
-   int i,j,n;
-       ^
-../src/strings.c: In function ‘str_copy’:
-../src/strings.c:80:1: warning: control reaches end of non-void function [-Wreturn-type]
+../src/main.c: In function 'RunRightSide':
+../src/main.c:67:1: warning: control reaches end of non-void function [-Wreturn-type]
  }
  ^
-../src/strings.c: In function ‘main’:
-../src/strings.c:181:1: warning: control reaches end of non-void function [-Wreturn-type]
- }
- ^
-Finished building: ../src/strings.c
- 
-Building target: strings
-Invoking: GCC C Linker
-gcc  -o "strings"  ./src/strings.o   
-Finished building target: strings
- 
-10:30:39 **** Build of configuration Debug for project test ****
-make -r all 
-Building target: test.axf
-Invoking: MCU Linker
-arm-none-eabi-gcc -nostdlib -L"/home/t/o104064k/robocar/workspace/test/lib" -Xlinker --gc-sections -Xlinker -Map=test.map -mcpu=cortex-m3 -mthumb -T "../Debug/vs-wrc103lv_Debug.ld" -o "test.axf"  ./src/cr_startup_lpc13.o ./src/gpio.o ./src/ixbus.o ./src/main.o ./src/vs-wrc103.o   -lCMSISv1p30_LPC13xx
-Finished building target: test.axf
- 
-make --no-print-directory post-build
-Performing post-build steps
-arm-none-eabi-size test.axf; arm-none-eabi-size test.axf; arm-none-eabi-objcopy -O binary test.axf test.bin; checksum test.bin;
-   text	   data	    bss	    dec	    hex	filename
-   2985	      0	    490	   3475	    d93	test.axf
-   text	   data	    bss	    dec	    hex	filename
-   2985	      0	    490	   3475	    d93	test.axf
- 
-10:30:39 **** Build of configuration Debug for project trace ****
-make -r all 
-Building file: ../src/main.c
-Invoking: MCU C Compiler
-arm-none-eabi-gcc -D__USE_CMSIS=CMSISv1p30_LPC13xx -DDEBUG -D__CODE_RED -D__REDLIB__ -I"/home/t/o104064k/robocar/workspace/trace/inc" -I"/home/t/o104064k/robocar/workspace/trace/lib" -O0 -Os -mword-relocations -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/main.d" -MT"src/main.o" -MT"src/main.d" -o"src/main.o" "../src/main.c"
-../src/main.c: In function 'sensor':
-../src/main.c:54:35: warning: suggest parentheses around '+' inside '<<' [-Wparentheses]
-  switch(((ADRead(0) > BLACK) << 1 + (ADRead(1) > BLACK)) & 3){
-                                   ^
 Finished building: ../src/main.c
  
-Building target: trace.axf
+Building target: robocar.axf
 Invoking: MCU Linker
-arm-none-eabi-gcc -nostdlib -L"/home/t/o104064k/robocar/workspace/trace/lib" -Xlinker --gc-sections -Xlinker -Map=trace.map -mcpu=cortex-m3 -mthumb -T "../Debug/vs-wrc103lv_Debug.ld" -o "trace.axf"  ./src/cr_startup_lpc13.o ./src/gpio.o ./src/ixbus.o ./src/main.o ./src/vs-wrc103.o   -lCMSISv1p30_LPC13xx
-Finished building target: trace.axf
+arm-none-eabi-gcc -nostdlib -L"/home/t/o104064k/robocar/workspace/robocar/lib" -Xlinker --gc-sections -Xlinker -Map=robocar.map -mcpu=cortex-m3 -mthumb -T "../Debug/vs-wrc103lv_Debug.ld" -o "robocar.axf"  ./src/cr_startup_lpc13.o ./src/gpio.o ./src/ixbus.o ./src/main.o ./src/vs-wrc103.o   -lCMSISv1p30_LPC13xx
+Finished building target: robocar.axf
  
 make --no-print-directory post-build
 Performing post-build steps
-arm-none-eabi-size trace.axf; arm-none-eabi-size trace.axf; arm-none-eabi-objcopy -O binary trace.axf trace.bin; checksum trace.bin;
+arm-none-eabi-size robocar.axf; arm-none-eabi-size robocar.axf; arm-none-eabi-objcopy -O binary robocar.axf robocar.bin; checksum robocar.bin;
    text	   data	    bss	    dec	    hex	filename
-   3129	      0	    490	   3619	    e23	trace.axf
+   2873	      0	    490	   3363	    d23	robocar.axf
    text	   data	    bss	    dec	    hex	filename
-   3129	      0	    490	   3619	    e23	trace.axf
- 
-10:30:40 **** Build of configuration Debug for project vars ****
-make all 
-Building file: ../src/vars.c
-Invoking: GCC C Compiler
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/vars.d" -MT"src/vars.d" -o "src/vars.o" "../src/vars.c"
-Finished building: ../src/vars.c
- 
-Building target: vars
-Invoking: GCC C Linker
-gcc  -o "vars"  ./src/vars.o   
-Finished building target: vars
+   2873	      0	    490	   3363	    d23	robocar.axf
  
