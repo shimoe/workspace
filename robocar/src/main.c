@@ -12,6 +12,7 @@
 #define LED_O 2
 #define LED_D 3 
 
+#define GRAY 250
 
 int Sensor(int black,int gray);
 int RunRightSide(void);
@@ -24,69 +25,23 @@ int main(void)
 	Init(MainCycle);
 
 	int count = 0;
-	int i,j;
+	int i,j,left,right;
 	while(1){
-		count = RunLeftSide();
-		if(count > 3){
-			Mtr_Run_lv(0,0,0,0,0,0);
-		}
+	  left = ADRead(0);
+	  right = ADRead(1);
 	}
 	return 0;
 }
 
-int Sensor(int black,int gray){
-  int i = 0,j = 0;
-  
-  i = ADRead(0);
-  j = ADRead(1);
+void RunOneSide(int side,int sensor){
+  switch(side){
+  case 0: 
+if(sensor < GRAY) Mtr_Run_lv(POWER+DIFF,-(POWER-DIFF),0,0,0,0);
+    else Mtr_Run_lv(POWER-DIFF,-(POWER+DIFF),0,0,0,0); break;
 
-  if(i > gray && j < gray){
-    return 0;
-  }
-  else if(i > gray && j > gray){
-    return 1;
-  }
-  else if(i < gray && j < gray){
-    return 2;
-  }
-  else if(i < gray && j > gray){
-    return 3;
+  case 1:
+ if(sensor < GRAY) Mtr_Run_lv(POWER-DIFF,-(POWER+DIFF),0,0,0,0);
+    else Mtr_Run_lv(POWER+DIFF,-(POWER-DIFF),0,0,0,0); break;
   }
 }
 
-int RunRightSide(){
-  int i;
-
-  i = ADRead(1);
- 
-  if(i < 500){
-    Mtr_Run_lv(POWER+DIFF,-(POWER-DIFF),0,0,0,0);
-  }else{
-    Mtr_Run_lv(POWER-DIFF,-(POWER+DIFF),0,0,0,0);
-  }
-}
-
-int RunLeftSide(){
-  int i,j,count;
-
-  count = 0;
-  i = ADRead(0);
-  j = ADRead(1);
-
-  if(i < 500){
-    Mtr_Run_lv(POWER+DIFF,-(POWER-DIFF),0,0,0,0);
-    if(j < 500){
-    	while(1){
-    		Mtr_Run_lv(POWER,POWER,0,0,0,0);
-if(j < 500){
-	count++;
-	break;
-}
-    	}
-    }
-  }else{
-    Mtr_Run_lv(POWER-DIFF,-(POWER+DIFF),0,0,0,0);
-  }
-
-return count;
-}
