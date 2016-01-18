@@ -14,10 +14,8 @@
 
 #define GRAY 250
 
-int Sensor(int black,int gray);
-int RunRightSide(void);
-int RunLeftSide(void);
-void GrayZone(void);
+
+
 
 int main(void)
 {
