@@ -1,23 +1,24 @@
-11:58:20 **** Incremental Build of configuration Debug for project robocar ****
+11:40:56 **** Incremental Build of configuration Debug for project robocar ****
 make -r all 
 Building file: ../src/main.c
 Invoking: MCU C Compiler
 arm-none-eabi-gcc -D__USE_CMSIS=CMSISv1p30_LPC13xx -DDEBUG -D__CODE_RED -D__REDLIB__ -I"/home/t/o104064k/robocar/workspace/robocar/inc" -I"/home/t/o104064k/robocar/workspace/robocar/lib" -O0 -Os -mword-relocations -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/main.d" -MT"src/main.o" -MT"src/main.d" -o"src/main.o" "../src/main.c"
 ../src/main.c: In function 'main':
+../src/main.c:27:26: warning: variable 'var2' set but not used [-Wunused-but-set-variable]
+  int i,j,left,right,var1,var2;
+                          ^
+../src/main.c:27:21: warning: variable 'var1' set but not used [-Wunused-but-set-variable]
+  int i,j,left,right,var1,var2;
+                     ^
 ../src/main.c:27:8: warning: unused variable 'j' [-Wunused-variable]
-  int i,j;
+  int i,j,left,right,var1,var2;
         ^
 ../src/main.c:27:6: warning: unused variable 'i' [-Wunused-variable]
-  int i,j;
+  int i,j,left,right,var1,var2;
       ^
-../src/main.c: In function 'Sensor':
-../src/main.c:55:1: warning: control reaches end of non-void function [-Wreturn-type]
- }
- ^
-../src/main.c: In function 'RunRightSide':
-../src/main.c:67:1: warning: control reaches end of non-void function [-Wreturn-type]
- }
- ^
+../src/main.c:26:6: warning: unused variable 'count' [-Wunused-variable]
+  int count = 0;
+      ^
 Finished building: ../src/main.c
  
 Building target: robocar.axf
@@ -29,10 +30,10 @@ make --no-print-directory post-build
 Performing post-build steps
 arm-none-eabi-size robocar.axf; arm-none-eabi-size robocar.axf; arm-none-eabi-objcopy -O binary robocar.axf robocar.bin; checksum robocar.bin;
    text	   data	    bss	    dec	    hex	filename
-   2873	      0	    490	   3363	    d23	robocar.axf
+   2945	      0	    490	   3435	    d6b	robocar.axf
    text	   data	    bss	    dec	    hex	filename
-   2873	      0	    490	   3363	    d23	robocar.axf
+   2945	      0	    490	   3435	    d6b	robocar.axf
  
 
-11:58:20 Build Finished (took 159ms)
+11:40:56 Build Finished (took 158ms)
 

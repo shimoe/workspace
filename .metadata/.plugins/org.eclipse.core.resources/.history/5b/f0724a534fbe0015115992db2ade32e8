@@ -19,51 +19,20 @@
 void RunOneSide(int side,int sensor);
 int Sensor(int var);
 
-int main(void){
+int main(void)
+{
 	const unsigned short MainCycle = 60;
 	Init(MainCycle);
 
 	int count = 0;
 	int i,j,left,right,var1,var2;
-
-
-
 	while(1){
 	  left = ADRead(0);
 	  right = ADRead(1);
 
 	  var1 = Sensor(left);
 	  var2 = Sensor(right);
-
 	  RunOneSide(SENSOR_L,left);
-	  
-
-	  if(1){
-	    LED(3);
-	    while(1) Mtr_Run_lv(0,0,0,0,0,0);
-	  }
-
-	  /* while((var1 + var2) < 2){
-	    LED(LED_D);
-	    Mtr_Run_lv(POWER,-POWER,0,0,0,0);
-	    if(ADRead(0) > GRAY){
-	      while(ADRead(1) < GRAY){
-		LED(LED_N);
-		 Mtr_Run_lv(POWER+DIFF,-(POWER-DIFF),0,0,0,0);
-	      }
-	      count++;
-	      break;
-	    }
-
-	    if(ADRead(1) > GRAY){
-	      while(ADRead(0) < GRAY){
-		LED(LED_N);
-		Mtr_Run_lv(POWER-DIFF,-(POWER+DIFF),0,0,0,0);
-	      }
-	      count++;
-	      break;
-	    }
-	  }*/
 	}
 	return 0;
 }
@@ -73,7 +42,7 @@ void RunOneSide(int side,int sensor){
   case 0: 
     if(sensor < GRAY) Mtr_Run_lv(POWER-DIFF,-(POWER+DIFF),0,0,0,0);
     else Mtr_Run_lv(POWER+DIFF,-(POWER-DIFF),0,0,0,0);
-    LED(LED_G);
+    led(LED_G);
     break;
 
   case 1:
@@ -81,7 +50,6 @@ void RunOneSide(int side,int sensor){
     else Mtr_Run_lv(POWER-DIFF,-(POWER+DIFF),0,0,0,0);
     LED(LED_O);
     break;
-  default: Mtr_Run_lv(0,0,0,0,0,0); break;
   }
 }
 
@@ -90,4 +58,3 @@ int Sensor(int var){
   else if(var < GRAY) return 1;
   else return 2;
 }
-
