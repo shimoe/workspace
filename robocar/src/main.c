@@ -56,8 +56,6 @@ int main(void){
   return 0;
 }
 
-
-
 /*------------------------------------------------
   original function
   ------------------------------------------------*/
@@ -112,9 +110,9 @@ void AcrossGray(void){
   if(ADRead(SENSOR_L) < GRAY) count++;
 
   if(ADRead(SENSOR_R) > GRAY){
-    MtrRunlv(POWER + DIFF,POWER - DIFF);
+    MtrRunlv((int)((POWER + DIFF)/2),(int)((POWER - DIFF)/2));
   } else{
-    MtrRunlv(POWER - DIFF,POWER + DIFF);
+    MtrRunlv((int)((POWER - DIFF)/2),(int)((POWER + DIFF)/2));
   }
 }
 
@@ -135,7 +133,15 @@ void Turn(int mode){
 }
 
 void LookBack(void){
-
+  while(1){
+    if(ADRead(SENSOR_L) > GRAY){
+    }
+    if(ADRead(SENSOR_R) > GRAY){
+      MtrRunlv(POWER + DIFF,POWER - DIFF);
+    } else {
+      MtrRunlv(POWER - DIFF,POWER + DIFF);
+    }
+  }
 }
 
 void AcrossT(void){
