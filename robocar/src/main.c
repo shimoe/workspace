@@ -15,6 +15,9 @@
 #define GRAY 250
 #define BLACK 500
 
+#define PITCH 128
+#define VOLUME 100
+
 /*------------------------------------------------
   function prototype
   ------------------------------------------------*/
@@ -107,6 +110,9 @@ void AcrossBlack(int var1,int var2){
 void MtrRunlv(int left,int right) Mtr_Run_lv(right,-left,0,0,0,0); 
 
 void AcrossGray(void){
+  BuzzerSet(PITCH,VOLUME);
+  BuzzerStart();
+
   if(ADRead(SENSOR_L) < GRAY) count++;
 
   if(ADRead(SENSOR_R) > GRAY){
@@ -134,7 +140,15 @@ void Turn(int mode){
 
 void LookBack(void){
   while(1){
-    if(ADRead(SENSOR_L) > GRAY){
+    if(ADRead(SENSOR_L) < GRAY){
+      while(ADRead(SENSOR_L) < GRAY){
+	MtrRunlv(POWER,0);
+      }
+      while(ADRead(SENSOR_R) > GRAY){
+	RunOneSide(SENSOR_L,ADRead(SENSOR_L));
+      }
+      count++;
+      break;
     }
     if(ADRead(SENSOR_R) > GRAY){
       MtrRunlv(POWER + DIFF,POWER - DIFF);
@@ -150,6 +164,7 @@ void AcrossT(void){
 }
 
 void Goal(void){
+
 }
 
 void Action(int mode){
@@ -171,17 +186,19 @@ void Action(int mode){
   case 4:
   case 9:
   case 10:
+    BuzzerStop();
     RunOneSide(SENSOR_L,left);
     if((var1 + var2) < 2) Trun(count);
     break;
 
   case 7:
+    BuzzerStop();
     RunOneSide(SENSOR_R,right);
     if((var1 + var2) < 2) AcrossBlack(var1,var2);
     break;
 
   case 8:
-    RunOneSide(SENSOR_R,RIGHT);
+    RunOneSide(SENSOR_R,right);
     if((var1 + var2) < 2) LookBack();
     break;
 
@@ -189,5 +206,9 @@ void Action(int mode){
     RunOneSide(SENSOR_L,left);
     if(var2 < 2) AcrossT();
     break; 
+
+  case 12:
+    RunOneSide(SENSOR_R,right);
+    if((var1 + var2) + )  
   }
 }
