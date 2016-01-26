@@ -1,6 +1,6 @@
-10:30:35 **** Build of configuration Debug for project led ****
+10:51:12 **** Build of configuration Debug for project led ****
 make -r all 
 src/cr_startup_lpc13.d:1: *** 複数のターゲットパターンです.  中止.
 
-10:30:35 Build Finished (took 59ms)
+10:51:12 Build Finished (took 59ms)
 

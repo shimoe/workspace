@@ -1,15 +1,6 @@
-10:30:40 **** Build of configuration Debug for project vars ****
+10:51:16 **** Build of configuration Debug for project vars ****
 make all 
-Building file: ../src/vars.c
-Invoking: GCC C Compiler
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/vars.d" -MT"src/vars.d" -o "src/vars.o" "../src/vars.c"
-Finished building: ../src/vars.c
- 
-Building target: vars
-Invoking: GCC C Linker
-gcc  -o "vars"  ./src/vars.o   
-Finished building target: vars
- 
+make: `all' に対して行うべき事はありません.
 
-10:30:40 Build Finished (took 108ms)
+10:51:16 Build Finished (took 59ms)
 

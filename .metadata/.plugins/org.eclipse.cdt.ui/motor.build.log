@@ -1,10 +1,5 @@
-10:30:36 **** Build of configuration Debug for project motor ****
+10:51:13 **** Build of configuration Debug for project motor ****
 make -r all 
-Building file: ../src/main.c
-Invoking: MCU C Compiler
-arm-none-eabi-gcc -D__USE_CMSIS=CMSISv1p30_LPC13xx -DDEBUG -D__CODE_RED -D__REDLIB__ -I"/home/t/o104064k/robocar/workspace/motor/inc" -I"/home/t/o104064k/robocar/workspace/motor/lib" -O0 -Os -mword-relocations -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/main.d" -MT"src/main.o" -MT"src/main.d" -o"src/main.o" "../src/main.c"
-Finished building: ../src/main.c
- 
 Building target: motor.axf
 Invoking: MCU Linker
 arm-none-eabi-gcc -nostdlib -L"/home/t/o104064k/robocar/workspace/motor/lib" -Xlinker --gc-sections -Xlinker -Map=motor.map -mcpu=cortex-m3 -mthumb -T "../Debug/vs-wrc103lv_Debug.ld" -o "motor.axf"  ./src/cr_startup_lpc13.o ./src/gpio.o ./src/ixbus.o ./src/main.o ./src/vs-wrc103.o   -lCMSISv1p30_LPC13xx
@@ -19,5 +14,5 @@ arm-none-eabi-size motor.axf; arm-none-eabi-size motor.axf; arm-none-eabi-objcop
    3021	      0	    490	   3511	    db7	motor.axf
  
 
-10:30:36 Build Finished (took 307ms)
+10:51:13 Build Finished (took 208ms)
 

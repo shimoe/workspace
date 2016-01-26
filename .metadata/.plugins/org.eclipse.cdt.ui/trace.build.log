@@ -1,14 +1,5 @@
-10:30:39 **** Build of configuration Debug for project trace ****
+10:51:15 **** Build of configuration Debug for project trace ****
 make -r all 
-Building file: ../src/main.c
-Invoking: MCU C Compiler
-arm-none-eabi-gcc -D__USE_CMSIS=CMSISv1p30_LPC13xx -DDEBUG -D__CODE_RED -D__REDLIB__ -I"/home/t/o104064k/robocar/workspace/trace/inc" -I"/home/t/o104064k/robocar/workspace/trace/lib" -O0 -Os -mword-relocations -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/main.d" -MT"src/main.o" -MT"src/main.d" -o"src/main.o" "../src/main.c"
-../src/main.c: In function 'sensor':
-../src/main.c:54:35: warning: suggest parentheses around '+' inside '<<' [-Wparentheses]
-  switch(((ADRead(0) > BLACK) << 1 + (ADRead(1) > BLACK)) & 3){
-                                   ^
-Finished building: ../src/main.c
- 
 Building target: trace.axf
 Invoking: MCU Linker
 arm-none-eabi-gcc -nostdlib -L"/home/t/o104064k/robocar/workspace/trace/lib" -Xlinker --gc-sections -Xlinker -Map=trace.map -mcpu=cortex-m3 -mthumb -T "../Debug/vs-wrc103lv_Debug.ld" -o "trace.axf"  ./src/cr_startup_lpc13.o ./src/gpio.o ./src/ixbus.o ./src/main.o ./src/vs-wrc103.o   -lCMSISv1p30_LPC13xx
@@ -23,5 +14,5 @@ arm-none-eabi-size trace.axf; arm-none-eabi-size trace.axf; arm-none-eabi-objcop
    3129	      0	    490	   3619	    e23	trace.axf
  
 
-10:30:39 Build Finished (took 260ms)
+10:51:16 Build Finished (took 213ms)
 
