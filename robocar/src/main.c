@@ -26,7 +26,7 @@ void RunOneSide(int side,int sensor);
 int Sensor(int var);
 void AcrossBlack(int var1,int var2);
 void MtrRunlv(int left,int right);
-void AcrossGray(int var1,int var2);
+void AcrossGray(void);
 void Turn(int mode);
 void LookBack1(void);
 void LookBack2(void);
@@ -192,7 +192,7 @@ void Action(int mode,int left,int right,int var1,int var2){
   case 3:
   case 6:
     RunOneSide(SENSOR_L,left);
-    if((var1 + var2) < 2) AcrossGray(var1,var2);
+    if((var1 + var2) < 2) AcrossGray();
     break;
 
   case 4:
