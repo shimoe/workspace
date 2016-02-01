@@ -29,7 +29,7 @@ all: robocar.axf
 robocar.axf: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: MCU Linker'
-	arm-none-eabi-gcc -nostdlib -L"/Users/hkim/lpcxpresso/robocar/lib" -Xlinker --gc-sections -Xlinker -Map=robocar.map -mcpu=cortex-m3 -mthumb -T "../Release/vs-wrc103lv_Release.ld" -o "robocar.axf" $(OBJS) $(USER_OBJS) $(LIBS)
+	arm-none-eabi-gcc -nostdlib -L"C:/nxp/LPCXpresso_7.9.2_493/workspace/workspace/robocar/lib" -Xlinker --gc-sections -Xlinker -Map=robocar.map -mcpu=cortex-m3 -mthumb -T "../Release/vs-wrc103lv_Release.ld" -o "robocar.axf" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 	$(MAKE) --no-print-directory post-build

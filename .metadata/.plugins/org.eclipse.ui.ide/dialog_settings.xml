@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<list key="installedFeatures">
-		<item value="com.crt.lpcxpresso.feature:8.0.0.201511182220"/>
-		<item value="org.eclipse.cdt.gdb:8.8.0.201509131935"/>
-		<item value="org.eclipse.cdt:8.8.0.201509131935"/>
-		<item value="org.eclipse.cvs:1.4.200.v20150904-0015"/>
-		<item value="org.eclipse.emf.common:2.11.0.v20150805-0538"/>
-		<item value="org.eclipse.emf.ecore:2.11.1.v20150805-0538"/>
-		<item value="org.eclipse.help:2.1.1.v20150904-0015"/>
-		<item value="org.eclipse.platform:4.5.1.v20150904-0015"/>
-		<item value="org.eclipse.rcp:4.5.1.v20150904-0015"/>
+		<item value="com.crt.lpcxpresso.feature:7.4.1.201509120039"/>
+		<item value="org.eclipse.cdt.gdb:8.6.0.201502131403"/>
+		<item value="org.eclipse.cdt:8.6.0.201502131403"/>
+		<item value="org.eclipse.cvs:1.4.100.v20150204-1700"/>
+		<item value="org.eclipse.emf.common:2.10.1.v20150123-0348"/>
+		<item value="org.eclipse.emf.ecore:2.10.2.v20150123-0348"/>
+		<item value="org.eclipse.help:2.0.103.v20150204-1700"/>
+		<item value="org.eclipse.platform:4.4.2.v20150204-1700"/>
+		<item value="org.eclipse.rcp:4.4.2.v20150204-1700"/>
 	</list>
+	<section name="ExternalProjectImportWizard">
+	</section>
 	<section name="CleanDialogSettings">
 		<item value="563" key="DIALOG_WIDTH"/>
-		<item value="false" key="BUILD_ALL"/>
-		<item value="true" key="TOGGLE_SELECTED"/>
-		<item value="473" key="DIALOG_HEIGHT"/>
 		<item value="true" key="BUILD_NOW"/>
 		<item value="161" key="DIALOG_Y_ORIGIN"/>
+		<item value="false" key="BUILD_ALL"/>
 		<item value="471" key="DIALOG_X_ORIGIN"/>
-	</section>
-	<section name="ExternalProjectImportWizard">
+		<item value="473" key="DIALOG_HEIGHT"/>
+		<item value="true" key="TOGGLE_SELECTED"/>
 	</section>
 </section>

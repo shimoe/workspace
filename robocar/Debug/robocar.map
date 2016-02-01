@@ -190,7 +190,7 @@ END GROUP
                 0x00008000                __top_FlashMap = 0x8000
                 0x10002000                __top_RamLoc8 = 0x10002000
 
-.text           0x00000000      0xf31
+.text           0x00000000      0xf29
  *(.isr_vector)
  .isr_vector    0x00000000      0x124 ./src/cr_startup_lpc13.o
                 0x00000000                g_pfnVectors
@@ -262,113 +262,113 @@ END GROUP
  .text.AcrossGray
                 0x000004d0       0x54 ./src/main.o
                 0x000004d0                AcrossGray
- .text.Turn     0x00000524       0xbc ./src/main.o
+ .text.Turn     0x00000524       0xb4 ./src/main.o
                 0x00000524                Turn
  .text.LookBack1
-                0x000005e0       0x30 ./src/main.o
-                0x000005e0                LookBack1
- .text.AcrossT  0x00000610       0x2c ./src/main.o
-                0x00000610                AcrossT
- .text.Goal     0x0000063c       0x18 ./src/main.o
-                0x0000063c                Goal
- .text.Action   0x00000654       0xec ./src/main.o
-                0x00000654                Action
+                0x000005d8       0x30 ./src/main.o
+                0x000005d8                LookBack1
+ .text.AcrossT  0x00000608       0x2c ./src/main.o
+                0x00000608                AcrossT
+ .text.Goal     0x00000634       0x18 ./src/main.o
+                0x00000634                Goal
+ .text.Action   0x0000064c       0xec ./src/main.o
+                0x0000064c                Action
  .text.startup.main
-                0x00000740       0x3c ./src/main.o
-                0x00000740                main
- .text.Sync     0x0000077c       0x58 ./src/vs-wrc103.o
-                0x0000077c                Sync
+                0x00000738       0x3c ./src/main.o
+                0x00000738                main
+ .text.Sync     0x00000774       0x58 ./src/vs-wrc103.o
+                0x00000774                Sync
  .text.Mtr_Run_lv
-                0x000007d4       0xb8 ./src/vs-wrc103.o
-                0x000007d4                Mtr_Run_lv
+                0x000007cc       0xb8 ./src/vs-wrc103.o
+                0x000007cc                Mtr_Run_lv
  .text.Timer32Init
-                0x0000088c       0x3c ./src/vs-wrc103.o
-                0x0000088c                Timer32Init
+                0x00000884       0x3c ./src/vs-wrc103.o
+                0x00000884                Timer32Init
  .text.Timer16Init
-                0x000008c8       0x64 ./src/vs-wrc103.o
-                0x000008c8                Timer16Init
- .text.ADCInit  0x0000092c       0x2c ./src/vs-wrc103.o
-                0x0000092c                ADCInit
- .text.Init     0x00000958      0x278 ./src/vs-wrc103.o
-                0x00000958                Init
- .text.ADRead   0x00000bd0       0x70 ./src/vs-wrc103.o
-                0x00000bd0                ADRead
- .text.LED      0x00000c40       0x26 ./src/vs-wrc103.o
-                0x00000c40                LED
- *fill*         0x00000c66        0x2 
- .text.Wait     0x00000c68       0x20 ./src/vs-wrc103.o
-                0x00000c68                Wait
+                0x000008c0       0x64 ./src/vs-wrc103.o
+                0x000008c0                Timer16Init
+ .text.ADCInit  0x00000924       0x2c ./src/vs-wrc103.o
+                0x00000924                ADCInit
+ .text.Init     0x00000950      0x278 ./src/vs-wrc103.o
+                0x00000950                Init
+ .text.ADRead   0x00000bc8       0x70 ./src/vs-wrc103.o
+                0x00000bc8                ADRead
+ .text.LED      0x00000c38       0x26 ./src/vs-wrc103.o
+                0x00000c38                LED
+ *fill*         0x00000c5e        0x2 
+ .text.Wait     0x00000c60       0x20 ./src/vs-wrc103.o
+                0x00000c60                Wait
  .text.BuzzerSet
-                0x00000c88       0x10 ./src/vs-wrc103.o
-                0x00000c88                BuzzerSet
+                0x00000c80       0x10 ./src/vs-wrc103.o
+                0x00000c80                BuzzerSet
  .text.BuzzerStart
-                0x00000c98       0x34 ./src/vs-wrc103.o
-                0x00000c98                BuzzerStart
+                0x00000c90       0x34 ./src/vs-wrc103.o
+                0x00000c90                BuzzerStart
  .text.BuzzerStop
-                0x00000ccc       0x1c ./src/vs-wrc103.o
-                0x00000ccc                BuzzerStop
+                0x00000cc4       0x1c ./src/vs-wrc103.o
+                0x00000cc4                BuzzerStop
  .text.TIMER32_0_IRQHandler
-                0x00000ce8       0x80 ./src/vs-wrc103.o
-                0x00000ce8                TIMER32_0_IRQHandler
+                0x00000ce0       0x80 ./src/vs-wrc103.o
+                0x00000ce0                TIMER32_0_IRQHandler
  .text.IntEncoder
-                0x00000d68       0xa0 ./src/vs-wrc103.o
-                0x00000d68                IntEncoder
+                0x00000d60       0xa0 ./src/vs-wrc103.o
+                0x00000d60                IntEncoder
  .text.PIOINT0_IRQHandler
-                0x00000e08        0x4 ./src/vs-wrc103.o
-                0x00000e08                PIOINT0_IRQHandler
+                0x00000e00        0x4 ./src/vs-wrc103.o
+                0x00000e00                PIOINT0_IRQHandler
  .text.PIOINT1_IRQHandler
-                0x00000e0c        0x4 ./src/vs-wrc103.o
-                0x00000e0c                PIOINT1_IRQHandler
+                0x00000e04        0x4 ./src/vs-wrc103.o
+                0x00000e04                PIOINT1_IRQHandler
  .text.PIOINT2_IRQHandler
-                0x00000e10        0x4 ./src/vs-wrc103.o
-                0x00000e10                PIOINT2_IRQHandler
+                0x00000e08        0x4 ./src/vs-wrc103.o
+                0x00000e08                PIOINT2_IRQHandler
  .text.SystemInit
-                0x00000e14       0xe0 C:/nxp/LPCXpresso_7.9.2_493/workspace/workspace/robocar/lib\libCMSISv1p30_LPC13xx.a(system_LPC13xx.o)
-                0x00000e14                SystemInit
+                0x00000e0c       0xe0 C:/nxp/LPCXpresso_7.9.2_493/workspace/workspace/robocar/lib\libCMSISv1p30_LPC13xx.a(system_LPC13xx.o)
+                0x00000e0c                SystemInit
  *(.rodata*)
- .rodata        0x00000ef4       0x3d ./src/vs-wrc103.o
-                0x00000f21                enctbl
+ .rodata        0x00000eec       0x3d ./src/vs-wrc103.o
+                0x00000f19                enctbl
 
-.glue_7         0x00000f34        0x0
+.glue_7         0x00000f2c        0x0
  .glue_7        0x00000000        0x0 linker stubs
 
-.glue_7t        0x00000f34        0x0
+.glue_7t        0x00000f2c        0x0
  .glue_7t       0x00000000        0x0 linker stubs
 
-.vfp11_veneer   0x00000f34        0x0
+.vfp11_veneer   0x00000f2c        0x0
  .vfp11_veneer  0x00000000        0x0 linker stubs
 
-.v4_bx          0x00000f34        0x0
+.v4_bx          0x00000f2c        0x0
  .v4_bx         0x00000000        0x0 linker stubs
 
-.iplt           0x00000f34        0x0
+.iplt           0x00000f2c        0x0
  .iplt          0x00000000        0x0 ./src/cr_startup_lpc13.o
 
-.rel.dyn        0x00000f34        0x0
+.rel.dyn        0x00000f2c        0x0
  .rel.iplt      0x00000000        0x0 ./src/cr_startup_lpc13.o
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x00000f34                __exidx_start = .
+                0x00000f2c                __exidx_start = .
 
 .ARM.exidx
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-                0x00000f34                __exidx_end = .
-                0x00000f34                _etext = .
+                0x00000f2c                __exidx_end = .
+                0x00000f2c                _etext = .
 
 .cmap
  *(.Const_Map*)
 
-.data           0x10000000        0x0 load address 0x00000f31
+.data           0x10000000        0x0 load address 0x00000f29
                 0x10000000                _data = .
  *(vtable)
  *(.data*)
                 0x10000000                _edata = .
 
-.igot.plt       0x10000000        0x0 load address 0x00000f31
+.igot.plt       0x10000000        0x0 load address 0x00000f29
  .igot.plt      0x00000000        0x0 ./src/cr_startup_lpc13.o
 
-.bss            0x10000000      0x1ee load address 0x00000f31
+.bss            0x10000000      0x1ee load address 0x00000f29
                 0x10000000                _bss = .
  *(.bss*)
  .bss           0x10000000       0x6c ./src/ixbus.o
@@ -408,7 +408,7 @@ END GROUP
                 0x100001ec                MainCnt
                 0x100001ee                _ebss = .
 
-.cr_heap        0x100001ee        0x0 load address 0x00000f31
+.cr_heap        0x100001ee        0x0 load address 0x00000f29
                 0x100001ee                end = .
                 0x100001ee                _pvHeapStart = .
                 0x10002000                _vRamTop = __top_RamLoc8
@@ -480,13 +480,13 @@ OUTPUT(robocar.axf elf32-littlearm)
  .debug_macro   0x00001b59       0x1c ./src/main.o
  .debug_macro   0x00001b75       0xd2 ./src/vs-wrc103.o
 
-.debug_line     0x00000000     0x140a
+.debug_line     0x00000000     0x1409
  .debug_line    0x00000000      0x23c ./src/cr_startup_lpc13.o
  .debug_line    0x0000023c      0x2ab ./src/gpio.o
  .debug_line    0x000004e7      0x2de ./src/ixbus.o
- .debug_line    0x000007c5      0x364 ./src/main.o
- .debug_line    0x00000b29      0x5b7 ./src/vs-wrc103.o
- .debug_line    0x000010e0      0x32a C:/nxp/LPCXpresso_7.9.2_493/workspace/workspace/robocar/lib\libCMSISv1p30_LPC13xx.a(system_LPC13xx.o)
+ .debug_line    0x000007c5      0x363 ./src/main.o
+ .debug_line    0x00000b28      0x5b7 ./src/vs-wrc103.o
+ .debug_line    0x000010df      0x32a C:/nxp/LPCXpresso_7.9.2_493/workspace/workspace/robocar/lib\libCMSISv1p30_LPC13xx.a(system_LPC13xx.o)
 
 .debug_str      0x00000000     0x85fd
  .debug_str     0x00000000     0x3cd8 ./src/cr_startup_lpc13.o

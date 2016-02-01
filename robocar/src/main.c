@@ -5,7 +5,7 @@
 
 #define SENSOR_L 0
 #define SENSOR_R 1
-#define POWER 10000
+#define POWER 20000
 #define DIFF 5000
 #define LED_N 0
 #define LED_G 1
@@ -116,7 +116,7 @@ void AcrossGray(void){
       count++;
       break;
     }
-  
+
     if(ADRead(SENSOR_R) > GRAY){
       LED(LED_G);
       MtrRunlv((int)((POWER + DIFF)/2),(int)((POWER - DIFF)/2));
@@ -143,7 +143,6 @@ void Turn(int mode){
     	LED(LED_N);
     	RunOneSide(SENSOR_R,ADRead(SENSOR_R));
     }
-    count++;
     break;
 
   case 9:
