@@ -2,14 +2,15 @@
 <?scdStore version="2"?><scannerInfo id="org.eclipse.cdt.make.core.discoveredScannerInfo">
 <instance id="com.crt.advproject.config.exe.debug.1382850378;com.crt.advproject.config.exe.debug.1382850378.;com.crt.advproject.gcc.exe.debug.1753810262;com.crt.advproject.compiler.input.457065762">
 <collector id="org.eclipse.cdt.make.core.PerProjectSICollector">
-<includePath path="/auto/edu/lib/lpcxpresso_7.9.2_493/lpcxpresso/tools/redlib/include"/>
-<includePath path="/auto/edu/lib/lpcxpresso_7.9.2_493/lpcxpresso/tools/features/include"/>
+<includePath path="/usr/local/lpcxpresso_8.0.0_526/lpcxpresso/tools/redlib/include"/>
+<includePath path="/usr/local/lpcxpresso_8.0.0_526/lpcxpresso/tools/features/include"/>
 <definedSymbol symbol="__STDC__=1"/>
 <definedSymbol symbol="__STDC_HOSTED__=1"/>
 <definedSymbol symbol="__GNUC__=4"/>
 <definedSymbol symbol="__GNUC_MINOR__=9"/>
 <definedSymbol symbol="__GNUC_PATCHLEVEL__=3"/>
 <definedSymbol symbol="__VERSION__=&quot;4.9.3 20150529 (release) [ARM/embedded-4_9-branch revision 224288]&quot;"/>
+<definedSymbol symbol="__VERSION__=&quot;4.9.3 20150529 (release) [ARM/embedded-4_9-branch revision 227977]&quot;"/>
 <definedSymbol symbol="__ATOMIC_RELAXED=0"/>
 <definedSymbol symbol="__ATOMIC_SEQ_CST=5"/>
 <definedSymbol symbol="__ATOMIC_ACQUIRE=2"/>
@@ -350,14 +351,15 @@
 </instance>
 <instance id="com.crt.advproject.config.exe.debug.1382850378;com.crt.advproject.config.exe.debug.1382850378.;com.crt.advproject.gas.exe.debug.722872328;com.crt.advproject.assembler.input.797911717">
 <collector id="org.eclipse.cdt.make.core.PerProjectSICollector">
-<includePath path="/auto/edu/lib/lpcxpresso_7.9.2_493/lpcxpresso/tools/redlib/include"/>
-<includePath path="/auto/edu/lib/lpcxpresso_7.9.2_493/lpcxpresso/tools/features/include"/>
+<includePath path="/usr/local/lpcxpresso_8.0.0_526/lpcxpresso/tools/redlib/include"/>
+<includePath path="/usr/local/lpcxpresso_8.0.0_526/lpcxpresso/tools/features/include"/>
 <definedSymbol symbol="__STDC__=1"/>
 <definedSymbol symbol="__STDC_HOSTED__=1"/>
 <definedSymbol symbol="__GNUC__=4"/>
 <definedSymbol symbol="__GNUC_MINOR__=9"/>
 <definedSymbol symbol="__GNUC_PATCHLEVEL__=3"/>
 <definedSymbol symbol="__VERSION__=&quot;4.9.3 20150529 (release) [ARM/embedded-4_9-branch revision 224288]&quot;"/>
+<definedSymbol symbol="__VERSION__=&quot;4.9.3 20150529 (release) [ARM/embedded-4_9-branch revision 227977]&quot;"/>
 <definedSymbol symbol="__ATOMIC_RELAXED=0"/>
 <definedSymbol symbol="__ATOMIC_SEQ_CST=5"/>
 <definedSymbol symbol="__ATOMIC_ACQUIRE=2"/>
