@@ -1,0 +1,101 @@
+#include "LPC13xx.h"
+#include "gpio.h"
+#include "vs-wrc103.h"
+#include "ixbus.h"
+
+#define SLOW 1000
+#define FAST 15000
+
+#define GET_SENSOR(lim) ((((ADRead(0) > lim.left) << 1) | (ADRead(1) > lim.right)) & 0x03)
+#define MTR_RUN_LV(ptr) Mtr_Run_lv(ptr.right, -ptr.left, 0, 0, 0, 0)
+
+typedef enum mode {
+  PINCH_BLACK_LINE,
+  RIGHT_EDGE,
+  LEFT_EDGE,
+  PASS_THROUGH,
+  TURN_RIGHT,
+  TURN_LEFT,
+} mode_t;
+
+typedef enum flag {
+  UNTIL_NEITHER_BLACK,
+  UNTIL_RIGHT_BLACK,
+  UNTIL_LEFT_BLACK,
+  UNTIL_BOTH_BLACK,
+} flag_t;
+
+typedef struct BeautoRover {
+  unsigned int proc;
+
+  struct lr {
+    int left, right;
+  } lim, act[6][4];
+
+  struct seq {
+    mode_t mode;
+    flag_t flag;
+  } *seq;
+} BeautoRover;
+
+BeautoRover beautoRoverCtor(struct seq* ptr) {
+  BeautoRover obj = {
+    .lim = {100, 100},
+    .act = {
+      {{ FAST,  FAST}, { FAST,  SLOW}, { SLOW,  FAST}, { FAST,  FAST}},
+      {{ SLOW,  FAST}, { FAST,  SLOW}, { SLOW,  FAST}, { FAST,  SLOW}},
+      {{ FAST,  SLOW}, { FAST,  SLOW}, { SLOW,  FAST}, { SLOW,  FAST}},
+      {{    0,     0}, { SLOW,  FAST}, { FAST,  SLOW}, { FAST,  FAST}},
+      {{ FAST, -FAST}, { FAST, -FAST}, {    0,     0}, { FAST, -FAST}},
+      {{-FAST,  FAST}, {    0,     0}, {-FAST,  FAST}, {-FAST,  FAST}}
+    },
+    .seq = ptr
+  };
+
+  return obj;
+}
+
+void beautoRoverRun(const BeautoRover* this) {
+  int sensor;
+  int mode = this->seq[this->proc].mode;
+  int flag = this->seq[this->proc].flag;
+
+  while ((sensor = GET_SENSOR(this->lim)) != flag) MTR_RUN_LV(this->act[mode][sensor]);
+}
+
+int main(void) {
+  const unsigned short MainCycle = 60;
+  Init(MainCycle);
+
+  struct seq seqence[] = {
+    /* pass through 3 intersection */
+    {PINCH_BLACK_LINE,    UNTIL_BOTH_BLACK},
+    {    PASS_THROUGH, UNTIL_NEITHER_BLACK},
+    {PINCH_BLACK_LINE,    UNTIL_BOTH_BLACK},
+    {    PASS_THROUGH, UNTIL_NEITHER_BLACK},
+    {PINCH_BLACK_LINE,    UNTIL_BOTH_BLACK},
+    {    PASS_THROUGH, UNTIL_NEITHER_BLACK},
+    {PINCH_BLACK_LINE,    UNTIL_BOTH_BLACK},
+
+    /* gray box */
+    {PINCH_BLACK_LINE, UNTIL_NEITHER_BLACK}, /* black box */
+    {       LEFT_EDGE,    UNTIL_BOTH_BLACK},
+
+    /* turn left T intersection */
+    {    PASS_THROUGH, UNTIL_NEITHER_BLACK},
+    {       TURN_LEFT,   UNTIL_RIGHT_BLACK},
+    {      RIGHT_EDGE,    UNTIL_BOTH_BLACK},
+
+    /* end flag */
+    {-1, -1}
+  };
+
+  BeautoRover rover = beautoRoverCtor(seqence);
+
+  while (rover.seq[rover.proc].flag > -1) {
+    beautoRoverRun(&rover);
+    rover.proc++;
+  }
+
+  return 0;
+}
