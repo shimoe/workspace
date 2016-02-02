@@ -69,8 +69,8 @@ Discarded input sections
  .debug_macro   0x00000000      0x7b7 ./src/gpio.o
  .debug_macro   0x00000000      0x115 ./src/gpio.o
  .debug_macro   0x00000000       0x22 ./src/gpio.o
- .debug_line    0x00000000      0x26f ./src/gpio.o
- .debug_str     0x00000000     0x71e2 ./src/gpio.o
+ .debug_line    0x00000000      0x2ad ./src/gpio.o
+ .debug_str     0x00000000     0x7201 ./src/gpio.o
  .comment       0x00000000       0x71 ./src/gpio.o
  .debug_frame   0x00000000       0xd0 ./src/gpio.o
  .ARM.attributes
@@ -117,8 +117,8 @@ Discarded input sections
  .debug_macro   0x00000000      0x115 ./src/ixbus.o
  .debug_macro   0x00000000       0x1c ./src/ixbus.o
  .debug_macro   0x00000000       0xac ./src/ixbus.o
- .debug_line    0x00000000      0x2a2 ./src/ixbus.o
- .debug_str     0x00000000     0x7cde ./src/ixbus.o
+ .debug_line    0x00000000      0x2e0 ./src/ixbus.o
+ .debug_str     0x00000000     0x7cfd ./src/ixbus.o
  .comment       0x00000000       0x71 ./src/ixbus.o
  .debug_frame   0x00000000       0x98 ./src/ixbus.o
  .ARM.attributes
@@ -175,8 +175,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x22 ./src/main.o
  .debug_macro   0x00000000       0x1c ./src/main.o
  .debug_macro   0x00000000       0xac ./src/main.o
- .debug_line    0x00000000      0x2b2 ./src/main.o
- .debug_str     0x00000000     0x743a ./src/main.o
+ .debug_line    0x00000000      0x2f0 ./src/main.o
+ .debug_str     0x00000000     0x7459 ./src/main.o
  .comment       0x00000000       0x71 ./src/main.o
  .debug_frame   0x00000000      0x17c ./src/main.o
  .ARM.attributes
@@ -260,8 +260,8 @@ Discarded input sections
  .debug_macro   0x00000000      0x115 ./src/vs-wrc103.o
  .debug_macro   0x00000000       0x22 ./src/vs-wrc103.o
  .debug_macro   0x00000000       0x1c ./src/vs-wrc103.o
- .debug_line    0x00000000      0x57b ./src/vs-wrc103.o
- .debug_str     0x00000000     0x7f0c ./src/vs-wrc103.o
+ .debug_line    0x00000000      0x5b9 ./src/vs-wrc103.o
+ .debug_str     0x00000000     0x7f2b ./src/vs-wrc103.o
  .comment       0x00000000       0x71 ./src/vs-wrc103.o
  .debug_frame   0x00000000      0x284 ./src/vs-wrc103.o
  .ARM.attributes
@@ -282,7 +282,7 @@ LOAD ./src/gpio.o
 LOAD ./src/ixbus.o
 LOAD ./src/main.o
 LOAD ./src/vs-wrc103.o
-LOAD C:/nxp/workspace/kirakira/lib\libCMSISv1p30_LPC13xx.a
+LOAD C:/nxp/LPCXpresso_7.9.2_493/workspace/workspace/kirakira/lib\libCMSISv1p30_LPC13xx.a
 START GROUP
 LOAD c:/nxp/lpcxpresso_7.9.2_493/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libcr_semihost.a
 LOAD c:/nxp/lpcxpresso_7.9.2_493/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a

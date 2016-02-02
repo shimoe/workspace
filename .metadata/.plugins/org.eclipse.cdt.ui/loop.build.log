@@ -1,6 +1,9 @@
-10:51:13 **** Build of configuration Debug for project loop ****
+18:33:23 **** Build of configuration Debug for project loop ****
 make all 
-make: `all' に対して行うべき事はありません.
+Cannot run program "make": Launching failed
 
-10:51:13 Build Finished (took 66ms)
+Error: Program "make" not found in PATH
+PATH=[C:/nxp/LPCXpresso_7.9.2_493/lpcxpresso/jre/bin/client;C:/nxp/LPCXpresso_7.9.2_493/lpcxpresso/jre/bin;C:/nxp/LPCXpresso_7.9.2_493/lpcxpresso/jre/lib/i386;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\ProgramData\Lenovo\ReadyApps;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files (x86)\Skype\Phone\;C:\nxp\LPCXpresso_7.9.2_493\lpcxpresso;]
+
+18:33:23 Build Finished (took 56ms)
 
