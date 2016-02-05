@@ -1,0 +1,23 @@
+21:50:52 **** Incremental Build of configuration Debug for project robocar_shimoe ****
+make -r all 
+Building file: ../src/main.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__USE_CMSIS=CMSISv1p30_LPC13xx -DDEBUG -D__CODE_RED -D__REDLIB__ -I"C:/nxp/LPCXpresso_7.9.2_493/workspace/workspace/robocar_shimoe/inc" -I"C:/nxp/LPCXpresso_7.9.2_493/workspace/workspace/robocar_shimoe/lib" -O0 -Os -mword-relocations -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/main.d" -MT"src/main.o" -MT"src/main.d" -o"src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building target: robocar_shimoe.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"C:/nxp/LPCXpresso_7.9.2_493/workspace/workspace/robocar_shimoe/lib" -Xlinker --gc-sections -Xlinker -Map=robocar_shimoe.map -mcpu=cortex-m3 -mthumb -T "../Debug/vs-wrc103lv_Debug.ld" -o "robocar_shimoe.axf"  ./src/cr_startup_lpc13.o ./src/gpio.o ./src/ixbus.o ./src/main.o ./src/vs-wrc103.o   -lCMSISv1p30_LPC13xx
+Finished building target: robocar_shimoe.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size robocar_shimoe.axf; arm-none-eabi-size robocar_shimoe.axf; arm-none-eabi-objcopy -O binary robocar_shimoe.axf robocar_shimoe.bin; checksum robocar_shimoe.bin;
+   text	   data	    bss	    dec	    hex	filename
+   4013	      0	    498	   4511	   119f	robocar_shimoe.axf
+   text	   data	    bss	    dec	    hex	filename
+   4013	      0	    498	   4511	   119f	robocar_shimoe.axf
+ 
+
+21:50:53 Build Finished (took 1s.147ms)
+

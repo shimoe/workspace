@@ -1,0 +1,125 @@
+#include <stdlib.h>
+#include "LPC13xx.h"
+#include "gpio.h"
+#include "vs-wrc103.h"
+#include "ixbus.h"
+
+#define SLOW 3000
+#define FAST 12000
+
+#define GET_SENSOR(lim) ((((ADRead(0) > lim.left) << 1) | (ADRead(1) > lim.right)) & 0x03)
+#define MTR_RUN_LV(ptr) Mtr_Run_lv(ptr.right, -ptr.left, 0, 0, 0, 0)
+
+typedef struct seq_t {
+  const enum mode {
+    PINCH,   /* pinch black line, box */
+    EDGE_R,  /* right edge, box */
+    EDGE_L,  /* left edge, box */
+    PASS,    /* pass through */
+    PIVOT_R, /* pivot turn right */
+    PIVOT_L, /* pivot turn left */
+  } mode;
+  const enum flag {
+    NEITHER, /* until neither of the sensor says black */
+    RIGHT,   /* until right sensor says black */
+    LEFT,    /* until left sensor says black */
+    BOTH,    /* until both of the sensor says black  */
+  } flag;
+} seq_t;
+
+typedef struct BeautoRover {
+  unsigned int proc;
+  struct lr_t {
+    int left, right;
+  } lim, act[7][4];
+  const seq_t* seq;
+} BeautoRover;
+
+
+BeautoRover beautoRoverCtor(const seq_t* ptr) {
+  BeautoRover obj = {
+    .act = {
+      {{ FAST,  FAST}, { FAST,  SLOW}, { SLOW,  FAST}, { FAST,  FAST}},
+      {{ SLOW,  FAST}, { FAST,  SLOW}, { SLOW,  FAST}, { FAST,  SLOW}},
+      {{ FAST,  SLOW}, { FAST,  SLOW}, { SLOW,  FAST}, { SLOW,  FAST}},
+      {{ FAST,  FAST}, { SLOW,  FAST}, { FAST,  SLOW}, { FAST,  FAST}},
+      {{ FAST, -FAST}, { FAST, -FAST}, { FAST, -FAST}, { FAST, -FAST}},
+      {{-FAST,  FAST}, {-FAST,  FAST}, {-FAST,  FAST}, {-FAST,  FAST}},
+      {{ SLOW/2,  FAST/2}, { FAST/2,  SLOW/2}, { SLOW/2,  FAST/2}, { FAST/2,  SLOW/2}},
+    },
+    .seq = ptr,
+  };
+  return obj;
+}
+
+void beautoRoverRun(const BeautoRover* this) {
+  int sensor;
+  while ((sensor = GET_SENSOR(this->lim)) != this->seq[this->proc].flag) {
+    LED(sensor);
+    MTR_RUN_LV(this->act[this->seq[this->proc].mode][sensor]);
+  }
+}
+
+int main(void) {
+  static int sensor, i = 0;
+  const unsigned short MainCycle = 60;
+  Init(MainCycle);
+
+  const seq_t seqence[] = {
+    /* until GrayBox#1 */
+    {PINCH, BOTH}, {PASS, NEITHER},
+    {PINCH, BOTH}, {PASS, NEITHER},
+    {PINCH, BOTH}, {PASS, NEITHER},
+    {PINCH, BOTH},
+
+    /* while GrayBox#1 */
+    {6, RIGHT}, //{EDGE_R, RIGHT},
+
+    /* turn left "T" intersection */
+    {PINCH, BOTH}, {PASS, NEITHER}, {PIVOT_L, RIGHT},
+
+    /* until GrayBox#2 */
+    {PINCH, BOTH}, {PASS, NEITHER}, {PINCH, BOTH},
+
+    /* while GrayBox#2 */
+    {6, RIGHT}, //{EDGE_R, RIGHT},
+
+    /* until U-TurnBox */
+    {PINCH, BOTH}, {PASS, NEITHER}, {PINCH, BOTH},
+
+    /* while U-TurnBox */
+    {EDGE_L, LEFT},
+
+    /* turn left intersection */
+    {EDGE_R, BOTH}, {PIVOT_L, NEITHER}, {EDGE_L, LEFT},
+    {EDGE_R, BOTH}, {PIVOT_L, NEITHER}, {EDGE_L, LEFT},
+
+    /* go pass "|-" intersection */
+    {EDGE_L, BOTH}, {PINCH, NEITHER},
+
+    /* GoalBox */
+    {EDGE_L, BOTH}, {PINCH, NEITHER},
+
+    /* end flag */
+    {-1, -EXIT_SUCCESS}
+  };
+
+  BeautoRover rover = beautoRoverCtor(seqence);
+
+  while (!getSW()) LED(0x01);
+  while (getSW()) {
+    LED(0x02);
+    rover.lim.left = (rover.lim.left + ADRead(0)) /2;
+    rover.lim.right = (rover.lim.right + ADRead(1)) /2;
+  }
+  while (!getSW()) LED(0x03);
+
+  for (; rover.seq[rover.proc].flag != -EXIT_SUCCESS; rover.proc++)
+    while ((sensor = GET_SENSOR(rover.lim)) != rover.seq[rover.proc].flag) {
+      if (rover.seq[rover.proc].mode == 6) LED((++i)%3);
+      else LED(sensor);
+      MTR_RUN_LV(rover.act[rover.seq[rover.proc].mode][sensor]);
+    }
+
+  return EXIT_SUCCESS;
+}

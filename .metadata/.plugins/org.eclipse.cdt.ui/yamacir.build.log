@@ -1,0 +1,23 @@
+22:08:45 **** Incremental Build of configuration Debug for project yamacir ****
+make -r all 
+Building file: ../src/main.c
+Invoking: MCU C Compiler
+arm-none-eabi-gcc -D__USE_CMSIS=CMSISv1p30_LPC13xx -DDEBUG -D__CODE_RED -D__REDLIB__ -I"C:/nxp/LPCXpresso_7.9.2_493/workspace/workspace/yamacir/inc" -I"C:/nxp/LPCXpresso_7.9.2_493/workspace/workspace/yamacir/lib" -O0 -Os -mword-relocations -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections -mcpu=cortex-m3 -mthumb -D__REDLIB__ -specs=redlib.specs -MMD -MP -MF"src/main.d" -MT"src/main.o" -MT"src/main.d" -o"src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building target: yamacir.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"C:/nxp/LPCXpresso_7.9.2_493/workspace/workspace/yamacir/lib" -Xlinker --gc-sections -Xlinker -Map=yamacir.map -mcpu=cortex-m3 -mthumb -T "../Debug/vs-wrc103lv_Debug.ld" -o "yamacir.axf"  ./src/cr_startup_lpc13.o ./src/gpio.o ./src/ixbus.o ./src/main.o ./src/vs-wrc103.o   -lCMSISv1p30_LPC13xx
+Finished building target: yamacir.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size yamacir.axf; arm-none-eabi-size yamacir.axf; arm-none-eabi-objcopy -O binary yamacir.axf yamacir.bin; checksum yamacir.bin;
+   text	   data	    bss	    dec	    hex	filename
+   3535	      0	    498	   4033	    fc1	yamacir.axf
+   text	   data	    bss	    dec	    hex	filename
+   3535	      0	    498	   4033	    fc1	yamacir.axf
+ 
+
+22:08:46 Build Finished (took 1s.7ms)
+
