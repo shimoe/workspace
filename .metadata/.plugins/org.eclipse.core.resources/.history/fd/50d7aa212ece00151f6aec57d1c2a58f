@@ -16,7 +16,7 @@ typedef struct lr_t {
 
 typedef struct seq_t {
   const enum order {
-    PINCH,   /* pinch black line, box */
+    PINCH = 1,   /* pinch black line, box */
     EDGE_R,  /* right edge, box */
     EDGE_L,  /* left edge, box */
     PASS,    /* pass through */
@@ -59,7 +59,7 @@ BeautoRover beautoRoverCtor(const seq_t* script) {
 
 int beautoRoverRun(BeautoRover* this) {
   int order, flag;
-  for (this->proc = 0; (order = this->seq[this->proc].order) != -1; this->proc++)
+  for (this->proc = 0; (order = this->seq[this->proc].order) != EXIT_SUCCESS; this->proc++)
     while ((this->sensor = GET_SENSOR(this->lim)) != (flag = this->seq[this->proc].flag)) {
       if (order == FUNC) this->seq[this->proc].func((void*)this->sensor);
       else MTR_RUN_LV(this->act[order][this->sensor]);
@@ -109,7 +109,7 @@ const seq_t script[] = {
   /* GoalBox */
   {EDGE_L, BOTH}, {PINCH, NEITHER},
 
-  {-1}
+  {EXIT_SUCCESS}
 };
 
 int main(void) {

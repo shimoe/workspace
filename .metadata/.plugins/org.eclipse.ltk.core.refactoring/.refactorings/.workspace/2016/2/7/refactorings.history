@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Delete resource &apos;robocar_shimoe/Debug/robocar.bin&apos;" deleteContents="false" description="Delete resource &apos;robocar_shimoe/Debug/robocar.bin&apos;" element1="/robocar_shimoe/Debug/robocar.bin" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1454909035055"/>&#x0A;<refactoring comment="Delete resource &apos;robocar_shimoe/Debug/robocar.map&apos;" deleteContents="false" description="Delete resource &apos;robocar_shimoe/Debug/robocar.map&apos;" element1="/robocar_shimoe/Debug/robocar.map" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1454909039685"/>
+</session>

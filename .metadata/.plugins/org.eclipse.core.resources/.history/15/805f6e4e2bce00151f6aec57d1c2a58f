@@ -165,14 +165,8 @@ void Turn(int mode){
 
       if(left < scale && right < scale){
     LED(LED_G);
-    while(1){
-    	if(ADRead(SENSOR_R) < scale) break;
-    	MtrRunlv(-POWER,POWER);
-    }
-	while(1){
-		if(ADRead(SENSOR_R) > scale) break;
-		MtrRunlv(-POWER,POWER);
-	}
+    while(ADRead(SENSOR_R) < scale) MtrRunlv(-POWER,POWER);
+	while(ADRead(SENSOR_R) > scale) MtrRunlv(-POWER,POWER);
 	LED(LED_O);
 	count++;
 	break;
@@ -196,7 +190,7 @@ void LookBack1(void){
     if(left < scale){
       while(1){
 	MtrRunlv(POWER,-POWER);
-	if(ADRead(SENSOR_L) > scale) break;
+	if(ADRead(SENSOR_R) > scale) break;
       }
       while(1){
 	left = ADRead(SENSOR_L);
@@ -206,7 +200,7 @@ void LookBack1(void){
     	  break;
 	}
 
-	if(left < scale) MtrRunlv(POWER,0);
+	if(right < scale) MtrRunlv(POWER,0);
 	else MtrRunlv(0,POWER);
       }
       break;
