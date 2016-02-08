@@ -23,7 +23,7 @@
   function prototype
   ------------------------------------------------*/
 void RunOneSide(int side,int sensor);
-void Run();
+void Run(int left,int right);
 int Sensor(int var);
 void AcrossBlack(int side);
 void MtrRunlv(int left,int right);
@@ -50,14 +50,14 @@ int main(void){
 
   int left,right,var1,var2;
 
-//  while(getSW() == 0) LED(LED_D);
-//  while(getSW() == 1){
-//	  LED(LED_G);
-//	  scale = ADRead(SENSOR_L);
-//  }
-//
-//  while(getSW() == 0) LED(LED_O);
-//  while(getSW() == 1) LED(LED_N);
+  //  while(getSW() == 0) LED(LED_D);
+  //  while(getSW() == 1){
+  //	  LED(LED_G);
+  //	  scale = ADRead(SENSOR_L);
+  //  }
+  //
+  //  while(getSW() == 0) LED(LED_O);
+  //  while(getSW() == 1) LED(LED_N);
 
   scale = GRAY;
 
@@ -82,14 +82,21 @@ void RunOneSide(int side,int sensor){
   case 0:
     if(sensor > scale) MtrRunlv(POWER-DIFF,POWER+DIFF);
     else MtrRunlv(POWER+DIFF,POWER-DIFF);
-  break;
+    break;
 
- case 1:
-   if(sensor > scale) MtrRunlv(POWER+DIFF,POWER-DIFF);
-   else MtrRunlv(POWER-DIFF,POWER+DIFF);
-   break;
- default: MtrRunlv(0,0); break;
+  case 1:
+    if(sensor > scale) MtrRunlv(POWER+DIFF,POWER-DIFF);
+    else MtrRunlv(POWER-DIFF,POWER+DIFF);
+    break;
+
+  default: MtrRunlv(0,0); break;
+  }
 }
+
+void Run(int left,int right){
+    if(left < scale && right > scale) MtrRunlv(POWER,-POWER);
+    else if(left > scale && right < scale) MtrRunlv(-POWER,POWER);
+    else MtrRunlv(POWER,POWER);
 }
 
 int Sensor(int var){
@@ -98,26 +105,17 @@ int Sensor(int var){
 }
 
 void AcrossBlack(int side){
-	while(1){
-//		switch(side){
-//		case 0:
-//			while(ADRead(SENSOR_R) > GRAY) MtrRunlv(DIFF,POWER);
-//			break;
-//
-//		case 1:
-//			while(ADRead(SENSOR_L) > GRAY) MtrRunlv(POWER,DIFF);
-//			break;
-//		}
-		if(ADRead(SENSOR_L) < GRAY || ADRead(SENSOR_R) < GRAY){
-		count++;
-		break;
-		}
-		MtrRunlv(POWER,POWER);
-	}
+  while(1){
+    if(ADRead(SENSOR_L) < GRAY || ADRead(SENSOR_R) < GRAY){
+      count++;
+      break;
+    }
+    MtrRunlv(POWER,POWER);
+  }
 }
 
 void MtrRunlv(int left,int right){
-	Mtr_Run_lv(right,-left,0,0,0,0);
+  Mtr_Run_lv(right,-left,0,0,0,0);
 }
 
 void AcrossGray(void){
@@ -126,116 +124,103 @@ void AcrossGray(void){
   int left,right;
 
   while(1){
-		left = ADRead(SENSOR_L);
-		right = ADRead(SENSOR_R);
+    left = ADRead(SENSOR_L);
+    right = ADRead(SENSOR_R);
 
     if(left < scale && right < scale){
       count++;
       break;
     }
     if(right > scale){
-    	LED(LED_G);
+      LED(LED_G);
       MtrRunlv((int)((POWER + DIFF)/2),(int)((POWER - DIFF)/2));
     } else{
-    	LED(LED_O);
+      LED(LED_O);
       MtrRunlv((int)((POWER - DIFF)/2),(int)((POWER + DIFF)/2));
     }
   }
 }
 
 void Turn(int mode){
+  int left,right;
   switch(mode){
   case 4:
-	AcrossBlack(SENSOR_R);
+    AcrossBlack(SENSOR_R);
     while(ADRead(SENSOR_R) < scale){
-    	MtrRunlv(-POWER,POWER);
+      MtrRunlv(-POWER,POWER);
     }
     break;
 
+  case 9:
   case 10:
-	  while(ADRead(SENSOR_L) < scale) MtrRunlv(-POWER,POWER);
+    while(1){
+      left = ADRead(SENSOR_L);
+      right = ADRead(SENSOR_R);
 
+      if(left < scale && right < scale){
+	while(ADRead(SENSOR_L) < scale) MtrRunlv(-POWER,POWER);
+	while(ADRead(SENSOR_L) > scale) MtrRunlv(-POWER,POWER);
+	count++;
+	break;
+      }
+      else if(left < scale && right > scale) MtrRunlv(POWER,0);
+      else if(left > scale && right < scale) MtrRunlv(0,POWER);
+      else MtrRunlv(POWER,POWER);
+    }
 
     break;
 
 
-}
+  }
 }
 
-void Run(void){
-	int left,right,va1,var2;
-
-	while(1){
-		left = ADRead(SENSOR_L);
-		right = ADRead(SENSOR_R);
-	if(left < scale && right < scale){
-		MtrRunlv(POWER,POWER);
-	}
-	else if(left < scale && right > scale){
-		MtrRunlv(POWER,0);
-	}
-	else if(left > scale && right < scale){
-		MtrRunlv(0,POWER);
-	}
-	else{
-		count++;
-		break;
-	}
-	}
-
-}
 void LookBack1(void){
-	int left,right;
+  int left,right;
 
   while(1){
-	  left = ADRead(SENSOR_L);
-	  right = ADRead(SENSOR_R);
+    left = ADRead(SENSOR_L);
+    right = ADRead(SENSOR_R);
 
     RunOneSide(SENSOR_R,right);
     if(left < scale){
       while(1){
-    	  MtrRunlv(POWER,-POWER);
-    	  if(ADRead(SENSOR_R) > scale) break;
+	MtrRunlv(POWER,-POWER);
+	if(ADRead(SENSOR_R) > scale) break;
       }
       while(1){
-    	  left = ADRead(SENSOR_L);
-   	  	  right = ADRead(SENSOR_R);
-      if((Sensor(left) +(Sensor(right))) < 2){
+	left = ADRead(SENSOR_L);
+	right = ADRead(SENSOR_R);
+	if((Sensor(left) +(Sensor(right))) < 2){
     	  count++;
     	  break;
-      	 }
+	}
 
-      if(right < scale) MtrRunlv(POWER,0);
-      else MtrRunlv(0,POWER);
-       }
-      break;
+	if(right < scale) MtrRunlv(POWER,0);
+	else MtrRunlv(0,POWER);
       }
+      break;
     }
   }
-
-void AcrossT(void){
-  while(ADRead(SENSOR_L) > scale) RunOneSide(SENSOR_L,ADRead(SENSOR_L));
-  count++;
 }
 
 void Goal(void){
-	int left,right;
-	LED(LED_D);
-	while(ADRead(SENSOR_R) > scale) MtrRunlv(POWER,POWER);
-	while(ADRead(SENSOR_L) < scale) MtrRunlv(POWER,-POWER);
-while(1){
-	left = ADRead(SENSOR_L);
-	right = ADRead(SENSOR_R);
+  int left,right;
+  LED(LED_D);
+  while(ADRead(SENSOR_R) > scale) MtrRunlv(POWER,POWER);
+  while(ADRead(SENSOR_L) < scale) MtrRunlv(POWER,-POWER);
+  while(1){
+    left = ADRead(SENSOR_L);
+    right = ADRead(SENSOR_R);
 
-	if(left > scale && right > scale){
-		MtrRunlv(POWER,POWER);
-		Wait(GOALTIME);
-		while(1) MtrRunlv(0,0);
-	}
+    if(left > scale && right > scale){
+      MtrRunlv(POWER,POWER);
+      Wait(GOALTIME);
+      while(1) MtrRunlv(0,0);
+    }
 
-	if(left > scale) MtrRunlv(POWER - DIFF,POWER + DIFF);
-	else MtrRunlv(POWER + DIFF,POWER - DIFF);
-	}
+    if(left > scale) MtrRunlv(POWER - DIFF,POWER + DIFF);
+    else MtrRunlv(POWER + DIFF,POWER - DIFF);
+  }
 }
 
 void Action(int mode,int left,int right,int var1,int var2){
@@ -244,7 +229,7 @@ void Action(int mode,int left,int right,int var1,int var2){
   case 1:
   case 2:
   case 7:
-	LED(LED_G);
+    LED(LED_G);
     BuzzerStop();
     RunOneSide(SENSOR_L,left);
     if((var1 + var2) < 2) AcrossBlack(SENSOR_L);
@@ -252,53 +237,49 @@ void Action(int mode,int left,int right,int var1,int var2){
 
   case 3:
   case 6:
-	LED(LED_D);
+    LED(LED_D);
     RunOneSide(SENSOR_L,left);
     if((var1 + var2) < 2) AcrossGray();
     break;
 
   case 4:
-	LED(LED_N);
+    LED(LED_N);
     BuzzerStop();
     RunOneSide(SENSOR_L,left);
     if((var1 + var2) < 2) Turn(count);
     break;
 
   case 5:
-	LED(LED_O);
-	RunOneSide(SENSOR_R,right);
-	if((var1 + var2) < 2) AcrossBlack(SENSOR_R);
-	break;
+    LED(LED_O);
+    RunOneSide(SENSOR_R,right);
+    if((var1 + var2) < 2) AcrossBlack(SENSOR_R);
+    break;
 
 
   case 8:
-	LED(LED_D);
+    LED(LED_D);
     RunOneSide(SENSOR_L,left);
     if((var1 + var2) < 2) LookBack1();
     break;
 
   case 9:
-	LED(LED_O);
-	if(var2 > 2) MtrRunlv(0,POWER);
-	if((var1 + var2) > 2) Run();
+  case 10:
+    if(count == 9) LED(LED_O);
+    else LED(LED_N);
+    Run(left,right);
+    if((var1 + var2) < 2) Turn;
     break;
 
-  case 10:
-	  LED(LED_N);
-	  if((var1 + var2) < 2) MtrRunlv(POWER,POWER);
-	  else Turn(count);
-	  break;
-
   case 11:
-	  LED(LED_G);
+    LED(LED_G);
     RunOneSide(SENSOR_L,left);
-    if(var2 < 2) AcrossT();
+    if(var2 < 2) count++;
     break;
 
   case 12:
-	LED(LED_N);
-    RunOneSide(SENSOR_L,left);
-    if(var2 < 2)  Goal();
+    LED(LED_N);
+    Run(left,right);
+    if((var1 + var2) < 2) Goal();
     break;
   }
 }
