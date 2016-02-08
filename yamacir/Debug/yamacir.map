@@ -109,15 +109,14 @@ Discarded input sections
  .group         0x00000000        0x8 ./src/main.o
  .group         0x00000000        0x8 ./src/main.o
  .group         0x00000000        0x8 ./src/main.o
- .group         0x00000000        0x8 ./src/main.o
  .text          0x00000000        0x0 ./src/main.o
  .data          0x00000000        0x0 ./src/main.o
  .bss           0x00000000        0x0 ./src/main.o
  .debug_macro   0x00000000      0x87a ./src/main.o
- .debug_macro   0x00000000       0x10 ./src/main.o
- .debug_macro   0x00000000      0x12d ./src/main.o
  .debug_macro   0x00000000       0x1c ./src/main.o
  .debug_macro   0x00000000       0x22 ./src/main.o
+ .debug_macro   0x00000000       0x10 ./src/main.o
+ .debug_macro   0x00000000      0x12d ./src/main.o
  .debug_macro   0x00000000      0x5b2 ./src/main.o
  .debug_macro   0x00000000      0x7b7 ./src/main.o
  .debug_macro   0x00000000      0x115 ./src/main.o
@@ -137,7 +136,6 @@ Discarded input sections
  .data          0x00000000        0x0 ./src/vs-wrc103.o
  .text.getMainCycle
                 0x00000000        0xc ./src/vs-wrc103.o
- .text.Sync     0x00000000       0x58 ./src/vs-wrc103.o
  .text.getSW    0x00000000       0x12 ./src/vs-wrc103.o
  .text.PadWait  0x00000000        0xe ./src/vs-wrc103.o
  .text.Ds2rw    0x00000000       0x78 ./src/vs-wrc103.o
@@ -147,7 +145,6 @@ Discarded input sections
  .text.updatePAD
                 0x00000000       0x60 ./src/vs-wrc103.o
  .text.getPAD   0x00000000       0x14 ./src/vs-wrc103.o
- .text.Wait     0x00000000       0x20 ./src/vs-wrc103.o
  .text.BuzzerSet
                 0x00000000       0x10 ./src/vs-wrc103.o
  .text.BuzzerStart
@@ -217,7 +214,7 @@ END GROUP
                 0x00008000                __top_FlashMap = 0x8000
                 0x10002000                __top_RamLoc8 = 0x10002000
 
-.text           0x00000000      0xdcd
+.text           0x00000000      0xee5
  *(.isr_vector)
  .isr_vector    0x00000000      0x124 ./src/cr_startup_lpc13.o
                 0x00000000                g_pfnVectors
@@ -278,107 +275,113 @@ END GROUP
                 0x00000268      0x190 ./src/ixbus.o
                 0x00000268                I2C_IRQHandler
  .text.runGrayBox
-                0x000003f8       0x3c ./src/main.o
+                0x000003f8       0x48 ./src/main.o
                 0x000003f8                runGrayBox
+ .text.cutGoalTape
+                0x00000440       0x28 ./src/main.o
+                0x00000440                cutGoalTape
  .text.beautoRoverCtor
-                0x00000434       0x24 ./src/main.o
-                0x00000434                beautoRoverCtor
+                0x00000468       0x24 ./src/main.o
+                0x00000468                beautoRoverCtor
  .text.beautoRoverRun
-                0x00000458       0x72 ./src/main.o
-                0x00000458                beautoRoverRun
- *fill*         0x000004ca        0x2 
+                0x0000048c       0x94 ./src/main.o
+                0x0000048c                beautoRoverRun
  .text.startup.main
-                0x000004cc       0x1c ./src/main.o
-                0x000004cc                main
+                0x00000520       0x20 ./src/main.o
+                0x00000520                main
+ .text.Sync     0x00000540       0x58 ./src/vs-wrc103.o
+                0x00000540                Sync
  .text.Mtr_Run_lv
-                0x000004e8       0xb8 ./src/vs-wrc103.o
-                0x000004e8                Mtr_Run_lv
+                0x00000598       0xb8 ./src/vs-wrc103.o
+                0x00000598                Mtr_Run_lv
  .text.Timer32Init
-                0x000005a0       0x3c ./src/vs-wrc103.o
-                0x000005a0                Timer32Init
+                0x00000650       0x3c ./src/vs-wrc103.o
+                0x00000650                Timer32Init
  .text.Timer16Init
-                0x000005dc       0x64 ./src/vs-wrc103.o
-                0x000005dc                Timer16Init
- .text.ADCInit  0x00000640       0x2c ./src/vs-wrc103.o
-                0x00000640                ADCInit
- .text.Init     0x0000066c      0x278 ./src/vs-wrc103.o
-                0x0000066c                Init
- .text.ADRead   0x000008e4       0x70 ./src/vs-wrc103.o
-                0x000008e4                ADRead
- .text.LED      0x00000954       0x26 ./src/vs-wrc103.o
-                0x00000954                LED
- *fill*         0x0000097a        0x2 
+                0x0000068c       0x64 ./src/vs-wrc103.o
+                0x0000068c                Timer16Init
+ .text.ADCInit  0x000006f0       0x2c ./src/vs-wrc103.o
+                0x000006f0                ADCInit
+ .text.Init     0x0000071c      0x278 ./src/vs-wrc103.o
+                0x0000071c                Init
+ .text.ADRead   0x00000994       0x70 ./src/vs-wrc103.o
+                0x00000994                ADRead
+ .text.LED      0x00000a04       0x26 ./src/vs-wrc103.o
+                0x00000a04                LED
+ *fill*         0x00000a2a        0x2 
+ .text.Wait     0x00000a2c       0x20 ./src/vs-wrc103.o
+                0x00000a2c                Wait
  .text.TIMER32_0_IRQHandler
-                0x0000097c       0x80 ./src/vs-wrc103.o
-                0x0000097c                TIMER32_0_IRQHandler
+                0x00000a4c       0x80 ./src/vs-wrc103.o
+                0x00000a4c                TIMER32_0_IRQHandler
  .text.IntEncoder
-                0x000009fc       0xa0 ./src/vs-wrc103.o
-                0x000009fc                IntEncoder
+                0x00000acc       0xa0 ./src/vs-wrc103.o
+                0x00000acc                IntEncoder
  .text.PIOINT0_IRQHandler
-                0x00000a9c        0x4 ./src/vs-wrc103.o
-                0x00000a9c                PIOINT0_IRQHandler
+                0x00000b6c        0x4 ./src/vs-wrc103.o
+                0x00000b6c                PIOINT0_IRQHandler
  .text.PIOINT1_IRQHandler
-                0x00000aa0        0x4 ./src/vs-wrc103.o
-                0x00000aa0                PIOINT1_IRQHandler
+                0x00000b70        0x4 ./src/vs-wrc103.o
+                0x00000b70                PIOINT1_IRQHandler
  .text.PIOINT2_IRQHandler
-                0x00000aa4        0x4 ./src/vs-wrc103.o
-                0x00000aa4                PIOINT2_IRQHandler
+                0x00000b74        0x4 ./src/vs-wrc103.o
+                0x00000b74                PIOINT2_IRQHandler
  .text.SystemInit
-                0x00000aa8       0xe0 C:/nxp/LPCXpresso_7.9.2_493/workspace/workspace/yamacir/lib\libCMSISv1p30_LPC13xx.a(system_LPC13xx.o)
-                0x00000aa8                SystemInit
- .text.memset   0x00000b88        0x4 c:/nxp/lpcxpresso_7.9.2_493/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(memset.o)
-                0x00000b88                memset
+                0x00000b78       0xe0 C:/nxp/LPCXpresso_7.9.2_493/workspace/workspace/yamacir/lib\libCMSISv1p30_LPC13xx.a(system_LPC13xx.o)
+                0x00000b78                SystemInit
+ .text.memset   0x00000c58        0x4 c:/nxp/lpcxpresso_7.9.2_493/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(memset.o)
+                0x00000c58                memset
  .text.__aeabi_memset_lowlevel
-                0x00000b8c       0x32 c:/nxp/lpcxpresso_7.9.2_493/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libcr_eabihelpers.a(memcpy.o)
-                0x00000b8c                __aeabi_lowlevel_memset
+                0x00000c5c       0x32 c:/nxp/lpcxpresso_7.9.2_493/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libcr_eabihelpers.a(memcpy.o)
+                0x00000c5c                __aeabi_lowlevel_memset
  *(.rodata*)
- *fill*         0x00000bbe        0x2 
- .rodata        0x00000bc0      0x1d0 ./src/main.o
-                0x00000be0                preset
-                0x00000ca0                script
- .rodata        0x00000d90       0x3d ./src/vs-wrc103.o
-                0x00000dbd                enctbl
+ *fill*         0x00000c8e        0x2 
+ .rodata        0x00000c90      0x218 ./src/main.o
+                0x00000c90                preset
+                0x00000d90                script
+ .rodata        0x00000ea8       0x3d ./src/vs-wrc103.o
+                0x00000ed5                enctbl
 
-.glue_7         0x00000dd0        0x0
+.glue_7         0x00000ee8        0x0
  .glue_7        0x00000000        0x0 linker stubs
 
-.glue_7t        0x00000dd0        0x0
+.glue_7t        0x00000ee8        0x0
  .glue_7t       0x00000000        0x0 linker stubs
 
-.vfp11_veneer   0x00000dd0        0x0
+.vfp11_veneer   0x00000ee8        0x0
  .vfp11_veneer  0x00000000        0x0 linker stubs
 
-.v4_bx          0x00000dd0        0x0
+.v4_bx          0x00000ee8        0x0
  .v4_bx         0x00000000        0x0 linker stubs
 
-.iplt           0x00000dd0        0x0
+.iplt           0x00000ee8        0x0
  .iplt          0x00000000        0x0 ./src/cr_startup_lpc13.o
 
-.rel.dyn        0x00000dd0        0x0
+.rel.dyn        0x00000ee8        0x0
  .rel.iplt      0x00000000        0x0 ./src/cr_startup_lpc13.o
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x00000dd0                __exidx_start = .
+                0x00000ee8                __exidx_start = .
 
 .ARM.exidx
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-                0x00000dd0                __exidx_end = .
-                0x00000dd0                _etext = .
+                0x00000ee8                __exidx_end = .
+                0x00000ee8                _etext = .
 
 .cmap
  *(.Const_Map*)
 
-.data           0x10000000        0x0 load address 0x00000dcd
+.data           0x10000000        0x0 load address 0x00000ee5
                 0x10000000                _data = .
  *(vtable)
  *(.data*)
                 0x10000000                _edata = .
 
-.igot.plt       0x10000000        0x0 load address 0x00000dcd
+.igot.plt       0x10000000        0x0 load address 0x00000ee5
  .igot.plt      0x00000000        0x0 ./src/cr_startup_lpc13.o
 
-.bss            0x10000000      0x1ea load address 0x00000dcd
+.bss            0x10000000      0x1ea load address 0x00000ee5
                 0x10000000                _bss = .
  *(.bss*)
  .bss           0x10000000       0x6c ./src/ixbus.o
@@ -416,38 +419,38 @@ END GROUP
                 0x100001e8                MainCnt
                 0x100001ea                _ebss = .
 
-.cr_heap        0x100001ea        0x0 load address 0x00000dcd
+.cr_heap        0x100001ea        0x0 load address 0x00000ee5
                 0x100001ea                end = .
                 0x100001ea                _pvHeapStart = .
                 0x10002000                _vRamTop = __top_RamLoc8
                 0x10002000                _vStackTop = (_vRamTop - 0x0)
 OUTPUT(yamacir.axf elf32-littlearm)
 
-.debug_info     0x00000000     0x399d
+.debug_info     0x00000000     0x3a39
  .debug_info    0x00000000      0x1fe ./src/cr_startup_lpc13.o
  .debug_info    0x000001fe      0x3c7 ./src/gpio.o
  .debug_info    0x000005c5      0xcfe ./src/ixbus.o
- .debug_info    0x000012c3      0x522 ./src/main.o
- .debug_info    0x000017e5     0x1c68 ./src/vs-wrc103.o
- .debug_info    0x0000344d      0x550 C:/nxp/LPCXpresso_7.9.2_493/workspace/workspace/yamacir/lib\libCMSISv1p30_LPC13xx.a(system_LPC13xx.o)
+ .debug_info    0x000012c3      0x5be ./src/main.o
+ .debug_info    0x00001881     0x1c68 ./src/vs-wrc103.o
+ .debug_info    0x000034e9      0x550 C:/nxp/LPCXpresso_7.9.2_493/workspace/workspace/yamacir/lib\libCMSISv1p30_LPC13xx.a(system_LPC13xx.o)
 
-.debug_abbrev   0x00000000      0xc98
+.debug_abbrev   0x00000000      0xca0
  .debug_abbrev  0x00000000       0xf8 ./src/cr_startup_lpc13.o
  .debug_abbrev  0x000000f8      0x19b ./src/gpio.o
  .debug_abbrev  0x00000293      0x240 ./src/ixbus.o
- .debug_abbrev  0x000004d3      0x22d ./src/main.o
- .debug_abbrev  0x00000700      0x4a5 ./src/vs-wrc103.o
- .debug_abbrev  0x00000ba5       0xf3 C:/nxp/LPCXpresso_7.9.2_493/workspace/workspace/yamacir/lib\libCMSISv1p30_LPC13xx.a(system_LPC13xx.o)
+ .debug_abbrev  0x000004d3      0x235 ./src/main.o
+ .debug_abbrev  0x00000708      0x4a5 ./src/vs-wrc103.o
+ .debug_abbrev  0x00000bad       0xf3 C:/nxp/LPCXpresso_7.9.2_493/workspace/workspace/yamacir/lib\libCMSISv1p30_LPC13xx.a(system_LPC13xx.o)
 
-.debug_loc      0x00000000      0xfcc
+.debug_loc      0x00000000      0xfd4
  .debug_loc     0x00000000       0x2b ./src/cr_startup_lpc13.o
  .debug_loc     0x0000002b      0x63d ./src/gpio.o
  .debug_loc     0x00000668      0x254 ./src/ixbus.o
- .debug_loc     0x000008bc      0x10f ./src/main.o
- .debug_loc     0x000009cb      0x4ff ./src/vs-wrc103.o
- .debug_loc     0x00000eca      0x102 C:/nxp/LPCXpresso_7.9.2_493/workspace/workspace/yamacir/lib\libCMSISv1p30_LPC13xx.a(system_LPC13xx.o)
+ .debug_loc     0x000008bc      0x117 ./src/main.o
+ .debug_loc     0x000009d3      0x4ff ./src/vs-wrc103.o
+ .debug_loc     0x00000ed2      0x102 C:/nxp/LPCXpresso_7.9.2_493/workspace/workspace/yamacir/lib\libCMSISv1p30_LPC13xx.a(system_LPC13xx.o)
 
-.debug_aranges  0x00000000      0x278
+.debug_aranges  0x00000000      0x280
  .debug_aranges
                 0x00000000       0x70 ./src/cr_startup_lpc13.o
  .debug_aranges
@@ -455,21 +458,21 @@ OUTPUT(yamacir.axf elf32-littlearm)
  .debug_aranges
                 0x000000d0       0x48 ./src/ixbus.o
  .debug_aranges
-                0x00000118       0x38 ./src/main.o
+                0x00000118       0x40 ./src/main.o
  .debug_aranges
-                0x00000150      0x100 ./src/vs-wrc103.o
+                0x00000158      0x100 ./src/vs-wrc103.o
  .debug_aranges
-                0x00000250       0x28 C:/nxp/LPCXpresso_7.9.2_493/workspace/workspace/yamacir/lib\libCMSISv1p30_LPC13xx.a(system_LPC13xx.o)
+                0x00000258       0x28 C:/nxp/LPCXpresso_7.9.2_493/workspace/workspace/yamacir/lib\libCMSISv1p30_LPC13xx.a(system_LPC13xx.o)
 
-.debug_ranges   0x00000000      0x238
+.debug_ranges   0x00000000      0x240
  .debug_ranges  0x00000000       0x60 ./src/cr_startup_lpc13.o
  .debug_ranges  0x00000060       0x50 ./src/gpio.o
  .debug_ranges  0x000000b0       0x50 ./src/ixbus.o
- .debug_ranges  0x00000100       0x28 ./src/main.o
- .debug_ranges  0x00000128       0xf0 ./src/vs-wrc103.o
- .debug_ranges  0x00000218       0x20 C:/nxp/LPCXpresso_7.9.2_493/workspace/workspace/yamacir/lib\libCMSISv1p30_LPC13xx.a(system_LPC13xx.o)
+ .debug_ranges  0x00000100       0x30 ./src/main.o
+ .debug_ranges  0x00000130       0xf0 ./src/vs-wrc103.o
+ .debug_ranges  0x00000220       0x20 C:/nxp/LPCXpresso_7.9.2_493/workspace/workspace/yamacir/lib\libCMSISv1p30_LPC13xx.a(system_LPC13xx.o)
 
-.debug_macro    0x00000000     0x1c4c
+.debug_macro    0x00000000     0x1c11
  .debug_macro   0x00000000       0x52 ./src/cr_startup_lpc13.o
  .debug_macro   0x00000052      0x87a ./src/cr_startup_lpc13.o
  .debug_macro   0x000008cc       0x10 ./src/cr_startup_lpc13.o
@@ -484,31 +487,30 @@ OUTPUT(yamacir.axf elf32-littlearm)
  .debug_macro   0x00001952       0x74 ./src/ixbus.o
  .debug_macro   0x000019c6       0x1c ./src/ixbus.o
  .debug_macro   0x000019e2       0xac ./src/ixbus.o
- .debug_macro   0x00001a8e       0xa8 ./src/main.o
- .debug_macro   0x00001b36       0x28 ./src/main.o
- .debug_macro   0x00001b5e       0x1c ./src/main.o
- .debug_macro   0x00001b7a       0xd2 ./src/vs-wrc103.o
+ .debug_macro   0x00001a8e       0x95 ./src/main.o
+ .debug_macro   0x00001b23       0x1c ./src/main.o
+ .debug_macro   0x00001b3f       0xd2 ./src/vs-wrc103.o
 
-.debug_line     0x00000000     0x12e1
+.debug_line     0x00000000     0x12da
  .debug_line    0x00000000      0x23c ./src/cr_startup_lpc13.o
  .debug_line    0x0000023c      0x2ab ./src/gpio.o
  .debug_line    0x000004e7      0x2de ./src/ixbus.o
- .debug_line    0x000007c5      0x23b ./src/main.o
- .debug_line    0x00000a00      0x5b7 ./src/vs-wrc103.o
- .debug_line    0x00000fb7      0x32a C:/nxp/LPCXpresso_7.9.2_493/workspace/workspace/yamacir/lib\libCMSISv1p30_LPC13xx.a(system_LPC13xx.o)
+ .debug_line    0x000007c5      0x234 ./src/main.o
+ .debug_line    0x000009f9      0x5b7 ./src/vs-wrc103.o
+ .debug_line    0x00000fb0      0x32a C:/nxp/LPCXpresso_7.9.2_493/workspace/workspace/yamacir/lib\libCMSISv1p30_LPC13xx.a(system_LPC13xx.o)
 
-.debug_str      0x00000000     0x86f1
+.debug_str      0x00000000     0x8686
  .debug_str     0x00000000     0x3cd8 ./src/cr_startup_lpc13.o
                                0x3d73 (size before relaxing)
  .debug_str     0x00003cd8     0x3601 ./src/gpio.o
                                0x7200 (size before relaxing)
  .debug_str     0x000072d9      0xc02 ./src/ixbus.o
                                0x7cfc (size before relaxing)
- .debug_str     0x00007edb      0x290 ./src/main.o
-                               0x75d8 (size before relaxing)
- .debug_str     0x0000816b      0x4e1 ./src/vs-wrc103.o
+ .debug_str     0x00007edb      0x225 ./src/main.o
+                               0x7561 (size before relaxing)
+ .debug_str     0x00008100      0x4e1 ./src/vs-wrc103.o
                                0x7f2a (size before relaxing)
- .debug_str     0x0000864c       0xa5 C:/nxp/LPCXpresso_7.9.2_493/workspace/workspace/yamacir/lib\libCMSISv1p30_LPC13xx.a(system_LPC13xx.o)
+ .debug_str     0x000085e1       0xa5 C:/nxp/LPCXpresso_7.9.2_493/workspace/workspace/yamacir/lib\libCMSISv1p30_LPC13xx.a(system_LPC13xx.o)
                                 0x3f3 (size before relaxing)
 
 .comment        0x00000000       0x9b
@@ -540,13 +542,13 @@ OUTPUT(yamacir.axf elf32-littlearm)
  .ARM.attributes
                 0x00000163       0x21 c:/nxp/lpcxpresso_7.9.2_493/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7-m\libcr_eabihelpers.a(memcpy.o)
 
-.debug_frame    0x00000000      0x570
+.debug_frame    0x00000000      0x58c
  .debug_frame   0x00000000       0xc8 ./src/cr_startup_lpc13.o
  .debug_frame   0x000000c8       0xd0 ./src/gpio.o
  .debug_frame   0x00000198       0x98 ./src/ixbus.o
- .debug_frame   0x00000230       0x8c ./src/main.o
- .debug_frame   0x000002bc      0x284 ./src/vs-wrc103.o
- .debug_frame   0x00000540       0x30 C:/nxp/LPCXpresso_7.9.2_493/workspace/workspace/yamacir/lib\libCMSISv1p30_LPC13xx.a(system_LPC13xx.o)
+ .debug_frame   0x00000230       0xa8 ./src/main.o
+ .debug_frame   0x000002d8      0x284 ./src/vs-wrc103.o
+ .debug_frame   0x0000055c       0x30 C:/nxp/LPCXpresso_7.9.2_493/workspace/workspace/yamacir/lib\libCMSISv1p30_LPC13xx.a(system_LPC13xx.o)
 
 .debug_macinfo  0x00000000     0x62a4
  .debug_macinfo

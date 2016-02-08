@@ -1,0 +1,124 @@
+#include <stdlib.h>
+#include "LPC13xx.h"
+#include "gpio.h"
+#include "vs-wrc103.h"
+#include "ixbus.h"
+
+#define SLOW 1000
+#define FAST 12000
+
+#define GET_SENSOR(lim) ((((ADRead(0) > lim.left) << 1) | (ADRead(1) > lim.right)) & 0x03)
+#define MTR_RUN_LV(ptr) Mtr_Run_lv(ptr.right, -ptr.left, 0, 0, 0, 0)
+
+typedef struct BeautoRover {
+  unsigned int proc, sensor;
+
+  const struct lr {
+    int left, right;
+  } lim, (*act)[4];
+
+  const struct seq {
+    const enum order {
+      PINCH,   /* pinch black line, box */
+      EDGE_R,  /* right edge, box */
+      EDGE_L,  /* left edge, box */
+      PASS,    /* pass through */
+      PIVOT_R, /* pivot turn right */
+      PIVOT_L, /* pivot turn left */
+      FUNC,
+    } order;
+    const enum flag {
+      NEITHER, /* until neither of the sensor says black */
+      RIGHT,   /* until right sensor says black */
+      LEFT,    /* until left sensor says black */
+      BOTH,    /* until both of the sensor says black  */
+    } flag;
+    void (* const func)(void* arg);
+  } *seq;
+} BeautoRover;
+
+const struct lr const preset[][4] = {
+  {{ FAST,  FAST}, { FAST,  SLOW}, { SLOW,  FAST}, { FAST,  FAST}},
+  {{ SLOW,  FAST}, { FAST,  SLOW}, { SLOW,  FAST}, { FAST,  SLOW}},
+  {{ FAST,  SLOW}, { FAST,  SLOW}, { SLOW,  FAST}, { SLOW,  FAST}},
+  {{ FAST,  FAST}, { SLOW,  FAST}, { FAST,  SLOW}, { FAST,  FAST}},
+  {{ FAST, -FAST}, { FAST, -FAST}, { FAST, -FAST}, { FAST, -FAST}},
+  {{-FAST,  FAST}, {-FAST,  FAST}, {-FAST,  FAST}, {-FAST,  FAST}},
+};
+
+BeautoRover beautoRoverCtor(const struct seq* script) {
+  BeautoRover obj = { //0, {150, 150}, script, preset};
+    .lim = {120, 120},
+    .seq = script,
+    .act = preset,
+  };
+  return obj;
+}
+
+int beautoRoverRun(BeautoRover* this) {
+  int order, flag;
+  for (this->proc = 0; (order = this->seq[this->proc].order) != -1; this->proc++)
+    while ((this->sensor = GET_SENSOR(this->lim)) != (flag = this->seq[this->proc].flag)) {
+      if (order == FUNC) this->seq[this->proc].func((void*)this);
+      else {
+        MTR_RUN_LV(this->act[order][this->sensor]);
+        LED(this->sensor);
+      }
+    }
+  return EXIT_SUCCESS;
+}
+
+static inline void runGrayBox(void* arg) {
+  BeautoRover* this = (BeautoRover*)arg;
+  struct lr gb[4] = {{SLOW, FAST/2}, {FAST/2, SLOW}, {SLOW*3, FAST/2}, {FAST/2, SLOW*2}};
+  MTR_RUN_LV(gb[this->sensor]);
+  if (this->sensor == BOTH) LED(LEFT);
+  else LED(this->sensor);
+}
+
+const struct seq script[] = {
+  /* until GrayBox#1 */
+  {PINCH, BOTH}, {PASS, NEITHER},
+  {PINCH, BOTH}, {PASS, NEITHER},
+  {PINCH, BOTH}, {PASS, NEITHER},
+  {PINCH, BOTH},
+
+  /* while GrayBox#1 */
+  {FUNC, RIGHT, runGrayBox},
+
+  /* turn left "T" intersection */
+  {PINCH, BOTH}, {PASS, NEITHER}, {PIVOT_L, RIGHT},
+
+  /* until GrayBox#2 */
+  {PINCH, BOTH}, {PASS, NEITHER}, {PINCH, BOTH},
+
+  /* while GrayBox#2 */
+  {FUNC, RIGHT, runGrayBox},
+
+  /* until U-TurnBox */
+  {PINCH, BOTH}, {PASS, NEITHER}, {PINCH, BOTH},
+
+  /* while U-TurnBox */
+  {EDGE_L, LEFT},
+
+  /* turn left intersection */
+  {EDGE_R, BOTH}, {PIVOT_L, NEITHER}, {EDGE_L, LEFT},
+  {EDGE_R, BOTH}, {PIVOT_L, NEITHER}, {EDGE_L, LEFT},
+
+  /* go pass "|-" intersection */
+  {EDGE_L, BOTH}, {PINCH, NEITHER},
+
+  /* GoalBox */
+  {EDGE_L, BOTH}, {PINCH, NEITHER},
+
+  {-1}
+};
+
+int main(void) {
+  const unsigned short MainCycle = 60;
+  Init(MainCycle);
+
+  BeautoRover rover = beautoRoverCtor(script);
+
+  return beautoRoverRun(&rover);
+}

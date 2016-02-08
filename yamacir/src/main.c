@@ -1,115 +1,121 @@
-#include <stdlib.h>
 #include "LPC13xx.h"
 #include "gpio.h"
 #include "vs-wrc103.h"
 #include "ixbus.h"
 
-#define SLOW 1000
+#define SLOW 2000
 #define FAST 12000
 
 #define GET_SENSOR(lim) ((((ADRead(0) > lim.left) << 1) | (ADRead(1) > lim.right)) & 0x03)
 #define MTR_RUN_LV(ptr) Mtr_Run_lv(ptr.right, -ptr.left, 0, 0, 0, 0)
 
-typedef struct lr_t {
-  int left, right;
-} lr_t;
-
-typedef struct seq_t {
-  const enum order {
-    PINCH,   /* pinch black line, box */
-    EDGE_R,  /* right edge, box */
-    EDGE_L,  /* left edge, box */
-    PASS,    /* pass through */
-    PIVOT_R, /* pivot turn right */
-    PIVOT_L, /* pivot turn left */
-    FUNC,
-  } order;
-  const enum flag {
-    NEITHER, /* until neither of the sensor says black */
-    RIGHT,   /* until right sensor says black */
-    LEFT,    /* until left sensor says black */
-    BOTH,    /* until both of the sensor says black  */
-  } flag;
-  void (*func)(void* arg);
-} seq_t;
-
 typedef struct BeautoRover {
   unsigned int proc, sensor;
-  const lr_t const lim, (*act)[4];
-  const seq_t* seq;
+  const struct lr {
+    int left, right;
+  } lim, (*act)[4];
+  const struct seq {
+    const enum order {
+      GOAL = -1,
+      PINCH,   /* pinch black line, box */
+      EDGE_R,  /* right edge, box */
+      EDGE_L,
+      PASS,    /* pass through */
+      PIVOT_R, /* pivot turn right */
+      PIVOT_L,
+      SKID_R,  /* skid steer right */
+      SKID_L,
+      FUNC,
+    } order;
+    const enum flag {
+      NEITHER, /* until neither of the sensor says black */
+      RIGHT,   /* until right sensor says black */
+      LEFT,    /* until left sensor says black */
+      BOTH,    /* until both of the sensor says black  */
+    } flag;
+    void (* const func)(void* arg);
+  } *seq;
 } BeautoRover;
 
-const struct lr_t const preset[][4] = {
+const struct lr const preset[][4] = {
   {{ FAST,  FAST}, { FAST,  SLOW}, { SLOW,  FAST}, { FAST,  FAST}},
-  {{ SLOW,  FAST}, { FAST,  SLOW}, { SLOW,  FAST}, { FAST,  SLOW}},
-  {{ FAST,  SLOW}, { FAST,  SLOW}, { SLOW,  FAST}, { SLOW,  FAST}},
+  {{ SLOW,  FAST}, { FAST,     0}, { SLOW,  FAST}, { FAST,  SLOW}},
+  {{ FAST,  SLOW}, { FAST,  SLOW}, {    0,  FAST}, { SLOW,  FAST}},
   {{ FAST,  FAST}, { SLOW,  FAST}, { FAST,  SLOW}, { FAST,  FAST}},
   {{ FAST, -FAST}, { FAST, -FAST}, { FAST, -FAST}, { FAST, -FAST}},
   {{-FAST,  FAST}, {-FAST,  FAST}, {-FAST,  FAST}, {-FAST,  FAST}},
+  {{ FAST,     0}, { FAST,     0}, { FAST,     0}, { FAST,     0}},
+  {{    0,  FAST}, {    0,  FAST}, {    0,  FAST}, {    0,  FAST}},
 };
 
-BeautoRover beautoRoverCtor(const seq_t* script) {
+BeautoRover beautoRoverCtor(const struct seq* script) {
   BeautoRover obj = {
     .lim = {100, 100},
-    .seq = script,
     .act = preset,
+    .seq = script,
   };
   return obj;
 }
 
 int beautoRoverRun(BeautoRover* this) {
   int order, flag;
-  for (this->proc = 0; (order = this->seq[this->proc].order) != -1; this->proc++)
+  for (this->proc = 0; (order = this->seq[this->proc].order) != GOAL; this->proc++)
     while ((this->sensor = GET_SENSOR(this->lim)) != (flag = this->seq[this->proc].flag)) {
-      if (order == FUNC) this->seq[this->proc].func((void*)this->sensor);
-      else MTR_RUN_LV(this->act[order][this->sensor]);
+      if (order == FUNC) this->seq[this->proc].func((void*)this);
+      else {
+        MTR_RUN_LV(this->act[order][this->sensor]);
+        LED(this->sensor);
+      }
     }
-  return EXIT_SUCCESS;
+  Mtr_Run_lv(0, 0, 0, 0, 0, 0);
+  return this->proc;
 }
 
 void runGrayBox(void* arg) {
-  static struct lr_t gb[4] = {
-    { SLOW/2,  FAST/2}, { FAST/2,  SLOW/2}, { SLOW/2,  FAST/2}, { FAST/2,  SLOW/2}};
-  MTR_RUN_LV(gb[(unsigned int)arg]);
-  if ((unsigned int)arg == BOTH) LED(LEFT);
+  BeautoRover* this = (BeautoRover*)arg;
+  Mtr_Run_lv(this->act[EDGE_L][this->sensor].right/2, -this->act[EDGE_L][this->sensor].left/2, 0, 0, 0, 0);
+  LED((ADRead(0)>this->lim.left)+1);
 }
 
-const seq_t script[] = {
+void cutGoalTape(void* arg) {
+  Mtr_Run_lv(FAST, -FAST, 0, 0, 0, 0);
+  Wait(1000);
+  return;
+}
+
+const struct seq script[] = {
   /* until GrayBox#1 */
-  {PINCH, BOTH}, {PASS, NEITHER},
-  {PINCH, BOTH}, {PASS, NEITHER},
-  {PINCH, BOTH}, {PASS, NEITHER},
-  {PINCH, BOTH},
+  {PINCH, BOTH}, {PASS, NEITHER}, {PINCH, BOTH}, {PASS, NEITHER},
+  {PINCH, BOTH}, {PASS, NEITHER}, {PINCH, BOTH},
 
   /* while GrayBox#1 */
-  {FUNC, RIGHT, runGrayBox},
+  {FUNC, NEITHER, runGrayBox},
 
   /* turn left "T" intersection */
-  {PINCH, BOTH}, {PASS, NEITHER}, {PIVOT_L, RIGHT},
+  {EDGE_R, BOTH}, {PASS, NEITHER}, {PIVOT_L, RIGHT},
 
   /* until GrayBox#2 */
   {PINCH, BOTH}, {PASS, NEITHER}, {PINCH, BOTH},
 
   /* while GrayBox#2 */
-  {FUNC, RIGHT, runGrayBox},
+  {FUNC, NEITHER, runGrayBox},
 
   /* until U-TurnBox */
   {PINCH, BOTH}, {PASS, NEITHER}, {PINCH, BOTH},
 
   /* while U-TurnBox */
-  {EDGE_L, LEFT},
+  {EDGE_R, NEITHER}, {PIVOT_R, RIGHT}, {EDGE_L, LEFT},
 
   /* turn left intersection */
-  {EDGE_R, BOTH}, {PIVOT_L, NEITHER}, {EDGE_L, LEFT},
-  {EDGE_R, BOTH}, {PIVOT_L, NEITHER}, {EDGE_L, LEFT},
+  {EDGE_R, BOTH}, {SKID_L, NEITHER}, {EDGE_L, LEFT},
+  {EDGE_R, BOTH}, {SKID_L, NEITHER}, {EDGE_L, LEFT},
 
   /* go pass "|-" intersection */
   {EDGE_L, BOTH}, {PINCH, NEITHER},
 
   /* GoalBox */
-  {EDGE_L, BOTH}, {PINCH, NEITHER},
-
-  {-1}
+  {EDGE_L, BOTH}, {SKID_R, NEITHER}, {EDGE_L, BOTH},
+  {PINCH, NEITHER}, {FUNC, BOTH, cutGoalTape}, {GOAL}
 };
 
 int main(void) {

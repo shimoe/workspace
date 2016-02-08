@@ -1,4 +1,4 @@
-15:15:10 **** Incremental Build of configuration Debug for project robocar_shimoe ****
+20:57:17 **** Incremental Build of configuration Debug for project robocar_shimoe ****
 make -r all 
 Building file: ../src/main.c
 Invoking: MCU C Compiler
@@ -14,10 +14,10 @@ make --no-print-directory post-build
 Performing post-build steps
 arm-none-eabi-size robocar_shimoe.axf; arm-none-eabi-size robocar_shimoe.axf; arm-none-eabi-objcopy -O binary robocar_shimoe.axf robocar_shimoe.bin; checksum robocar_shimoe.bin;
    text	   data	    bss	    dec	    hex	filename
-   4081	      0	    498	   4579	   11e3	robocar_shimoe.axf
+   4053	      0	    498	   4551	   11c7	robocar_shimoe.axf
    text	   data	    bss	    dec	    hex	filename
-   4081	      0	    498	   4579	   11e3	robocar_shimoe.axf
+   4053	      0	    498	   4551	   11c7	robocar_shimoe.axf
  
 
-15:15:11 Build Finished (took 1s.938ms)
+20:57:18 Build Finished (took 1s.154ms)
 
